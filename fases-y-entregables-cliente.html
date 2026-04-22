@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>OktuMedia — Fases y entregables del Sistema 90 días</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121212;
+    --bg-elev:#1a1a1a;
+    --bg-elev-2:#222;
+    --text:#ffffff;
+    --text-soft:rgba(255,255,255,0.72);
+    --text-muted:rgba(255,255,255,0.48);
+    --accent:#8A2BE2;
+    --accent-soft:rgba(138,43,226,0.14);
+    --line:rgba(255,255,255,0.08);
+    --line-strong:rgba(255,255,255,0.16);
+    --success:#10b981;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:48px 40px 64px}
+  header{display:flex;justify-content:space-between;align-items:center;margin-bottom:48px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+  .logo{font-family:'Montserrat';font-weight:900;font-size:28px;letter-spacing:-0.02em}
+  .logo .violet{color:var(--accent)}
+  .tagline{font-size:13px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.12em;font-weight:500}
+  .hero{margin-bottom:56px}
+  .eyebrow{display:inline-block;background:var(--accent-soft);color:var(--accent);font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:0.16em;padding:6px 12px;border-radius:4px;margin-bottom:20px;text-transform:uppercase}
+  h1{font-family:'Montserrat';font-weight:900;font-size:44px;line-height:1.08;letter-spacing:-0.03em;margin:0 0 20px}
+  h1 .violet{color:var(--accent)}
+  .lead{font-size:18px;color:var(--text-soft);max-width:680px;margin:0}
+  .lead strong{color:var(--text);font-weight:600}
+  section{margin-bottom:56px}
+  h2{font-family:'Montserrat';font-weight:800;font-size:26px;letter-spacing:-0.02em;margin:0 0 8px}
+  h2 .violet{color:var(--accent)}
+  .section-intro{color:var(--text-soft);font-size:16px;margin:0 0 28px;max-width:680px}
+  /* PHASES */
+  .phases{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+  .phase{background:var(--bg-elev);border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;display:flex;flex-direction:column}
+  .phase-num{font-family:'Montserrat';font-weight:900;font-size:12px;color:var(--accent);letter-spacing:0.18em;margin-bottom:6px}
+  .phase-month{font-family:'Montserrat';font-weight:800;font-size:13px;color:var(--text-muted);letter-spacing:0.12em;margin-bottom:14px;text-transform:uppercase}
+  .phase h3{font-family:'Montserrat';font-weight:800;font-size:19px;margin:0 0 14px;line-height:1.25}
+  .phase-focus{font-size:14px;color:var(--text-soft);margin:0 0 18px;line-height:1.5;flex:1}
+  .phase-deliv{margin-top:auto}
+  .phase-deliv-label{font-family:'Montserrat';font-weight:700;font-size:10px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px}
+  .phase-deliv ul{margin:0;padding:0;list-style:none}
+  .phase-deliv li{font-size:13px;color:var(--text);line-height:1.5;padding-left:16px;position:relative;margin-bottom:6px}
+  .phase-deliv li:before{content:'→';position:absolute;left:0;color:var(--accent);font-weight:700}
+  /* DONE CONDITIONS */
+  .done-block{background:linear-gradient(180deg,rgba(138,43,226,0.08) 0%,var(--bg-elev) 100%);border:1px solid var(--accent);border-radius:16px;padding:32px}
+  .done-block h2{margin-bottom:10px}
+  .done-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:24px}
+  .done-item{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:16px 14px;text-align:center}
+  .done-num{font-family:'Montserrat';font-weight:900;font-size:24px;color:var(--accent);line-height:1;margin-bottom:10px}
+  .done-text{font-size:12.5px;color:var(--text);line-height:1.4}
+  .done-text strong{color:var(--text);font-weight:600}
+  /* SLA BILATERAL */
+  .sla{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .sla-col{background:var(--bg-elev);border:1px solid var(--line);border-radius:14px;padding:28px}
+  .sla-col.us{border:1px solid var(--accent)}
+  .sla-label{font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;margin-bottom:16px}
+  .sla-col.us .sla-label{color:var(--accent)}
+  .sla-col.you .sla-label{color:var(--text-muted)}
+  .sla-col h3{font-family:'Montserrat';font-weight:800;font-size:17px;margin:0 0 18px;line-height:1.3}
+  .sla-list{list-style:none;padding:0;margin:0}
+  .sla-list li{font-size:13.5px;color:var(--text-soft);line-height:1.5;padding-left:22px;position:relative;margin-bottom:12px}
+  .sla-list li:before{content:'✓';position:absolute;left:0;top:0;font-weight:800;font-size:12px;width:16px;height:16px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+  .sla-col.you .sla-list li:before{background:var(--bg-elev-2);color:var(--text);border:1px solid var(--line-strong)}
+  .sla-list li strong{color:var(--text);font-weight:600}
+  /* CADENCIA */
+  .cadence{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .cadence-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:12px;padding:24px}
+  .cadence-tag{font-family:'Montserrat';font-weight:700;font-size:11px;color:var(--accent);letter-spacing:0.14em;text-transform:uppercase;margin-bottom:10px}
+  .cadence-card h3{font-family:'Montserrat';font-weight:800;font-size:18px;margin:0 0 8px;line-height:1.3}
+  .cadence-card p{font-size:14px;color:var(--text-soft);margin:0;line-height:1.55}
+  .cadence-card p strong{color:var(--text);font-weight:600}
+  /* DEAL */
+  .deal{display:grid;grid-template-columns:1.1fr 1fr;gap:16px}
+  .card{background:var(--bg-elev);border:1px solid var(--line);border-radius:14px;padding:28px}
+  .card.price{border:1px solid var(--accent);background:linear-gradient(180deg,rgba(138,43,226,0.08) 0%,var(--bg-elev) 100%)}
+  .card-label{font-family:'Montserrat';font-weight:700;font-size:11px;letter-spacing:0.16em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+  .card-price{font-family:'Montserrat';font-weight:900;font-size:34px;letter-spacing:-0.02em;margin:0 0 6px;line-height:1.05}
+  .card-price .unit{font-size:14px;color:var(--text-muted);font-weight:600;letter-spacing:0;margin-left:6px}
+  .card-price .alt{display:block;font-size:18px;color:var(--text-soft);margin-top:8px;font-weight:700}
+  .card-sub{font-size:14px;color:var(--text-soft);margin:10px 0 0}
+  .card-note{font-size:12.5px;color:var(--text-muted);margin:14px 0 0;line-height:1.5}
+  .guarantee h3{font-family:'Montserrat';font-weight:800;font-size:17px;margin:0 0 8px;line-height:1.35}
+  .guarantee p{font-size:14px;color:var(--text-soft);margin:0 0 10px;line-height:1.55}
+  .guarantee p:last-child{margin:0}
+  /* FOOTER */
+  footer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;color:var(--text-muted)}
+  footer a{color:var(--text-soft);text-decoration:none}
+  /* RESPONSIVE */
+  @media (max-width:800px){
+    .wrap{padding:32px 20px}
+    h1{font-size:32px}
+    .phases,.sla,.cadence,.deal{grid-template-columns:1fr}
+    .done-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  /* PRINT */
+  @media print{
+    :root{--bg:#121212;--bg-elev:#1a1a1a;--text:#fff}
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact;color-adjust:exact}
+    .wrap{max-width:none;padding:30px}
+    section{page-break-inside:avoid;margin-bottom:28px}
+    h1{font-size:32px}
+    .phases{grid-template-columns:1fr 1fr 1fr}
+    .done-grid{grid-template-columns:repeat(5,1fr)}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo"><span class="violet">O</span>ktuMedia</div>
+    <div class="tagline">Fases y entregables · Sistema 90 días</div>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">Qué vas a recibir en 90 días</span>
+    <h1>Un sistema completo en <span class="violet">3 fases</span>, con entregables concretos y garantía por escrito.</h1>
+    <p class="lead">Sin promesas vagas. Cada fase tiene un <strong>objetivo medible</strong>, <strong>entregables específicos</strong> y <strong>criterios de "hecho"</strong> auditables. Tú sabes qué vamos a entregar, cuándo, y qué pasa si no lo cumplimos.</p>
+  </section>
+
+  <section>
+    <h2>Las <span class="violet">3 fases</span> del sprint</h2>
+    <p class="section-intop">Cada fase dura un mes. Los objetivos de la fase anterior se cumplen antes de abrir la siguiente.</p>
+    <div class="phases">
+      <div class="phase">
+        <div class="phase-num">FASE 01</div>
+        <div class="phase-month">Mes 1 · Construcción</div>
+        <h3>Diagnóstico profundo + sistema encendido</h3>
+        <p class="phase-focus">Mapeamos con datos las 3 fugas exactas de tu negocio, construimos tu oferta, publicamos tu página y encendemos el sistema con tráfico real.</p>
+        <div class="phase-deliv">
+          <div class="phase-deliv-label">Entregables</div>
+          <ul>
+            <li>Diagnóstico estratégico</li>
+            <li>Oferta construida</li>
+            <li>Página de aterrizaje en vivo</li>
+            <li>Seguimiento (tracking) instalado</li>
+            <li>Campañas Meta encendidas</li>
+            <li>Google Business optimizado</li>
+            <li>WhatsApp automatizado 24/7</li>
+            <li>Primer reporte semanal</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">FASE 02</div>
+        <div class="phase-month">Mes 2 · Operación</div>
+        <h3>Primera optimización sobre datos reales</h3>
+        <p class="phase-focus">Ya tienes clientes entrando. Ahora iteramos creatividades, encendemos retargeting y reconocimiento, activamos nurturing para quienes no compraron la primera vez y gestión de reviews.</p>
+        <div class="phase-deliv">
+          <div class="phase-deliv-label">Entregables</div>
+          <ul>
+            <li>Iteración de creatividades</li>
+            <li>Retargeting activo</li>
+            <li>Campaña de reconocimiento</li>
+            <li>Nurturing automatizado</li>
+            <li>Pedido y respuesta a reviews</li>
+            <li>Reportes semanales</li>
+            <li>Review mensual con feedback cualitativo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-num">FASE 03</div>
+        <div class="phase-month">Mes 3 · Escalamiento</div>
+        <h3>Optimización avanzada + decisión de continuidad</h3>
+        <p class="phase-focus">Escalamos la combinación ganadora, te entregamos el playbook operativo y presentamos las 3 vías para continuar: retainer con nosotros, mantenimiento ligero, o transferencia total a tu equipo.</p>
+        <div class="phase-deliv">
+          <div class="phase-deliv-label">Entregables</div>
+          <ul>
+            <li>Escalamiento del combo ganador</li>
+            <li>Iteraciones avanzadas</li>
+            <li>Playbook operativo del sistema</li>
+            <li>Reporte final de 90 días</li>
+            <li>3 vías de continuidad presentadas</li>
+            <li>Review final + decisión firmada</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="done-block">
+      <h2>Las <span class="violet">5 condiciones</span> del día 30</h2>
+      <p class="section-intro">Tu garantía se activa sobre estas 5 condiciones objetivas y auditables. Si al día 30 no las cumplimos todas, te devolvemos el saldo no ejecutado del fee.</p>
+      <div class="done-grid">
+        <div class="done-item">
+          <div class="done-num">01</div>
+          <div class="done-text"><strong>Página publicada</strong> con seguimiento activo</div>
+        </div>
+        <div class="done-item">
+          <div class="done-num">02</div>
+          <div class="done-text"><strong>Campaña Meta</strong> en vivo con inversión real</div>
+        </div>
+        <div class="done-item">
+          <div class="done-num">03</div>
+          <div class="done-text"><strong>Google Business</strong> optimizado (si aplica)</div>
+        </div>
+        <div class="done-item">
+          <div class="done-num">04</div>
+          <div class="done-text"><strong>WhatsApp</strong> respondiendo &lt;60 segundos</div>
+        </div>
+        <div class="done-item">
+          <div class="done-num">05</div>
+          <div class="done-text"><strong>Reporte semanal</strong> entregado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Compromisos <span class="violet">mutuos</span></h2>
+    <p class="section-intro">Un sistema serio exige compromisos serios en ambos lados. Esto es lo que firmamos.</p>
+    <div class="sla">
+      <div class="sla-col us">
+        <div class="sla-label">OktuMedia se compromete a</div>
+        <h3>Entregar con fechas, avisar con transparencia, compensar si fallamos.</h3>
+        <ul class="sla-list">
+          <li><strong>Diagnóstico completo al día 14.</strong> Si nos atrasamos, sumamos 5 días de servicio gratis.</li>
+          <li><strong>Sistema operando al día 30</strong> (5 condiciones). Si no, devolvemos saldo no ejecutado.</li>
+          <li><strong>Reporte semanal cada viernes.</strong> Si se retrasa más de 3 días hábiles, crédito del 5% del mes siguiente.</li>
+          <li><strong>Review mensual en vivo</strong> (WhatsApp + Meet o presencial si prefieres).</li>
+          <li><strong>Respuesta &lt;24h hábiles</strong> en el canal oficial.</li>
+          <li><strong>Mínimo 2 iteraciones</strong> de creatividad por mes desde el mes 2.</li>
+        </ul>
+      </div>
+      <div class="sla-col you">
+        <div class="sla-label">Tu compromiso es</div>
+        <h3>Hacer posible que el sistema arranque y avance sin frenos.</h3>
+        <ul class="sla-list">
+          <li><strong>Entregar accesos dentro de 72h</strong> post-firma (Meta, Google, sitio, WhatsApp).</li>
+          <li><strong>Aprobar creatividades y copy en ≤48h hábiles.</strong> Silencio = aprobación automática.</li>
+          <li><strong>Pago del fee antes del día 5</strong> de cada mes.</li>
+          <li><strong>Designar 1 punto de contacto principal</strong> al kickoff.</li>
+          <li><strong>Asistir a las revisiones mensuales</strong> acordadas.</li>
+          <li><strong>No intervenir en campañas</strong> sin avisarnos (cambios unilaterales rompen la data).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Cómo nos <span class="violet">comunicamos</span></h2>
+    <p class="section-intro">Los números importan. Lo que tú vives con tu marca también. Por eso la cadencia tiene los dos.</p>
+    <div class="cadence">
+      <div class="cadence-card">
+        <div class="cadence-tag">Cada semana</div>
+        <h3>Reporte de 1 página, todos los viernes</h3>
+        <p>Cuántos clientes llegaron, cuánto invertimos, cuánto cuesta conseguir uno, qué mejoramos y qué viene la próxima semana. <strong>Sin jerga, sin adornos, sin excusas.</strong></p>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-tag">Cada mes</div>
+        <h3>Review en vivo de 60-90 min</h3>
+        <p>Métricas del mes, decisiones de ajuste <strong>y un espacio explícito para que cuentes cómo sientes que está tu marca.</strong> WhatsApp + Meet — o presencial si prefieres y las posibilidades lo permiten.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Inversión y <span class="violet">garantía</span></h2>
+    <p class="section-intro">Precio claro. Garantía firmada.</p>
+    <div class="deal">
+      <div class="card guarantee">
+        <div class="card-label">Garantía 30 días</div>
+        <h3>Si al día 30 no entregamos las 5 condiciones de sistema operando, te devolvemos el saldo no ejecutado.</h3>
+        <p>Condiciones auditables. Sin preguntas, sin negociación. Asumimos el riesgo porque confiamos en la arquitectura.</p>
+      </div>
+      <div class="card price">
+        <div class="card-label">Inversión 90 días</div>
+        <div class="card-price">$3.5M<span class="unit">COP / mes × 3</span>
+          <span class="alt">o $10M upfront (ahorras $500K)</span>
+        </div>
+        <p class="card-sub">Fee fijo. No incluye pauta.</p>
+        <p class="card-note">La inversión en pauta de Meta y Google corre aparte: tú la cargas en tu tarjeta y nosotros la administramos. Sin markup, sin comisión en los primeros 90 días.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Después del <span class="violet">día 90</span></h2>
+    <p class="section-intro">Al final del sprint tienes el sistema funcionando. Tú decides cómo seguir.</p>
+    <div class="cadence">
+      <div class="cadence-card">
+        <div class="cadence-tag">Opción A · Continuidad</div>
+        <h3>Retainer mensual</h3>
+        <p>$3M COP/mes + 10% de tu inversión en pauta. Seguimos operando todo: campañas, iteraciones, reportes, reviews mensuales.</p>
+      </div>
+      <div class="cadence-card">
+        <div class="cadence-tag">Opción B · Ligero</div>
+        <h3>Mantenimiento básico</h3>
+        <p>Operación reducida + 1 review trimestral + consultoría bajo demanda. Para cuando el sistema ya rueda solo.</p>
+      </div>
+    </div>
+    <div class="cadence" style="margin-top:16px">
+      <div class="cadence-card" style="grid-column:1/-1">
+        <div class="cadence-tag">Opción C · Transferencia</div>
+        <h3>Te entregamos el sistema completo</h3>
+        <p>Playbook operativo + handoff estructurado + 30 días de soporte post-transferencia. Tu equipo asume la operación. Pago único de transferencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div>OktuMedia — Anexo de fases y entregables · Colombia · 2026</div>
+    <div>
+      <a href="mailto:[EMAIL]">[EMAIL]</a> &nbsp;·&nbsp;
+      <a href="https://wa.me/[WHATSAPP]">WhatsApp [WHATSAPP]</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
