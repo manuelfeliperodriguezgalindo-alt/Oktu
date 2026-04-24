@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roadmap 90 días — Servimorel × OktuMedia</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fbfbfd;
+    color: #1d1d1f;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(180deg, #f5f5f7 0%, #fbfbfd 100%);
+    padding: 100px 24px 60px;
+    text-align: center;
+    border-bottom: 1px solid #e8e8ed;
+  }
+  .hero-eyebrow {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #86868b;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: 48px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 14px;
+  }
+  .hero .client {
+    font-size: 22px;
+    font-weight: 500;
+    color: #0071e3;
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: #86868b;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 24px;
+  }
+  .section-tag {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+  }
+  .tag-client { background: #e6f2ff; color: #0071e3; }
+  .tag-team { background: #1d1d1f; color: #fff; }
+  .section-title {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .section-sub {
+    font-size: 18px;
+    color: #86868b;
+    margin-bottom: 48px;
+    max-width: 680px;
+  }
+  .north-star {
+    background: linear-gradient(135deg, #eaf4ff 0%, #f5f9ff 100%);
+    border: 1px solid #d4e6ff;
+    border-radius: 20px;
+    padding: 36px 40px;
+    margin-bottom: 40px;
+  }
+  .north-star-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0071e3;
+    margin-bottom: 8px;
+  }
+  .north-star h3 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 10px;
+  }
+  .north-star p {
+    font-size: 16px;
+    color: #424245;
+  }
+  .phase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .phase-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 18px;
+    padding: 32px 28px;
+    position: relative;
+  }
+  .phase-card.active { border-color: #0071e3; box-shadow: 0 0 0 3px rgba(0,113,227,0.08); }
+  .phase-num {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #0071e3;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .phase-card h4 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: 6px;
+  }
+  .phase-range {
+    font-size: 13px;
+    color: #86868b;
+    margin-bottom: 18px;
+  }
+  .phase-card p {
+    font-size: 15px;
+    color: #424245;
+    margin-bottom: 14px;
+  }
+  .phase-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  .phase-card ul li {
+    font-size: 14px;
+    color: #424245;
+    padding: 8px 0 8px 20px;
+    position: relative;
+    border-bottom: 1px solid #f5f5f7;
+  }
+  .phase-card ul li:last-child { border-bottom: none; }
+  .phase-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 16px;
+    width: 5px;
+    height: 5px;
+    background: #0071e3;
+    border-radius: 50%;
+  }
+  .impact-box {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 18px;
+    padding: 32px;
+    margin-bottom: 24px;
+  }
+  .impact-box h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .kpi {
+    text-align: center;
+    padding: 20px 14px;
+    background: #f5f5f7;
+    border-radius: 12px;
+  }
+  .kpi-value {
+    font-size: 24px;
+    font-weight: 700;
+    color: #0071e3;
+    display: block;
+    letter-spacing: -0.01em;
+  }
+  .kpi-label {
+    font-size: 12px;
+    color: #86868b;
+    margin-top: 4px;
+    font-weight: 500;
+  }
+  .investment-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .inv-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 18px;
+    padding: 28px;
+  }
+  .inv-card h4 {
+    font-size: 14px;
+    font-weight: 600;
+    color: #86868b;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+  .inv-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1d1d1f;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+  }
+  .inv-desc {
+    font-size: 14px;
+    color: #424245;
+  }
+  /* Team section */
+  .team-section {
+    background: #1d1d1f;
+    color: #f5f5f7;
+    padding: 80px 0;
+    margin-top: 60px;
+  }
+  .team-section .container h2,
+  .team-section .container .section-title {
+    color: #fff;
+  }
+  .team-section .section-sub { color: #a1a1a6; }
+  .team-section .north-star {
+    background: #2c2c2e;
+    border-color: #3a3a3c;
+  }
+  .team-section .north-star-label { color: #0a84ff; }
+  .team-section .north-star h3 { color: #fff; }
+  .team-section .north-star p { color: #d2d2d7; }
+  .sprint-block {
+    background: #2c2c2e;
+    border: 1px solid #3a3a3c;
+    border-radius: 18px;
+    padding: 36px;
+    margin-bottom: 24px;
+  }
+  .sprint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .sprint-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .sprint-dates {
+    font-size: 13px;
+    color: #0a84ff;
+    font-weight: 600;
+    padding: 6px 12px;
+    background: rgba(10,132,255,0.15);
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .sprint-goal {
+    font-size: 15px;
+    color: #a1a1a6;
+    margin-bottom: 24px;
+  }
+  .sprint-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .sprint-table th {
+    text-align: left;
+    padding: 10px 12px;
+    background: #1d1d1f;
+    color: #86868b;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #3a3a3c;
+  }
+  .sprint-table td {
+    padding: 12px;
+    color: #d2d2d7;
+    border-bottom: 1px solid #3a3a3c;
+    vertical-align: top;
+  }
+  .sprint-table tr:last-child td { border-bottom: none; }
+  .sprint-table strong { color: #fff; }
+  .role-pill {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 12px;
+    background: rgba(10,132,255,0.15);
+    color: #0a84ff;
+    white-space: nowrap;
+  }
+  .role-pill.strat { background: rgba(191,90,242,0.15); color: #bf5af2; }
+  .role-pill.am { background: rgba(48,209,88,0.15); color: #30d158; }
+  .role-pill.mb { background: rgba(255,159,10,0.15); color: #ff9f0a; }
+  .role-pill.auto { background: rgba(100,210,255,0.15); color: #64d2ff; }
+  .role-pill.cw { background: rgba(255,214,10,0.15); color: #ffd60a; }
+  .role-pill.des { background: rgba(255,69,58,0.15); color: #ff453a; }
+  .priority-box {
+    background: #2c2c2e;
+    border-left: 3px solid #ff9f0a;
+    padding: 20px 24px;
+    border-radius: 0 12px 12px 0;
+    margin: 24px 0;
+  }
+  .priority-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ff9f0a;
+    margin-bottom: 6px;
+  }
+  .priority-box p {
+    font-size: 15px;
+    color: #f5f5f7;
+  }
+  .milestones {
+    background: #2c2c2e;
+    border-radius: 18px;
+    padding: 32px;
+    margin-top: 32px;
+  }
+  .milestones h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 18px;
+  }
+  .milestone-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #3a3a3c;
+    font-size: 14px;
+    gap: 16px;
+  }
+  .milestone-item:last-child { border-bottom: none; }
+  .milestone-item strong { color: #fff; flex: 1; }
+  .milestone-item span { color: #0a84ff; font-weight: 600; white-space: nowrap; }
+  .footer {
+    background: #000;
+    color: #86868b;
+    text-align: center;
+    padding: 48px 24px;
+    font-size: 13px;
+  }
+  .footer strong { color: #fff; }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 32px; }
+    .phase-grid, .investment-row { grid-template-columns: 1fr; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .section-title { font-size: 28px; }
+    .sprint-table { font-size: 13px; }
+    .sprint-block { padding: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Roadmap 90 días · Sistema OktuMedia adaptado</div>
+  <h1>Motor de ventas para Servimorel</h1>
+  <div class="client">Del 24 de abril al 24 de julio de 2026</div>
+  <p class="hero-sub">Aplicación del Sistema OktuMedia adaptado al caso de una empresa de transporte especial, turismo y Servimorel Bike con base en Miraflores, Boyacá.</p>
+</div>
+
+<!-- ========================= VISTA CLIENTE ========================= -->
+<div class="container">
+  <span class="section-tag tag-client">Vista 01 · Para presentar al cliente</span>
+  <h2 class="section-title">Más clientes, medibles, en 90 días</h2>
+  <p class="section-sub">Lo que Servimorel va a obtener, cuándo, y qué se compromete OktuMedia a entregar. Sin jerga técnica.</p>
+
+  <div class="north-star">
+    <div class="north-star-label">Meta central del sprint</div>
+    <h3>Duplicar el flujo de contactos calificados en 90 días</h3>
+    <p>Hoy Servimorel vive principalmente del boca a boca y de sus 37 reviews en Google. El objetivo es construir un segundo canal de ventas predecible —búsqueda pagada + redes + respuesta automática— sin romper el modelo operativo actual. Meta concreta: pasar de N leads/mes (línea base a medir en semana 1) a 2× en el mes 3.</p>
+  </div>
+
+  <h3 style="font-size:24px;font-weight:700;letter-spacing:-0.01em;margin-bottom:20px;">Las 3 fases explicadas sin rodeos</h3>
+
+  <div class="phase-grid">
+    <div class="phase-card active">
+      <div class="phase-num">Mes 1</div>
+      <h4>Armamos el motor</h4>
+      <div class="phase-range">24 abr — 24 may</div>
+      <p>Arreglamos lo que ya tienen, construimos lo que falta y arrancamos con tráfico real.</p>
+      <ul>
+        <li>Página web optimizada para convertir, no sólo informar</li>
+        <li>Las 37 reviews de Google visibles en la home</li>
+        <li>Páginas específicas: Servimorel Bike, Empresas, FAQ</li>
+        <li>WhatsApp que responde automáticamente en menos de 60 segundos</li>
+        <li>Primera campaña en Google y Meta con presupuesto real corriendo</li>
+        <li>Google Business reforzado (más fotos, publicaciones semanales, más reviews)</li>
+      </ul>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Mes 2</div>
+      <h4>Operamos y afinamos</h4>
+      <div class="phase-range">25 may — 24 jun</div>
+      <p>Dejamos de adivinar y empezamos a decidir con datos. Bajamos costo por contacto y subimos conversión.</p>
+      <ul>
+        <li>3 versiones de anuncios compitiendo entre sí por segmento</li>
+        <li>Retargeting a quien visitó pero no contactó</li>
+        <li>Garantía pública: "si llegamos tarde +15 min, el tramo no se cobra"</li>
+        <li>Seguimiento automático a leads que no respondieron en 24 h</li>
+        <li>Pedido automatizado de reviews a clientes satisfechos</li>
+        <li>Primera reunión mensual de revisión con números sobre la mesa</li>
+      </ul>
+    </div>
+    <div class="phase-card">
+      <div class="phase-num">Mes 3</div>
+      <h4>Escalamos y transferimos</h4>
+      <div class="phase-range">25 jun — 24 jul</div>
+      <p>Duplicamos presupuesto en lo que funciona y entregamos el manual para que el motor siga corriendo.</p>
+      <ul>
+        <li>Escalamiento de la mejor combinación anuncio-audiencia-canal</li>
+        <li>Playbook operativo entregado (cómo leer reportes, qué hacer si algo falla)</li>
+        <li>Reporte final de 90 días con métricas completas</li>
+        <li>Decisión de continuidad: retainer, mantenimiento ligero o transferencia total</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="impact-box">
+    <h4>Qué vamos a medir cada semana</h4>
+    <div class="kpi-grid">
+      <div class="kpi">
+        <span class="kpi-value">CPL</span>
+        <div class="kpi-label">Costo por contacto</div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-value">CVR</span>
+        <div class="kpi-label">Tasa de conversión web</div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-value">&lt;60s</span>
+        <div class="kpi-label">Respuesta WhatsApp</div>
+      </div>
+      <div class="kpi">
+        <span class="kpi-value">⭐</span>
+        <div class="kpi-label">Reviews nuevas/mes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="investment-row">
+    <div class="inv-card">
+      <h4>Inversión OktuMedia</h4>
+      <div class="inv-amount">$3.5M COP/mes</div>
+      <div class="inv-desc">Fee fijo por 3 meses. Estrategia, operación, reportes, iteraciones, reuniones mensuales. Plan upfront disponible con 4.7% de descuento.</div>
+    </div>
+    <div class="inv-card">
+      <h4>Inversión en pauta</h4>
+      <div class="inv-amount">$2.5M – $4M COP/mes</div>
+      <div class="inv-desc">Google Ads + Meta Ads. Corre en tarjeta del cliente, sin markup ni comisión. Se arranca escalonado: mes 1 mitad de presupuesto, mes 2–3 completo.</div>
+    </div>
+  </div>
+
+  <div class="north-star" style="background:#fff8e6;border-color:#ffe4a3;">
+    <div class="north-star-label" style="color:#b8651e;">Garantía concreta</div>
+    <h3>Si al día 30 el motor no está operando, devolvemos lo no ejecutado</h3>
+    <p>Cinco condiciones verificables al día 30: página web publicada con tracking, campaña activa con inversión real, Google Business reforzado, WhatsApp respondiendo menos de 60 seg, primer reporte semanal entregado. Si una sola no se cumple, se activa la garantía.</p>
+  </div>
+
+  <h3 style="font-size:22px;font-weight:700;letter-spacing:-0.01em;margin-top:48px;margin-bottom:16px;">Qué necesitamos de Servimorel</h3>
+  <ul style="list-style:none;padding:0;">
+    <li style="font-size:16px;color:#424245;padding:10px 0 10px 24px;position:relative;border-bottom:1px solid #f5f5f7;">
+      <span style="position:absolute;left:0;top:16px;width:6px;height:6px;background:#0071e3;border-radius:50%;"></span>
+      Accesos a Google Business, Meta, sitio web y WhatsApp en las primeras 72 horas
+    </li>
+    <li style="font-size:16px;color:#424245;padding:10px 0 10px 24px;position:relative;border-bottom:1px solid #f5f5f7;">
+      <span style="position:absolute;left:0;top:16px;width:6px;height:6px;background:#0071e3;border-radius:50%;"></span>
+      Aprobaciones de creatividades y copy en menos de 48 horas (silencio = aprobado)
+    </li>
+    <li style="font-size:16px;color:#424245;padding:10px 0 10px 24px;position:relative;border-bottom:1px solid #f5f5f7;">
+      <span style="position:absolute;left:0;top:16px;width:6px;height:6px;background:#0071e3;border-radius:50%;"></span>
+      Una persona del equipo disponible para responder WhatsApp cuando el bot escale
+    </li>
+    <li style="font-size:16px;color:#424245;padding:10px 0 10px 24px;position:relative;">
+      <span style="position:absolute;left:0;top:16px;width:6px;height:6px;background:#0071e3;border-radius:50%;"></span>
+      Asistencia a las 3 reuniones mensuales de revisión (60–90 min cada una)
+    </li>
+  </ul>
+</div>
+
+<!-- ========================= VISTA EQUIPO ========================= -->
+<div class="team-section">
+  <div class="container" style="padding:0 24px;">
+    <span class="section-tag tag-team" style="background:#fff;color:#1d1d1f;">Vista 02 · Para dirección del equipo</span>
+    <h2 class="section-title">Acciones concretas por sprint</h2>
+    <p class="section-sub">Qué hace cada rol, cuándo, y cómo se alimenta del diagnóstico de las 7 Maletas. Trabajo estructurado en Notion.</p>
+
+    <div class="north-star">
+      <div class="north-star-label">Adaptaciones al PRD estándar</div>
+      <h3>Desviaciones del Sistema OktuMedia para este caso</h3>
+      <p><strong style="color:#fff;">TikTok Ads queda fuera del mes 1.</strong> Servimorel falla el criterio del Anexo B: ICP B2B (dueños/RRHH 35+), turismo mixto, vertical no de ocupación demográfica joven dominante. Se reevalúa en mes 2 sólo si los datos de Meta muestran tracción en el segmento cicloturismo <40. <strong style="color:#fff;">Segmentación tri-funnel obligatoria</strong> desde el día 1: B2B Empresarial / Turismo + Bike / Alquiler particular — cada uno con landing, copy y audiencia separados. <strong style="color:#fff;">Certificaciones (PESV, ISO) son intervención paralela</strong> del cliente, no OktuMedia — pero bloquean segmento B2B grande y hay que flagearlo desde kickoff.</p>
+    </div>
+
+    <div class="priority-box">
+      <div class="priority-label">Quick wins del diagnóstico 7 Maletas — ejecutar en semana 1</div>
+      <p>Estas 4 intervenciones son las de mayor ROI inmediato y salen del reporte del 23 de abril. Se hacen antes que cualquier campaña pagada para no quemar presupuesto contra un funnel roto.</p>
+    </div>
+
+    <!-- SPRINT 1 -->
+    <div class="sprint-block">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 1 · Diagnóstico + Construcción</div>
+        <div class="sprint-dates">Sem 1–4 · hasta 24 may</div>
+      </div>
+      <div class="sprint-goal">Al día 30: las 5 condiciones del Anexo A cumplidas + claims del diagnóstico 7 Maletas implementados + tres funnels segmentados corriendo.</div>
+
+      <table class="sprint-table">
+        <tr>
+          <th style="width:35%;">Acción</th>
+          <th style="width:15%;">Rol</th>
+          <th style="width:12%;">Semana</th>
+          <th style="width:38%;">Resultado esperado</th>
+        </tr>
+        <tr>
+          <td><strong>Kickoff + recolección de accesos</strong> (Meta, Google Ads, GBP, WordPress servimorel.com, WhatsApp Business, Instagram)</td>
+          <td><span class="role-pill am">Account Mgr</span></td>
+          <td>S1</td>
+          <td>Accesos entregados antes del día 3, base comercial medida, fase arrancada</td>
+        </tr>
+        <tr>
+          <td><strong>Quick win 1:</strong> bloque de reviews de Google integrado en home (widget o snippets de las 37 reviews)</td>
+          <td><span class="role-pill des">Diseñador</span> <span class="role-pill auto">Auto. Eng</span></td>
+          <td>S1</td>
+          <td>Reviews visibles en primer fold de servimorel.com, aumento de tiempo en sitio medible</td>
+        </tr>
+        <tr>
+          <td><strong>Quick win 2:</strong> claim "La empresa de transporte mejor calificada de Lengupá" en H1 + carruseles de Instagram</td>
+          <td><span class="role-pill cw">Copywriter</span> <span class="role-pill des">Diseñador</span></td>
+          <td>S1</td>
+          <td>Posicionamiento vacante ocupado, diferencial verificable (4.9★) en todos los puntos de contacto</td>
+        </tr>
+        <tr>
+          <td><strong>Quick win 3:</strong> página dedicada "Servimorel Bike" con capacidad de bicis, zonas cubiertas, precio desde, fotos de clientes (las 4 de jorge ortiz + pedir más)</td>
+          <td><span class="role-pill cw">Copywriter</span> <span class="role-pill des">Diseñador</span> <span class="role-pill auto">Auto. Eng</span></td>
+          <td>S1–S2</td>
+          <td>URL independiente indexable para tráfico pagado al nicho cicloturismo</td>
+        </tr>
+        <tr>
+          <td><strong>Quick win 4:</strong> sección FAQ respondiendo las 10 objeciones detectadas en Maleta 06 (PESV, capacidad, factura electrónica, contingencia, etc.)</td>
+          <td><span class="role-pill cw">Copywriter</span> <span class="role-pill strat">Estratega</span></td>
+          <td>S2</td>
+          <td>Reducción de preguntas repetidas a WhatsApp, mejora de SEO long-tail</td>
+        </tr>
+        <tr>
+          <td><strong>Tracking completo:</strong> Meta Pixel + Google Tag + GA4 + UTMs + eventos de conversión (formulario, click a WhatsApp, llamada, reserva)</td>
+          <td><span class="role-pill auto">Auto. Eng</span></td>
+          <td>S2</td>
+          <td>Atribución end-to-end validada con mensaje de prueba</td>
+        </tr>
+        <tr>
+          <td><strong>Tres landings segmentadas:</strong> /empresas (B2B personal/rutas), /turismo-bike (cicloturismo + grupos), /alquiler (particulares y eventos)</td>
+          <td><span class="role-pill des">Diseñador</span> <span class="role-pill cw">Copywriter</span> <span class="role-pill auto">Auto. Eng</span></td>
+          <td>S2–S3</td>
+          <td>Cada landing con hook y CTA propio, tracking por UTM de origen</td>
+        </tr>
+        <tr>
+          <td><strong>WhatsApp Business API + bot n8n</strong> con 3 ramas de calificación (empresa / turismo / alquiler) + handoff humano en horario</td>
+          <td><span class="role-pill auto">Auto. Eng</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S2–S3</td>
+          <td>Respuesta &lt;60 seg 24/7 verificada, leads calificados antes de pasar a humano</td>
+        </tr>
+        <tr>
+          <td><strong>Google Business refuerzo:</strong> 5 publicaciones nuevas, 15 fotos actualizadas (flota, Bike, eventos), descripción optimizada con keywords Lengupá/Boyacá</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill des">Diseñador</span></td>
+          <td>S3</td>
+          <td>Aumento de impresiones en búsquedas locales y llamadas directas desde Maps</td>
+        </tr>
+        <tr>
+          <td><strong>Primera campaña Google Ads</strong> con grupos: "transporte especial Boyacá", "alquiler van conductor Tunja", "transporte cicloturismo Colombia"</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill strat">Estratega</span></td>
+          <td>S3</td>
+          <td>Primer lead en &lt;72 h desde live, CPL línea base por grupo</td>
+        </tr>
+        <tr>
+          <td><strong>Primera campaña Meta Ads:</strong> 3 conjuntos (Empresas Boyacá, Cicloturismo Colombia, Particulares Lengupá) con creatividades diferenciadas</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill cw">Copywriter</span> <span class="role-pill des">Diseñador</span></td>
+          <td>S3–S4</td>
+          <td>Tráfico real, pixel disparando, audiencias construidas para retargeting del mes 2</td>
+        </tr>
+        <tr>
+          <td><strong>Flag crítico al cliente:</strong> estado de PESV e ISO. Si no existen, agendar con el cliente el proceso en paralelo — no es scope OktuMedia pero bloquea contratos corporativos grandes</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill am">Account Mgr</span></td>
+          <td>S1</td>
+          <td>Decisión documentada: Servimorel obtiene PESV o se acota ICP a pymes/turismo</td>
+        </tr>
+        <tr>
+          <td><strong>Primer reporte semanal</strong> PDF 1 página desde semana 3</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill strat">Estratega</span></td>
+          <td>S3, S4</td>
+          <td>Entregado viernes antes de las 18:00, SLA compliance</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- SPRINT 2 -->
+    <div class="sprint-block">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 2 · Operación + Primera optimización</div>
+        <div class="sprint-dates">Sem 5–8 · 25 may — 24 jun</div>
+      </div>
+      <div class="sprint-goal">Bajar CPL al menos 20% vs línea base + activar retargeting y nurturing + publicar garantía asimétrica.</div>
+
+      <table class="sprint-table">
+        <tr>
+          <th style="width:35%;">Acción</th>
+          <th style="width:15%;">Rol</th>
+          <th style="width:12%;">Semana</th>
+          <th style="width:38%;">Resultado esperado</th>
+        </tr>
+        <tr>
+          <td><strong>3 variantes A/B por canal activo</strong> en Meta (creatividad + hook) y Google (headlines)</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill cw">Copywriter</span> <span class="role-pill des">Diseñador</span></td>
+          <td>S5–S6</td>
+          <td>Ganadora identificada y escalada, documentada en Notion/Activos creativos</td>
+        </tr>
+        <tr>
+          <td><strong>Retargeting activado</strong> con audiencias construidas del mes 1 (visitantes de las 3 landings + clicks WhatsApp no convertidos)</td>
+          <td><span class="role-pill mb">Media Buyer</span></td>
+          <td>S5</td>
+          <td>CPL de retargeting 40–60% menor al de captación en frío</td>
+        </tr>
+        <tr>
+          <td><strong>Nurturing automatizado n8n</strong> para leads sin respuesta en 24h: secuencia de 3 mensajes WhatsApp por vertical</td>
+          <td><span class="role-pill auto">Auto. Eng</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S5–S6</td>
+          <td>Recuperación de 15–25% de leads que iban a perderse</td>
+        </tr>
+        <tr>
+          <td><strong>Publicar garantía asimétrica</strong> "Si llegamos tarde +15 min, el tramo no se cobra" en home, landings, bot WhatsApp y firma de email</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S5</td>
+          <td>Objeción #1 de puntualidad neutralizada con compromiso verificable</td>
+        </tr>
+        <tr>
+          <td><strong>Pedido automatizado de reviews</strong> post-servicio: flujo n8n que envía WhatsApp 24h después del viaje con link directo a Google Business</td>
+          <td><span class="role-pill auto">Auto. Eng</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S6</td>
+          <td>Meta: pasar de 37 a 50+ reviews al día 60, rating sostenido 4.8+</td>
+        </tr>
+        <tr>
+          <td><strong>Campaña de reconocimiento</strong> en Meta (10–15% presupuesto): video corto de flota + Servimorel Bike en audiencia Boyacá/Cundinamarca</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill des">Diseñador</span></td>
+          <td>S6–S7</td>
+          <td>Top-of-mind para cuando aparezca la necesidad</td>
+        </tr>
+        <tr>
+          <td><strong>Optimización landing</strong> basada en tasa de rebote y puntos de caída (heatmap + session replay)</td>
+          <td><span class="role-pill des">Diseñador</span> <span class="role-pill cw">Copywriter</span> <span class="role-pill auto">Auto. Eng</span></td>
+          <td>S7</td>
+          <td>CVR subiendo al menos 15% vs semana 4</td>
+        </tr>
+        <tr>
+          <td><strong>Evaluación TikTok Ads</strong> con data del mes 1: ¿hay tracción cicloturismo? Si sí, test con $500K COP dedicados. Si no, mantener fuera.</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill mb">Media Buyer</span></td>
+          <td>S7</td>
+          <td>Decisión documentada de incluir o no TikTok en sprint 3</td>
+        </tr>
+        <tr>
+          <td><strong>Review mensual 1</strong> con cliente: métricas por canal + feedback cualitativo + firma de ajustes</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill am">Account Mgr</span></td>
+          <td>S8</td>
+          <td>Decisiones firmadas, próximos pasos claros, relación en buen estado</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- SPRINT 3 -->
+    <div class="sprint-block">
+      <div class="sprint-header">
+        <div class="sprint-title">Sprint 3 · Escalamiento + Decisión de continuidad</div>
+        <div class="sprint-dates">Sem 9–12 · 25 jun — 24 jul</div>
+      </div>
+      <div class="sprint-goal">Duplicar presupuesto en la combinación ganadora, cerrar el sistema transferible, presentar 3 vías de continuidad.</div>
+
+      <table class="sprint-table">
+        <tr>
+          <th style="width:35%;">Acción</th>
+          <th style="width:15%;">Rol</th>
+          <th style="width:12%;">Semana</th>
+          <th style="width:38%;">Resultado esperado</th>
+        </tr>
+        <tr>
+          <td><strong>Escalamiento de la mejor combinación</strong> creatividad × audiencia × landing × canal. Duplicar presupuesto gradualmente (no 2× de golpe)</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill strat">Estratega</span></td>
+          <td>S9–S10</td>
+          <td>Volumen crece sin que CPL se dispare &gt;30%</td>
+        </tr>
+        <tr>
+          <td><strong>Campaña específica B2B corporativa</strong> con oferta "evaluación gratuita de tu ruta de personal + cotización en 48h"</td>
+          <td><span class="role-pill mb">Media Buyer</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S9</td>
+          <td>Pipeline de al menos 3 leads B2B grandes abiertos</td>
+        </tr>
+        <tr>
+          <td><strong>Caso de estudio Servimorel Bike</strong> con un grupo ciclístico real (foto/video + testimonio) — activo reutilizable para futuros contratos</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill des">Diseñador</span> <span class="role-pill cw">Copywriter</span></td>
+          <td>S10</td>
+          <td>Case study publicado en landing, reutilizado en anuncios de retargeting</td>
+        </tr>
+        <tr>
+          <td><strong>Playbook operativo del cliente:</strong> cómo leer reportes, estructura de campañas, cuándo pausar/escalar, scripts WhatsApp, dashboard Looker</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill am">Account Mgr</span></td>
+          <td>S10–S11</td>
+          <td>Documento de 15–25 páginas entregado y revisado con cliente</td>
+        </tr>
+        <tr>
+          <td><strong>Reporte final de 90 días:</strong> métricas por canal, ROAS acumulado, aprendizajes, recomendaciones, CPL inicial vs final</td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill mb">Media Buyer</span></td>
+          <td>S11–S12</td>
+          <td>PDF ejecutivo, insumo para decisión de continuidad</td>
+        </tr>
+        <tr>
+          <td><strong>Propuesta de continuidad</strong> con 3 vías: retainer $3M + 10% pauta / mantenimiento ligero / transferencia completa</td>
+          <td><span class="role-pill am">Account Mgr</span> <span class="role-pill strat">Estratega</span></td>
+          <td>S11</td>
+          <td>Vía elegida firmada antes del día 90 (evitar vacío operativo)</td>
+        </tr>
+        <tr>
+          <td><strong>Review mensual 2 + cierre formal</strong></td>
+          <td><span class="role-pill strat">Estratega</span> <span class="role-pill am">Account Mgr</span></td>
+          <td>S12</td>
+          <td>Decisión de continuidad firmada, case study interno OktuMedia documentado</td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="milestones">
+      <h3>Hitos no negociables (contra SLA del PRD OktuMedia)</h3>
+      <div class="milestone-item">
+        <strong>Diagnóstico ejecutivo entregado</strong>
+        <span>Día 14</span>
+      </div>
+      <div class="milestone-item">
+        <strong>Las 5 condiciones del sistema operando</strong>
+        <span>Día 30</span>
+      </div>
+      <div class="milestone-item">
+        <strong>CPL bajando al menos 20% vs línea base</strong>
+        <span>Día 60</span>
+      </div>
+      <div class="milestone-item">
+        <strong>Playbook + reporte final + decisión de continuidad</strong>
+        <span>Día 90</span>
+      </div>
+      <div class="milestone-item">
+        <strong>Reporte semanal PDF viernes</strong>
+        <span>Todos los viernes</span>
+      </div>
+    </div>
+
+    <div class="priority-box" style="margin-top:40px;border-left-color:#ff453a;">
+      <div class="priority-label" style="color:#ff453a;">Riesgos a vigilar desde el día 1</div>
+      <p><strong style="color:#fff;">1. Cuello de respuesta humana:</strong> el bot califica pero cierra una persona. Si Servimorel no asigna quién recibe el handoff, los leads pagados se queman. Definir en kickoff. <strong style="color:#fff;">2. Estacionalidad turística:</strong> el segmento Bike/Turismo puede fluctuar por temporadas — proyectar presupuesto en consecuencia. <strong style="color:#fff;">3. PESV/ISO ausentes:</strong> segmento B2B grande queda bloqueado hasta resolverlo. Si no se obtiene, reasignar presupuesto a turismo/particulares antes del mes 2. <strong style="color:#fff;">4. Dependencia de un punto de contacto:</strong> si el dueño no asiste a reviews mensuales, el sprint entra en deuda estratégica — cláusula SLA del PRD se activa.</p>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <p><strong>Roadmap Servimorel × OktuMedia · v1.0</strong></p>
+  <p style="margin-top:8px;">Basado en Sistema OktuMedia 90 días v1.1 (2026-04-22) + Diagnóstico 7 Maletas Servimorel (2026-04-23)</p>
+  <p style="margin-top:4px;">Kickoff: 24 abril 2026 · Cierre: 24 julio 2026</p>
+</div>
+
+</body>
+</html>

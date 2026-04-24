@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap 90 días — Troncos y Raíces del Valle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; color: #1d1d1f; background: #f5f5f7; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; }
+        .header { background: #1d1d1f; padding: 56px 80px; border-bottom: 1px solid #d2d2d7; }
+        .header .tag { display: inline-block; font-size: 13px; font-weight: 600; color: #0071e3; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-size: 52px; font-weight: 700; color: white; margin-bottom: 14px; letter-spacing: -1px; line-height: 1.1; }
+        .header .subtitle { font-size: 20px; color: #a1a1a6; font-weight: 400; }
+        .header .meta { font-size: 14px; color: #6e6e73; margin-top: 16px; }
+        .intro { padding: 72px 80px; background: #fbfbfd; border-bottom: 1px solid #d2d2d7; }
+        .intro-title { font-size: 34px; font-weight: 600; color: #1d1d1f; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .intro-lead { font-size: 18px; color: #515154; max-width: 820px; margin-bottom: 32px; line-height: 1.7; }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
+        .metric { text-align: left; }
+        .metric-value { font-size: 52px; font-weight: 700; color: #0071e3; line-height: 1; margin-bottom: 8px; letter-spacing: -1px; }
+        .metric-label { font-size: 13px; color: #6e6e73; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .key-promise { background: #1d1d1f; color: white; padding: 40px 48px; border-radius: 16px; margin-top: 48px; }
+        .key-promise .tag { font-size: 12px; color: #0071e3; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+        .key-promise h3 { font-size: 26px; font-weight: 600; margin-bottom: 12px; line-height: 1.3; }
+        .key-promise p { font-size: 17px; color: #d2d2d7; line-height: 1.6; }
+        .content { padding: 80px; }
+        .section { margin-bottom: 96px; padding-top: 32px; border-top: 1px solid #d2d2d7; }
+        .section:first-child { border-top: none; padding-top: 0; }
+        .section-number { font-size: 13px; color: #0071e3; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .section-title { font-size: 42px; font-weight: 700; color: #1d1d1f; margin-bottom: 12px; letter-spacing: -0.8px; }
+        .section-lead { font-size: 18px; color: #515154; margin-bottom: 32px; max-width: 820px; }
+        .subsection { margin-bottom: 48px; }
+        .subsection-title { font-size: 24px; font-weight: 600; color: #1d1d1f; margin: 40px 0 16px 0; letter-spacing: -0.3px; }
+        p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: #1d1d1f; }
+        ul, ol { margin: 20px 0; padding-left: 24px; }
+        li { font-size: 16px; margin: 10px 0; line-height: 1.6; }
+        strong { font-weight: 600; color: #1d1d1f; }
+        .phase-card { background: #fbfbfd; border: 1px solid #d2d2d7; border-radius: 16px; padding: 40px 48px; margin-bottom: 32px; }
+        .phase-header { border-bottom: 1px solid #d2d2d7; padding-bottom: 20px; margin-bottom: 24px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 12px; }
+        .phase-title { font-size: 28px; font-weight: 700; color: #1d1d1f; letter-spacing: -0.4px; }
+        .phase-dates { font-size: 14px; color: #6e6e73; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .phase-objective { background: #f5f5f7; padding: 20px 24px; border-left: 4px solid #0071e3; border-radius: 8px; margin-bottom: 24px; font-size: 16px; }
+        .phase-objective strong { color: #0071e3; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; display: block; margin-bottom: 6px; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 24px 0; border: 1px solid #d2d2d7; border-radius: 12px; overflow: hidden; font-size: 15px; }
+        .data-table thead { background: #f5f5f7; }
+        .data-table th { padding: 14px 18px; font-size: 12px; font-weight: 600; text-align: left; border-bottom: 1px solid #d2d2d7; text-transform: uppercase; letter-spacing: 0.5px; color: #6e6e73; }
+        .data-table td { padding: 16px 18px; border-bottom: 1px solid #d2d2d7; vertical-align: top; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .status { display: inline-block; padding: 4px 10px; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+        .status-now { background: #0071e3; color: white; }
+        .status-next { background: #c85800; color: white; }
+        .status-later { background: #6e6e73; color: white; }
+        .status-done { background: #008a00; color: white; }
+        .status-critical { background: #d70015; color: white; }
+        .info-box { background: #f5f5f7; padding: 28px 32px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0071e3; }
+        .info-box h4 { font-size: 14px; font-weight: 600; color: #0071e3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .info-box p { margin-bottom: 0; font-size: 16px; }
+        .alert-red { background: #fff5f5; border-left: 4px solid #d70015; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-red h4 { color: #d70015; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .alert-green { background: #f0f8f0; border-left: 4px solid #008a00; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-green h4 { color: #008a00; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .alert-amber { background: #fffbf0; border-left: 4px solid #c85800; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-amber h4 { color: #c85800; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .deliverables-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+        .deliverable { background: white; border: 1px solid #d2d2d7; padding: 20px 24px; border-radius: 10px; }
+        .deliverable .num { display: inline-block; background: #1d1d1f; color: white; width: 24px; height: 24px; border-radius: 50%; text-align: center; line-height: 24px; font-weight: 700; font-size: 12px; margin-right: 10px; }
+        .deliverable h5 { font-size: 15px; font-weight: 600; color: #1d1d1f; display: inline-block; vertical-align: middle; }
+        .deliverable p { font-size: 14px; color: #515154; margin-top: 8px; margin-bottom: 0; line-height: 1.5; }
+        .kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 24px 0; }
+        .kpi-box { background: white; border: 1px solid #d2d2d7; padding: 20px 24px; border-radius: 10px; }
+        .kpi-label { font-size: 12px; color: #6e6e73; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+        .kpi-value { font-size: 24px; font-weight: 700; color: #0071e3; line-height: 1.2; }
+        .kpi-note { font-size: 13px; color: #6e6e73; margin-top: 6px; }
+        .pillar { background: white; border: 1px solid #d2d2d7; padding: 28px 32px; border-radius: 12px; margin: 16px 0; }
+        .pillar-num { display: inline-block; background: #0071e3; color: white; width: 36px; height: 36px; border-radius: 50%; text-align: center; line-height: 36px; font-weight: 700; font-size: 15px; margin-right: 14px; }
+        .pillar h4 { font-size: 20px; font-weight: 600; color: #1d1d1f; display: inline-block; vertical-align: middle; }
+        .pillar p { margin-top: 12px; font-size: 16px; }
+        .timeline { position: relative; padding: 24px 0; }
+        .timeline-row { display: grid; grid-template-columns: 80px 1fr; gap: 24px; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid #e5e5e5; }
+        .timeline-row:last-child { border-bottom: none; }
+        .timeline-week { font-size: 13px; font-weight: 600; color: #0071e3; text-transform: uppercase; letter-spacing: 0.5px; }
+        .timeline-content { font-size: 15px; color: #1d1d1f; }
+        .footer { background: #f5f5f7; padding: 56px 80px; text-align: center; border-top: 1px solid #d2d2d7; color: #6e6e73; }
+        .footer p { font-size: 14px; margin-bottom: 6px; color: #6e6e73; }
+        @media (max-width: 768px) {
+            .header, .content, .intro, .footer { padding: 40px 24px; }
+            .header h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .metrics, .deliverables-grid, .kpi-grid { grid-template-columns: 1fr; }
+            .metric-value { font-size: 42px; }
+            .phase-card { padding: 28px 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <span class="tag">Roadmap Comercial · 90 días</span>
+            <h1>Troncos y Raíces del Valle</h1>
+            <p class="subtitle">Sistema de generación de ventas — Adaptado al sector mueblería premium</p>
+            <p class="meta">Propuesta presentada el 22 de abril de 2026 · Horizonte operativo: 90 días</p>
+        </div>
+
+        <div class="intro">
+            <h2 class="intro-title">Objetivo del roadmap</h2>
+            <p class="intro-lead">Convertir Troncos y Raíces en un negocio con motor de ventas predecible, medible y transferible en 90 días. El producto está probado (6 años de trayectoria, 14.8K seguidores, rango premium $1.6M–$22M COP por pieza). Lo que falta no es más exposición — es <strong>arquitectura comercial</strong>: prueba social verificable, mensaje central de marca, landing que cierre y sistema de respuesta profesional.</p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">90</div>
+                    <div class="metric-label">Días del sprint</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">3</div>
+                    <div class="metric-label">Fases operativas</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">5</div>
+                    <div class="metric-label">Brazos tácticos</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">$10.5M</div>
+                    <div class="metric-label">Fee total 90 días (COP)</div>
+                </div>
+            </div>
+
+            <div class="key-promise">
+                <span class="tag">Promesa central</span>
+                <h3>Al día 30, el sistema está operando con tráfico real. Al día 90, es un motor de ventas que genera clientes de forma consistente, con datos transparentes y métricas defendibles.</h3>
+                <p>No promete ventas garantizadas — el volumen depende de pauta, ciclo de decisión del comprador y calidad del showroom. Promete infraestructura comercial completa, ejecutada y auditable.</p>
+            </div>
+        </div>
+
+        <div class="content">
+
+        <!-- ===== CONTEXTO / DIAGNÓSTICO ===== -->
+        <div class="section">
+            <div class="section-number">Contexto</div>
+            <h2 class="section-title">Dónde estás hoy</h2>
+            <p class="section-lead">Este roadmap parte del diagnóstico de las 7 Maletas y de una lectura honesta de tus activos. Lo que tienes y lo que falta:</p>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Activo</th>
+                        <th>Estado actual</th>
+                        <th>Gap comercial</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Producto</strong></td>
+                        <td>Sólido. Samán curado 5 años, resina epóxica personalizada, poliuretano, 1 año garantía.</td>
+                        <td>Ninguno — es tu mayor fortaleza.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Instagram</strong></td>
+                        <td>14.8K seguidores, 285 posts, contenido estético consistente.</td>
+                        <td>Audiencia tibia que no se está monetizando con retargeting ni nurturing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sitio web</strong></td>
+                        <td>En construcción. Catálogo visible (62 comedores), sin tracking, sin CTA claro.</td>
+                        <td>Primer punto de fuga de conversión. Se necesita landing dedicada que convierta, no web completa.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Business</strong></td>
+                        <td><span class="status status-critical">0 reviews</span> Ficha existe, sin prueba social.</td>
+                        <td>Bloqueador #1. Nadie invierte $5M COP en una empresa sin reviews verificables.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Facebook</strong></td>
+                        <td>574 seguidores, engagement bajo, 0 reviews.</td>
+                        <td>Canal muerto — no se descarta pero no es prioridad.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WhatsApp</strong></td>
+                        <td>Número publicado (+57 312 2289243), atención humana.</td>
+                        <td>Sin automatización. Tiempo de respuesta no medido. Objeciones se manejan sin script.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Showroom Jamundí</strong></td>
+                        <td>Operativo, ubicación real, taller visible en Cali.</td>
+                        <td>No posicionado como CTA. Cliente premium quiere ver antes de transferir millones.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pauta digital</strong></td>
+                        <td>Sin historial verificable de Meta/Google Ads.</td>
+                        <td>Partimos de cero — ventaja: data limpia desde día 1.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-amber">
+                <h4>Principio de diseño del roadmap</h4>
+                <p>No rediseñamos el producto. No rebrandeamos. No regeneramos contenido desde cero. <strong>Activamos lo que ya existe</strong> + <strong>construimos los tres faltantes críticos</strong> (reviews verificables, landing que convierte, respuesta profesional) + <strong>reempaquetamos el mensaje central</strong> en torno a la historia única del samán.</p>
+            </div>
+        </div>
+
+        <!-- ===== 3 PILARES ===== -->
+        <div class="section">
+            <div class="section-number">Método</div>
+            <h2 class="section-title">Los 3 pilares del sistema</h2>
+            <p class="section-lead">La arquitectura comercial se apoya en tres pilares que funcionan juntos. Ninguno funciona aislado — si uno cojea, los otros dos no compensan.</p>
+
+            <div class="pillar">
+                <span class="pillar-num">1</span>
+                <h4>Cerebro estratégico</h4>
+                <p>Una sola mente decide el mensaje, el canal, el presupuesto y el ajuste. La entrada son dos tipos de data: <strong>cuantitativa</strong> (CPL, CVR, ROAS por canal) y <strong>cualitativa</strong> (feedback del dueño sobre cómo vive la marca y cómo conversa con compradores reales). El output son decisiones semanales de ajuste. Sin esto, los brazos tácticos se desordenan y se derrocha pauta.</p>
+            </div>
+
+            <div class="pillar">
+                <span class="pillar-num">2</span>
+                <h4>Cinco brazos tácticos coordinados</h4>
+                <p><strong>(a) Captación en frío social</strong> — Meta Ads en Instagram/Facebook + retargeting + reconocimiento. <strong>(b) Intención local</strong> — Google Ads Search + Google Business Profile en Cali, Bogotá, Medellín. <strong>(c) Respuesta automatizada</strong> — WhatsApp Business API con flujo de calificación + handoff a humano. <strong>(d) Conversión medible</strong> — landing dedicada + tracking completo (Meta Pixel + Google Tag + GA4 + UTMs). <strong>(e) Reputación</strong> — recolección sistemática de reviews + respuesta asistida. TikTok entra en Fase 2 solo si la data del mes 1 lo justifica (ver Anexo B).</p>
+            </div>
+
+            <div class="pillar">
+                <span class="pillar-num">3</span>
+                <h4>Transparencia radical</h4>
+                <p>Ves los números cada viernes en una página. Cada mes revisamos juntos las métricas y la experiencia vivida — qué funcionó, qué no, qué sientes que está pasando con la marca. Todas las cuentas (Meta, Google, tarjeta de pauta) son tuyas. Se opera con access role, nunca con propiedad. Al día 90, tú tienes el sistema, no nosotros.</p>
+            </div>
+        </div>
+
+        <!-- ===== FASE 1 ===== -->
+        <div class="section">
+            <div class="section-number">Fase 01</div>
+            <h2 class="section-title">Mes 1 — Fundación</h2>
+            <p class="section-lead">Días 1–30. Diagnóstico estratégico, construcción de los activos faltantes, primera tracción con tráfico real. <strong>Al día 30, sistema operando con tráfico real.</strong></p>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-title">Objetivo de Fase 1</div>
+                    <div class="phase-dates"><span class="status status-now">Now</span> · Días 1–30</div>
+                </div>
+
+                <div class="phase-objective">
+                    <strong>Meta del mes 1</strong>
+                    Pasar de "marca bonita en Instagram sin reviews" a "negocio con prueba social pública, landing que convierte, respuesta profesional y primera pauta en live". Primer lead calificado antes del día 14. Sistema completo auditable al día 30.
+                </div>
+
+                <h3 class="subsection-title">Entregables del mes 1</h3>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable">
+                        <span class="num">1</span>
+                        <h5>Diagnóstico estratégico</h5>
+                        <p>Ya hecho vía las 7 Maletas. Se formaliza en documento entregable + 3 decisiones ejecutivas firmadas contigo. Entrega: día 7.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">2</span>
+                        <h5>Mensaje central reempaquetado</h5>
+                        <p>"El árbol que vivió 200 años ahora vive en tu casa." Nueva bio Instagram, nuevo tagline, guion de WhatsApp, 3 hooks para ads.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">3</span>
+                        <h5>Landing dedicada publicada</h5>
+                        <p>Framer o Webflow. Página única optimizada para conversión. Incluye hero con mensaje central, catálogo destacado, garantía blindada, reviews (cuando ya haya), CTA claro a WhatsApp o visita al showroom.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">4</span>
+                        <h5>Tracking completo</h5>
+                        <p>Meta Pixel + Google Tag + GA4 + UTMs. Al menos 1 evento de conversión registrado y verificado.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">5</span>
+                        <h5>Primera campaña Meta en live</h5>
+                        <p>Empezamos con <strong>warm audience retargeting</strong>: 14.8K seguidores IG + visitantes del sitio. Esta audiencia es oro y no se ha monetizado. CPL esperado más bajo del sprint.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">6</span>
+                        <h5>Google Business optimizado + 1ra ola de reviews</h5>
+                        <p><strong>Prioridad crítica.</strong> Ficha optimizada (categoría, fotos, descripción, publicaciones). Activación de la base de clientes pasados por WhatsApp para recolectar las primeras 15–20 reviews. Meta: 15 reviews al día 30.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">7</span>
+                        <h5>WhatsApp automatizado</h5>
+                        <p>Flujo n8n con 4 ramas: (1) precio, (2) tiempos de entrega, (3) visita showroom, (4) proyecto a medida. Handoff a humano claro. Respuesta <60 seg. Garantía blindada incluida en la 1ra respuesta.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">8</span>
+                        <h5>Primer reporte semanal</h5>
+                        <p>PDF de 1 página. Gasto, CPL, leads, CVR, top creativos. Enviado cada viernes desde la semana 3.</p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Cronograma semanal</h3>
+                <div class="timeline">
+                    <div class="timeline-row">
+                        <div class="timeline-week">Semana 1</div>
+                        <div class="timeline-content">Kickoff + accesos. Entrega de Meta Business, Google Ads, GBP, dominio, WhatsApp Business. Briefing creativo. Diagnóstico fase 2 (validación con 3 clientes pasados).</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-week">Semana 2</div>
+                        <div class="timeline-content">Redacción del mensaje central. Diseño de landing. Setup técnico de tracking. Activación de la base para recolección de reviews. Escritura del flujo WhatsApp.</div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-week">Semana 3</div>
+                        <div class="timeline-content">Landing publicada. Tracking validado. WhatsApp bot en producción. GBP optimizado. Aprobación de creatividades Meta. <strong>Primer lead calificado objetivo.</strong></div>
+                    </div>
+                    <div class="timeline-row">
+                        <div class="timeline-week">Semana 4</div>
+                        <div class="timeline-content">Campaña Meta (warm) en live. Primer reporte semanal. Primeras 10–15 reviews Google recolectadas. Review mensual 1: decisiones para Fase 2.</div>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">KPIs auditables al día 30</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-label">Reviews Google</div>
+                        <div class="kpi-value">≥ 15</div>
+                        <div class="kpi-note">Desde 0. Meta: 4.8⭐ promedio.</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Leads calificados</div>
+                        <div class="kpi-value">15 – 25</div>
+                        <div class="kpi-note">Con WhatsApp y/o cita en showroom.</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Tiempo respuesta WhatsApp</div>
+                        <div class="kpi-value">&lt; 60 seg</div>
+                        <div class="kpi-note">24/7 con handoff a humano en horario laboral.</div>
+                    </div>
+                </div>
+
+                <div class="alert-green">
+                    <h4>Garantía del mes 1</h4>
+                    <p>Si al día 30 las 5 condiciones auditables no están cumplidas (landing + tracking + campaña live + GBP optimizado + WhatsApp automatizado + primer reporte), se devuelve el saldo del fee no ejecutado. Condiciones verificables externamente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FASE 2 ===== -->
+        <div class="section">
+            <div class="section-number">Fase 02</div>
+            <h2 class="section-title">Mes 2 — Operación y optimización</h2>
+            <p class="section-lead">Días 31–60. Estabilizar el flujo, bajar el CPL con iteración sobre data real, activar nurturing y retargeting, expandir a audiencia fría.</p>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-title">Objetivo de Fase 2</div>
+                    <div class="phase-dates"><span class="status status-next">Next</span> · Días 31–60</div>
+                </div>
+
+                <div class="phase-objective">
+                    <strong>Meta del mes 2</strong>
+                    Reducir CPL 20% vs línea base de mes 1. Duplicar volumen de leads calificados. Alcanzar 30+ reviews en Google. Activar el embudo completo (captación → nurturing → cierre) con data real.
+                </div>
+
+                <h3 class="subsection-title">Entregables del mes 2</h3>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable">
+                        <span class="num">1</span>
+                        <h5>Expansión a audiencia fría Meta</h5>
+                        <p>Lookalike de compradores pasados + intereses (decoración, arquitectura, Interior Design, marcas premium de mobiliario). Primera prueba A/B de 3 creatividades.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">2</span>
+                        <h5>Google Ads Search en live</h5>
+                        <p>Campañas de alta intención: "mesa comedor madera maciza Cali", "mesa tronco samán", "mueble a medida Valle del Cauca". Captura la demanda existente que compite hoy ganan Macizo, Rooselvelt.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">3</span>
+                        <h5>Retargeting cross-canal</h5>
+                        <p>Audiencias construidas del mes 1: visitantes landing, video-viewers IG, lead-form abierto sin completar. Creatividades específicas para cada segmento.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">4</span>
+                        <h5>Nurturing WhatsApp + email</h5>
+                        <p>Secuencia automatizada para leads que preguntaron y no compraron. Día 1: catálogo + garantía. Día 3: "así se ve en casa de...". Día 7: invitación showroom. Día 14: testimonio en video.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">5</span>
+                        <h5>Serie "Así se ve en casa de..."</h5>
+                        <p>8 posts editoriales en IG con fotos reales de clientes pasados + quote suyo + link a pieza similar. Contenido validador que alimenta retargeting.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">6</span>
+                        <h5>Optimización de landing</h5>
+                        <p>Ajuste de copy, orden de secciones, CTA según tasa de rebote y puntos de caída. Incorporación de las reviews ya recolectadas.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">7</span>
+                        <h5>Segunda ola de reviews</h5>
+                        <p>Automatización post-entrega: email + WhatsApp 7 días después con foto de la pieza instalada. Tarjeta física con QR en cada despacho. Meta: +15 reviews este mes.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">8</span>
+                        <h5>Review mensual formal</h5>
+                        <p>Reunión de 90 min. Métricas por canal, qué funcionó, qué no, feedback cualitativo del dueño. Decisiones firmadas para Fase 3.</p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">Decisión crítica — ¿Entra TikTok?</h3>
+                <p>TikTok se incluye solo si al menos 2 de estos 3 criterios se cumplen al final del mes 1:</p>
+                <ul>
+                    <li><strong>Demografía:</strong> más del 40% de los leads calificados tienen entre 30–44 años.</li>
+                    <li><strong>Presupuesto:</strong> cliente puede destinar ≥$500K COP/mes específicamente a TikTok sin canibalizar Meta.</li>
+                    <li><strong>Bandwidth creativo:</strong> hay capacidad de producir 2–3 videos verticales/mes mostrando taller, proceso y pieza terminada.</li>
+                </ul>
+                <p>Si se justifica → 15–20% del presupuesto a TikTok. Si no → se mantiene recomendado para Fase 3.</p>
+
+                <h3 class="subsection-title">KPIs auditables al día 60</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-label">CPL vs mes 1</div>
+                        <div class="kpi-value">-20%</div>
+                        <div class="kpi-note">Mínimo obligatorio del sprint.</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Reviews Google acumuladas</div>
+                        <div class="kpi-value">30 – 40</div>
+                        <div class="kpi-note">Promedio 4.8⭐ sostenido.</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Leads calificados/mes</div>
+                        <div class="kpi-value">30 – 50</div>
+                        <div class="kpi-note">De los cuales 15–25% debería convertir a cita en showroom.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== FASE 3 ===== -->
+        <div class="section">
+            <div class="section-number">Fase 03</div>
+            <h2 class="section-title">Mes 3 — Escalamiento y transferencia</h2>
+            <p class="section-lead">Días 61–90. Escalar el mejor combo, abrir vertical B2B como oportunidad de ticket gigante, entregar playbook y decidir continuidad.</p>
+
+            <div class="phase-card">
+                <div class="phase-header">
+                    <div class="phase-title">Objetivo de Fase 3</div>
+                    <div class="phase-dates"><span class="status status-later">Later</span> · Días 61–90</div>
+                </div>
+
+                <div class="phase-objective">
+                    <strong>Meta del mes 3</strong>
+                    Escalar el sistema a su punto óptimo de eficiencia. Abrir línea de negocio B2B (proyectos a medida para hoteles boutique, restaurantes de autor, oficinas ejecutivas). Entregar playbook operativo transferible. Decisión de continuidad firmada antes del día 90.
+                </div>
+
+                <h3 class="subsection-title">Entregables del mes 3</h3>
+
+                <div class="deliverables-grid">
+                    <div class="deliverable">
+                        <span class="num">1</span>
+                        <h5>Escalamiento del mejor combo</h5>
+                        <p>Identificada la mejor combinación creatividad-audiencia-canal-landing → se duplica presupuesto ahí. Se paralela las que no escalan.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">2</span>
+                        <h5>Lanzamiento B2B — proyectos a medida</h5>
+                        <p>Página dedicada "Proyectos Corporativos". Outreach directo vía LinkedIn + email a 30 hoteles boutique y 30 restaurantes de autor en Cali, Bogotá, Medellín. Ticket esperado: $15M–$80M por proyecto.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">3</span>
+                        <h5>Campaña estacional Q4</h5>
+                        <p>Si la fecha coincide con fin de año: campaña especial de "regala una pieza irrepetible". Si es otra época, se ajusta al evento relevante (Día de la Madre, etc.).</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">4</span>
+                        <h5>Tercera ola de reviews</h5>
+                        <p>Foco en reviews con foto y/o video de la pieza instalada — más poderosas para conversión. Meta: +20 reviews, total 60+ al día 90.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">5</span>
+                        <h5>Playbook operativo transferible</h5>
+                        <p>Documento completo: frameworks, scripts WhatsApp, estructura de campañas Meta y Google, cómo leer los reportes, cómo recolectar reviews, cómo manejar objeciones. Propiedad del cliente.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">6</span>
+                        <h5>Reporte final 90 días</h5>
+                        <p>Resumen ejecutivo: métricas por canal, costo por venta, ROAS, lecciones, recomendaciones. PDF firmado por ambas partes.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">7</span>
+                        <h5>Propuesta de continuidad</h5>
+                        <p>3 opciones (ver más abajo). Decisión firmada antes del día 90 para evitar vacío operativo.</p>
+                    </div>
+                    <div class="deliverable">
+                        <span class="num">8</span>
+                        <h5>Review mensual 2</h5>
+                        <p>Balance completo del sprint. Firma de la vía de continuidad elegida.</p>
+                    </div>
+                </div>
+
+                <h3 class="subsection-title">KPIs auditables al día 90</h3>
+                <div class="kpi-grid">
+                    <div class="kpi-box">
+                        <div class="kpi-label">Reviews Google totales</div>
+                        <div class="kpi-value">60+</div>
+                        <div class="kpi-note">Superando a Macizo Colombia y acercándose a Rooselvelt (106).</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">CPL vs mes 1</div>
+                        <div class="kpi-value">-35%</div>
+                        <div class="kpi-note">Post-optimización de Fase 2 y escalamiento de Fase 3.</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-label">Leads calificados B2C/mes</div>
+                        <div class="kpi-value">50 – 80</div>
+                        <div class="kpi-note">Volumen estable post-optimización.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== ROADMAP VISUAL RESUMEN ===== -->
+        <div class="section">
+            <div class="section-number">Vista</div>
+            <h2 class="section-title">Roadmap consolidado — Now / Next / Later</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Iniciativa</th>
+                        <th>Now (Días 1–30)</th>
+                        <th>Next (Días 31–60)</th>
+                        <th>Later (Días 61–90)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Reputación (Google Reviews)</strong></td>
+                        <td><span class="status status-now">Activación base</span> 15 reviews</td>
+                        <td><span class="status status-next">Automatización post-entrega</span> 30+ totales</td>
+                        <td><span class="status status-later">Reviews con foto/video</span> 60+ totales</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Landing + tracking</strong></td>
+                        <td><span class="status status-now">Publicada</span> con pixel + GA4</td>
+                        <td><span class="status status-next">Optimización A/B</span> basada en data</td>
+                        <td><span class="status status-later">Landing B2B separada</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Meta Ads</strong></td>
+                        <td><span class="status status-now">Warm retargeting</span> 14.8K IG</td>
+                        <td><span class="status status-next">Cold + Lookalike</span> + A/B creatividades</td>
+                        <td><span class="status status-later">Escalamiento</span> del mejor combo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Ads</strong></td>
+                        <td>—</td>
+                        <td><span class="status status-next">Search alta intención</span></td>
+                        <td><span class="status status-later">Expansión keywords</span> + GBP Ads</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TikTok Ads</strong></td>
+                        <td>—</td>
+                        <td><span class="status status-next">Evaluar entrada</span> (Anexo B)</td>
+                        <td><span class="status status-later">Si aplica</span> — 15-20% de pauta</td>
+                    </tr>
+                    <tr>
+                        <td><strong>WhatsApp</strong></td>
+                        <td><span class="status status-now">Bot + 4 ramas</span></td>
+                        <td><span class="status status-next">Nurturing secuencia</span></td>
+                        <td><span class="status status-later">Refinamiento</span> por tipo de cliente</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Mensaje de marca</strong></td>
+                        <td><span class="status status-now">Reempaquetado</span></td>
+                        <td><span class="status status-next">Aplicado en todo el stack</span></td>
+                        <td><span class="status status-later">Consolidado</span> en playbook</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Showroom Jamundí</strong></td>
+                        <td><span class="status status-now">CTA activo</span> en landing + IG</td>
+                        <td><span class="status status-next">Cita agendada por WhatsApp</span></td>
+                        <td><span class="status status-later">Evento puertas abiertas</span> (opcional)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>B2B / A medida</strong></td>
+                        <td>—</td>
+                        <td><span class="status status-next">Identificación de targets</span></td>
+                        <td><span class="status status-later">Outreach activo</span> + 1ra propuesta</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== SLA BILATERAL ===== -->
+        <div class="section">
+            <div class="section-number">Compromiso</div>
+            <h2 class="section-title">SLA bilateral</h2>
+            <p class="section-lead">Este roadmap solo funciona si ambas partes cumplen su lado. La garantía del mes 1 está condicionada a los SLA del cliente.</p>
+
+            <h3 class="subsection-title">Lo que se compromete el equipo ejecutor</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Compromiso</th>
+                        <th>Plazo</th>
+                        <th>Consecuencia si no se cumple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Diagnóstico estratégico entregado</td>
+                        <td>Día 7</td>
+                        <td>+3 días de servicio adicional sin costo</td>
+                    </tr>
+                    <tr>
+                        <td>Sistema operando (5 condiciones)</td>
+                        <td>Día 30</td>
+                        <td>Garantía activa: devolución del saldo no ejecutado</td>
+                    </tr>
+                    <tr>
+                        <td>Reporte semanal (PDF 1 página)</td>
+                        <td>Todos los viernes</td>
+                        <td>Crédito 5% del fee si se retrasa &gt;3 días</td>
+                    </tr>
+                    <tr>
+                        <td>Review mensual en vivo</td>
+                        <td>Última semana de cada mes</td>
+                        <td>Reprogramación en 5 días o crédito de 1 hora de consultoría</td>
+                    </tr>
+                    <tr>
+                        <td>Tiempo de respuesta equipo</td>
+                        <td>&lt;24h hábiles</td>
+                        <td>Notificación y reprogramación explícita</td>
+                    </tr>
+                    <tr>
+                        <td>Iteraciones de creatividad</td>
+                        <td>Mínimo 2/mes desde mes 2</td>
+                        <td>Documentación en reporte + crédito proporcional</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Lo que se compromete el cliente (Troncos y Raíces)</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Compromiso</th>
+                        <th>Plazo</th>
+                        <th>Consecuencia si no se cumple</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Acceso a cuentas (Meta Business, Google Ads, GBP, dominio, WhatsApp Business)</td>
+                        <td>Dentro de 72h post-firma</td>
+                        <td>Pausa de cronograma; garantía se ajusta proporcionalmente</td>
+                    </tr>
+                    <tr>
+                        <td>Aprobación de creatividades y copy</td>
+                        <td>≤48h hábiles</td>
+                        <td>Silencio = aprobación tácita</td>
+                    </tr>
+                    <tr>
+                        <td>Designación de 1 punto de contacto principal</td>
+                        <td>Kickoff</td>
+                        <td>Sin este rol no arranca la fase</td>
+                    </tr>
+                    <tr>
+                        <td>Entrega de base de clientes pasados (24 meses)</td>
+                        <td>Dentro de 72h</td>
+                        <td>Se arranca sin base → recolección de reviews se retrasa</td>
+                    </tr>
+                    <tr>
+                        <td>Asistencia a revisiones mensuales</td>
+                        <td>Fechas acordadas en kickoff</td>
+                        <td>Reprogramación 1 vez; segunda cancelación = incumplimiento</td>
+                    </tr>
+                    <tr>
+                        <td>No intervenir campañas sin notificación</td>
+                        <td>Durante toda la relación</td>
+                        <td>No se asumen pérdidas por modificaciones unilaterales</td>
+                    </tr>
+                    <tr>
+                        <td>Presupuesto de pauta disponible</td>
+                        <td>Mínimo mensual $3M COP desde semana 3</td>
+                        <td>Sin este volumen mínimo la data no genera aprendizaje</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== INVERSIÓN ===== -->
+        <div class="section">
+            <div class="section-number">Inversión</div>
+            <h2 class="section-title">Estructura de inversión</h2>
+            <p class="section-lead">Transparencia total. Separación entre fee operativo y pauta. La pauta corre en la tarjeta del cliente, sin markup ni comisión durante los 90 días iniciales.</p>
+
+            <h3 class="subsection-title">Fee operativo — dos modalidades</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Modalidad</th>
+                        <th>Inversión</th>
+                        <th>Cuándo conviene</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Plan mensual</strong></td>
+                        <td>$3.5M COP/mes × 3 meses = <strong>$10.5M COP total</strong></td>
+                        <td>Si prefieres distribuir el flujo de caja a lo largo del sprint.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plan upfront</strong></td>
+                        <td><strong>$10M COP pagados al kickoff</strong> (ahorro de $500K, ≈4.7%)</td>
+                        <td>Si tienes liquidez disponible y quieres bloquear capacidad operativa con descuento.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>Qué incluye el fee</h4>
+                <p>Estrategia + dirección creativa + ejecución de pauta (Meta + Google + TikTok si aplica) + landing + tracking + automatización WhatsApp/n8n + nurturing + reporting semanal + 2 reviews mensuales + iteraciones de creatividad mínimo 2/mes desde mes 2 + playbook transferible al día 90. <strong>Fee fijo. Sin markup sobre pauta.</strong></p>
+            </div>
+
+            <h3 class="subsection-title">Pauta — distribución sugerida por canal</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Canal</th>
+                        <th>% del presupuesto pauta</th>
+                        <th>Función</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Meta Ads (Instagram + Facebook)</strong></td>
+                        <td>40-50%</td>
+                        <td>Conversión + retargeting + reconocimiento. Mayor ponderación porque Instagram es el canal donde ya tienes 14.8K seguidores tibios listos para retargeting.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Google Ads (Search + LSA)</strong></td>
+                        <td>25-35%</td>
+                        <td>Captura intención local de "mesa madera maciza Cali", "mueble samán a medida". Alta intención = alto cierre.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TikTok Ads (desde mes 2 si aplica)</strong></td>
+                        <td>15-25%</td>
+                        <td>Video vertical mostrando el proceso del taller, el samán curado, el "antes-después". Sólo entra si Anexo B se cumple.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Reserva retargeting cross-canal</strong></td>
+                        <td>10-15%</td>
+                        <td>Audiencias construidas a partir de visitantes y video-viewers. Mayor CVR del sistema.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box">
+                <h4>Lógica de presupuesto de pauta — adaptada a tu ticket</h4>
+                <p>Para tu ticket promedio estimado $4M-$8M COP, un CPL aceptable está en el rango $60K-$120K (1-3% del ticket). Con pauta mínima de $3M/mes → entre 25-50 leads calificados/mes desde Meta. Con $5M → entre 40-80. La pauta óptima se define tras la línea base del mes 1 — empezamos conservador y escalamos donde la data muestra ROI positivo.</p>
+            </div>
+
+            <h3 class="subsection-title">Otros costos asumidos por el equipo ejecutor</h3>
+            <p>Software e infraestructura operativa interna (~$100K-150K COP/mes equivalentes): n8n, hosting de landing, plataforma de gestión interna, herramientas de automatización. <strong>Sin cargo adicional</strong> — incluido en el fee operativo.</p>
+        </div>
+
+        <!-- ===== POST-90 DÍAS ===== -->
+        <div class="section">
+            <div class="section-number">Continuidad</div>
+            <h2 class="section-title">Post-90 días — 3 caminos</h2>
+            <p class="section-lead">Al final del sprint se presentan 3 opciones con pricing transparente. La decisión se firma antes del día 90 para evitar vacío operativo entre sprint y continuidad.</p>
+
+            <div class="pillar">
+                <span class="pillar-num">1</span>
+                <h4>Retainer continuo — $3M COP/mes + 10% pauta gestionada</h4>
+                <p>Operación completa del sistema mes a mes: reportes semanales + review mensual + iteraciones de creatividad cross-canal (Meta + Google + TikTok).</p>
+                <p style="margin-top: 8px;"><strong>Ejemplos de costo total mensual:</strong></p>
+                <ul>
+                    <li>Pauta de $5M/mes → fee total <strong>$3.5M COP/mes</strong></li>
+                    <li>Pauta de $10M/mes → fee total <strong>$4M COP/mes</strong></li>
+                    <li>Pauta de $15M/mes → fee total <strong>$4.5M COP/mes</strong></li>
+                </ul>
+                <p style="margin-top: 12px;"><strong>Recomendado si:</strong> el sistema funciona y el objetivo es escalar volumen sin distraer el ojo del operario.</p>
+            </div>
+
+            <div class="pillar">
+                <span class="pillar-num">2</span>
+                <h4>Mantenimiento ligero — $1.5M COP/mes</h4>
+                <p>Fee reducido. Operación en bajo mantenimiento (campañas estables sin iteraciones agresivas) + 1 review trimestral + consultoría bajo demanda.</p>
+                <p style="margin-top: 12px;"><strong>Recomendado si:</strong> el sistema ya está estable, los CPL son sostenibles y quieres bajar carga operativa sin perder el motor.</p>
+            </div>
+
+            <div class="pillar">
+                <span class="pillar-num">3</span>
+                <h4>Transferencia completa — $2M COP único</h4>
+                <p>Entrega estructurada del playbook operativo completo (frameworks, scripts, estructuras de campaña, cómo leer reportes) + 30 días de soporte post-transferencia. Tu equipo interno asume la operación.</p>
+                <p style="margin-top: 12px;"><strong>Recomendado si:</strong> tienes equipo de marketing in-house o vas a contratar uno para absorber la operación.</p>
+            </div>
+
+            <div class="info-box">
+                <h4>Por qué esto importa</h4>
+                <p>El sprint de 90 días no es un fin en sí mismo — es el setup para una operación rentable y sostenida. Las 3 vías están diseñadas para que el cliente nunca quede atrapado: <strong>al día 90 tú decides</strong> si quieres seguir con nosotros, bajar la intensidad o tomar el control. La propiedad de las cuentas, los datos y los activos siempre fue tuya.</p>
+            </div>
+        </div>
+
+        <!-- ===== CLAÚSULAS DE SEGURIDAD CONTRACTUALES ===== -->
+        <div class="section">
+            <div class="section-number">Contrato</div>
+            <h2 class="section-title">Cláusulas contractuales clave</h2>
+            <p class="section-lead">Lo que protege a ambas partes. Estas cláusulas van en el contrato firmado y son negociables solo en alcance específico, no en su existencia.</p>
+
+            <h3 class="subsection-title">Propiedad y ownership de activos</h3>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Activo</th>
+                        <th>Propiedad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Cuenta Meta Business / Google Ads / TikTok Ads</td>
+                        <td><strong>Cliente siempre.</strong> El equipo opera con access role.</td>
+                    </tr>
+                    <tr>
+                        <td>Google Business Profile</td>
+                        <td><strong>Cliente.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Landing y código exportable</td>
+                        <td><strong>Cliente al final del sprint.</strong> Hosting durante el sprint puede ser del equipo.</td>
+                    </tr>
+                    <tr>
+                        <td>Creatividades, copy, fotos del taller</td>
+                        <td><strong>Cliente</strong> (derecho de uso). El equipo conserva derecho de usar el caso genérico para portafolio.</td>
+                    </tr>
+                    <tr>
+                        <td>Base de leads y contactos WhatsApp</td>
+                        <td><strong>Cliente.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Flujos de n8n y automatizaciones</td>
+                        <td><strong>Cliente recibe la configuración exportada al final del sprint.</strong></td>
+                    </tr>
+                    <tr>
+                        <td>Frameworks genéricos y plantillas de campaña</td>
+                        <td>Equipo ejecutor. <strong>Cliente tiene licencia de uso, no propiedad.</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">3 cláusulas mínimas en contrato</h3>
+
+            <div class="finding-card" style="background: #fbfbfd; border: 1px solid #d2d2d7; padding: 24px 28px; border-radius: 12px; margin: 16px 0;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">1. Derecho de uso del caso de éxito</h4>
+                <p>El equipo ejecutor tiene derecho no exclusivo a usar el caso de Troncos y Raíces en su marketing (portafolio, web, propuestas a prospectos). Métricas específicas requieren tu aprobación previa. El caso genérico (sector mueblería, tipo de resultado) no requiere aprobación.</p>
+            </div>
+
+            <div class="finding-card" style="background: #fbfbfd; border: 1px solid #d2d2d7; padding: 24px 28px; border-radius: 12px; margin: 16px 0;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">2. Licencia genérica sobre frameworks</h4>
+                <p>El equipo conserva derecho de reutilizar frameworks, scripts de WhatsApp, estructuras de campaña y plantillas de nurturing en otros proyectos. Los activos personalizados a tu marca (copy específico, creatividades con tu logo) son tuyos.</p>
+            </div>
+
+            <div class="finding-card" style="background: #fbfbfd; border: 1px solid #d2d2d7; padding: 24px 28px; border-radius: 12px; margin: 16px 0;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 10px;">3. Anti-fuga (cancelación temprana)</h4>
+                <p>Si el cliente cancela el sprint <strong>antes del día 30 por decisión propia</strong> (no por incumplimiento del equipo ejecutor), el fee del mes en curso no es reembolsable, y se cobra una penalización equivalente al <strong>30% del fee de los meses restantes</strong> como compensación por capacidad operativa reservada.</p>
+                <p style="margin-top: 8px; font-size: 14px; color: #6e6e73;"><em>Esta cláusula no aplica si la cancelación es por incumplimiento documentado del equipo (en cuyo caso aplica la garantía del día 30).</em></p>
+            </div>
+
+            <h3 class="subsection-title">Complementarias recomendadas</h3>
+            <ul>
+                <li><strong>No-compete limitada de contratación directa:</strong> el cliente acepta no contratar directamente a colaboradores identificados del equipo ejecutor durante la duración del sprint y 6 meses posteriores, salvo acuerdo explícito.</li>
+                <li><strong>Confidencialidad bilateral (NDA):</strong> sobre información financiera, operativa y estratégica en ambas direcciones.</li>
+            </ul>
+        </div>
+
+        <!-- ===== RIESGOS Y DEPENDENCIAS ===== -->
+        <div class="section">
+            <div class="section-number">Riesgos</div>
+            <h2 class="section-title">Riesgos identificados y mitigación</h2>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Riesgo</th>
+                        <th>Probabilidad</th>
+                        <th>Impacto</th>
+                        <th>Mitigación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Base de clientes pasados no responde al pedido de reviews</strong></td>
+                        <td>Media</td>
+                        <td>Alto — bloquea el diferencial #1</td>
+                        <td>Plan B: ofrecer beneficio concreto (descuento futuro, mantenimiento gratuito) a cambio de review con foto. Crear grupo piloto de 10 clientes VIP.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ciclo de decisión más largo que lo esperado (8+ semanas)</strong></td>
+                        <td>Alta</td>
+                        <td>Medio — afecta métricas de conversión en fase 1</td>
+                        <td>Nurturing extendido hasta 60 días. CVR real se mide al final del sprint, no mes a mes.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Pauta insuficiente para generar aprendizajes</strong></td>
+                        <td>Baja (si cliente cumple SLA)</td>
+                        <td>Alto — compromete todo el sprint</td>
+                        <td>Mínimo $3M/mes establecido como SLA contractual. Sin esto, no se arranca pauta.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Showroom no convierte el tráfico que se le manda</strong></td>
+                        <td>Media</td>
+                        <td>Alto — es el CTA principal</td>
+                        <td>Fase 2: auditoría del proceso del showroom (cómo se recibe al cliente, guión de venta, materiales impresos). Capacitación si aplica.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dependencia de 1 persona para aprobaciones</strong></td>
+                        <td>Alta</td>
+                        <td>Medio — retrasa cronograma</td>
+                        <td>Cláusula de silencio = aprobación tácita después de 48h. Segundo punto de contacto como backup.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Competidores reaccionan a la campaña</strong></td>
+                        <td>Media</td>
+                        <td>Bajo — pueden subir CPL pero no bloquear</td>
+                        <td>Diferencial de producto (5 años de secado, samán, garantía) es difícil de copiar en 90 días. Mantenemos moat.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- ===== PRÓXIMOS PASOS ===== -->
+        <div class="section">
+            <div class="section-number">Siguientes pasos</div>
+            <h2 class="section-title">Cómo arrancar</h2>
+
+            <div class="timeline">
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 1</div>
+                    <div class="timeline-content"><strong>Firma del contrato</strong> + contrato con 5 condiciones auditables del mes 1 + SLA bilateral.</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 2–3</div>
+                    <div class="timeline-content"><strong>Kickoff presencial o virtual.</strong> 2 horas. Alineación sobre el mensaje central, calendario de aprobaciones, punto de contacto principal.</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 4–7</div>
+                    <div class="timeline-content"><strong>Entrega de accesos</strong> (Meta Business, Google Ads, GBP, dominio, WhatsApp Business). <strong>Entrega de base de clientes pasados</strong> (24 meses) para recolección de reviews.</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 7</div>
+                    <div class="timeline-content"><strong>Diagnóstico estratégico formalizado</strong> + 3 decisiones ejecutivas firmadas para blindar el mes 1.</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 14</div>
+                    <div class="timeline-content"><strong>Primer lead calificado</strong> por WhatsApp bot. Si no ocurre, bandera roja y revisión inmediata.</div>
+                </div>
+                <div class="timeline-row">
+                    <div class="timeline-week">Día 30</div>
+                    <div class="timeline-content"><strong>Auditoría de las 5 condiciones.</strong> Si todas cumplidas: se avanza a Fase 2. Si no: garantía activa.</div>
+                </div>
+            </div>
+
+            <div class="alert-green">
+                <h4>Por qué este roadmap tiene alta probabilidad de funcionar</h4>
+                <p>Porque partimos de un producto validado (6 años de operación, 14.8K seguidores orgánicos, ticket sostenido). El cuello de botella no es la demanda — es la infraestructura para capturarla. Los negocios sin producto validado no deberían usar este sistema; Troncos y Raíces sí. El 80% del trabajo del sprint es construir lo que hoy no existe: reviews públicos, landing que convierte, respuesta profesional, mensaje reempaquetado. El 20% restante es pauta y optimización. Los números caen solos cuando las fugas se tapan.</p>
+            </div>
+        </div>
+
+        </div><!-- /.content -->
+
+        <div class="footer">
+            <p><strong>Roadmap 90 días · Troncos y Raíces del Valle</strong></p>
+            <p>Adaptación del Sistema OktuMedia al sector mueblería artesanal premium</p>
+            <p>Basado en el diagnóstico de las 7 Maletas del 21 de abril de 2026</p>
+            <p style="margin-top: 16px; font-size: 12px;">Documento ejecutivo de propuesta · Versión 1.0 · Requiere firma bilateral para activación</p>
+        </div>
+
+    </div>
+</body>
+</html>

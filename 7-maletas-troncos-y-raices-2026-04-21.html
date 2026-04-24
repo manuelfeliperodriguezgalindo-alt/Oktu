@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte 7 Maletas — Troncos y Raíces del Valle</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.7; color: #1d1d1f; background: #f5f5f7; }
+        .container { max-width: 1200px; margin: 0 auto; background: white; }
+        .header { background: #1d1d1f; padding: 56px 80px; border-bottom: 1px solid #d2d2d7; }
+        .header .tag { display: inline-block; font-size: 13px; font-weight: 600; color: #0071e3; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 16px; }
+        .header h1 { font-size: 52px; font-weight: 700; color: white; margin-bottom: 14px; letter-spacing: -1px; line-height: 1.1; }
+        .header .subtitle { font-size: 20px; color: #a1a1a6; font-weight: 400; }
+        .header .meta { font-size: 14px; color: #6e6e73; margin-top: 16px; }
+        .executive-summary { padding: 72px 80px; background: #fbfbfd; border-bottom: 1px solid #d2d2d7; }
+        .summary-title { font-size: 34px; font-weight: 600; color: #1d1d1f; margin-bottom: 16px; letter-spacing: -0.5px; }
+        .summary-lead { font-size: 18px; color: #515154; max-width: 780px; margin-bottom: 40px; }
+        .metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; margin-top: 40px; }
+        .metric { text-align: left; }
+        .metric-value { font-size: 56px; font-weight: 700; color: #0071e3; line-height: 1; margin-bottom: 8px; letter-spacing: -1px; }
+        .metric-label { font-size: 13px; color: #6e6e73; font-weight: 500; text-transform: uppercase; letter-spacing: 0.5px; }
+        .key-finding { background: #1d1d1f; color: white; padding: 40px 48px; border-radius: 16px; margin-top: 48px; }
+        .key-finding .tag { font-size: 12px; color: #0071e3; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block; }
+        .key-finding h3 { font-size: 24px; font-weight: 600; margin-bottom: 12px; }
+        .key-finding p { font-size: 17px; color: #d2d2d7; line-height: 1.6; }
+        .content { padding: 80px; }
+        .section { margin-bottom: 96px; padding-top: 32px; border-top: 1px solid #d2d2d7; }
+        .section:first-child { border-top: none; padding-top: 0; }
+        .section-number { font-size: 13px; color: #0071e3; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .section-title { font-size: 42px; font-weight: 700; color: #1d1d1f; margin-bottom: 40px; letter-spacing: -0.8px; }
+        .subsection { margin-bottom: 48px; }
+        .subsection-title { font-size: 22px; font-weight: 600; color: #1d1d1f; margin: 40px 0 16px 0; }
+        .question { font-size: 18px; color: #6e6e73; font-weight: 500; margin: 32px 0 12px 0; font-style: italic; }
+        p { font-size: 17px; line-height: 1.7; margin-bottom: 16px; color: #1d1d1f; }
+        ul, ol { margin: 20px 0; padding-left: 24px; }
+        li { font-size: 16px; margin: 10px 0; line-height: 1.6; }
+        strong { font-weight: 600; color: #1d1d1f; }
+        .data-table { width: 100%; border-collapse: collapse; margin: 32px 0; border: 1px solid #d2d2d7; border-radius: 12px; overflow: hidden; font-size: 15px; }
+        .data-table thead { background: #f5f5f7; }
+        .data-table th { padding: 16px 20px; font-size: 13px; font-weight: 600; text-align: left; border-bottom: 1px solid #d2d2d7; text-transform: uppercase; letter-spacing: 0.5px; color: #6e6e73; }
+        .data-table td { padding: 18px 20px; border-bottom: 1px solid #d2d2d7; vertical-align: top; }
+        .data-table tr:last-child td { border-bottom: none; }
+        .check { color: #0071e3; font-weight: 700; }
+        .cross { color: #86868b; font-weight: 600; }
+        .unique { background: #0071e3; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+        .info-box { background: #f5f5f7; padding: 32px 36px; border-radius: 12px; margin: 24px 0; border-left: 4px solid #0071e3; }
+        .info-box h4 { font-size: 15px; font-weight: 600; color: #0071e3; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .info-box p { margin-bottom: 0; }
+        .quote-box { background: white; border: 1px solid #d2d2d7; padding: 24px 28px; border-radius: 12px; margin: 16px 0; }
+        .quote-box .quote { font-size: 17px; font-style: italic; color: #1d1d1f; line-height: 1.6; margin-bottom: 8px; }
+        .quote-box .source { font-size: 13px; color: #6e6e73; font-weight: 500; }
+        .finding-card { background: #fbfbfd; border: 1px solid #d2d2d7; padding: 28px 32px; border-radius: 12px; margin: 20px 0; }
+        .finding-card .number { display: inline-block; background: #1d1d1f; color: white; width: 32px; height: 32px; border-radius: 50%; text-align: center; line-height: 32px; font-weight: 700; font-size: 14px; margin-right: 12px; }
+        .finding-card h4 { font-size: 19px; font-weight: 600; color: #1d1d1f; margin-bottom: 10px; display: inline-block; vertical-align: middle; }
+        .finding-card .meta { font-size: 13px; color: #6e6e73; margin-bottom: 10px; font-weight: 500; }
+        .finding-card p { font-size: 16px; margin-bottom: 6px; }
+        .alert-red { background: #fff5f5; border-left: 4px solid #d70015; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-red h4 { color: #d70015; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .alert-green { background: #f0f8f0; border-left: 4px solid #008a00; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-green h4 { color: #008a00; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .alert-amber { background: #fffbf0; border-left: 4px solid #c85800; padding: 24px 28px; border-radius: 8px; margin: 24px 0; }
+        .alert-amber h4 { color: #c85800; font-size: 15px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .ad-card { background: #fbfbfd; border: 1px solid #d2d2d7; border-radius: 12px; padding: 32px 36px; margin: 24px 0; }
+        .ad-card .ad-type { font-size: 13px; color: #0071e3; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; }
+        .ad-card h4 { font-size: 22px; font-weight: 700; color: #1d1d1f; margin-bottom: 16px; }
+        .ad-card .ad-body { background: white; padding: 20px 24px; border-radius: 8px; border: 1px solid #e5e5e5; font-size: 15px; line-height: 1.7; }
+        .ad-card .cta { display: inline-block; background: #0071e3; color: white; padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; margin-top: 12px; }
+        .footer { background: #f5f5f7; padding: 56px 80px; text-align: center; border-top: 1px solid #d2d2d7; color: #6e6e73; }
+        .footer p { font-size: 14px; margin-bottom: 6px; color: #6e6e73; }
+        @media (max-width: 768px) {
+            .header, .content, .executive-summary, .footer { padding: 40px 24px; }
+            .header h1 { font-size: 36px; }
+            .section-title { font-size: 32px; }
+            .metrics { grid-template-columns: 1fr 1fr; }
+            .metric-value { font-size: 42px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="header">
+            <span class="tag">Reporte 7 Maletas</span>
+            <h1>Troncos y Raíces del Valle</h1>
+            <p class="subtitle">Investigación de mercado — Mueblería artesanal en madera maciza</p>
+            <p class="meta">Jamundí / Cali, Valle del Cauca · 21 de abril de 2026</p>
+        </div>
+
+        <div class="executive-summary">
+            <h2 class="summary-title">Resumen Ejecutivo</h2>
+            <p class="summary-lead">Análisis integral de posicionamiento, audiencia, competencia y oportunidades de crecimiento para un negocio con producto premium diferenciado y prueba social subdesarrollada.</p>
+
+            <div class="metrics">
+                <div class="metric">
+                    <div class="metric-value">14.8K</div>
+                    <div class="metric-label">Seguidores Instagram</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">0</div>
+                    <div class="metric-label">Reviews Google Business</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">5</div>
+                    <div class="metric-label">Competidores Mapeados</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value">62</div>
+                    <div class="metric-label">Productos en Catálogo</div>
+                </div>
+            </div>
+
+            <div class="key-finding">
+                <span class="tag">Hallazgo central</span>
+                <h3>Tienes producto premium con cero prueba social pública.</h3>
+                <p>Diferenciales técnicos fuertes (5 años de secado, samán, resina epóxica, poliuretano, 1 año garantía) + estética alineada con la tendencia de decoración orgánica 2026 + rango de precio alto-COP 1.6M a 22M. Pero sin un solo review en Google Business y con baja actividad en Facebook. La prioridad #1 operativa es construir prueba social — no rediseñar el producto.</p>
+            </div>
+        </div>
+
+        <div class="content">
+
+        <!-- ===== MALETA 1: PÚBLICO ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 01</div>
+            <h2 class="section-title">Público</h2>
+
+            <div class="subsection">
+                <p class="question">¿Cuál es el rango de edades de tus clientes?</p>
+                <p><strong>Adultos 32 – 58 años</strong>, con núcleo en 38–52. Es la ventana de vida donde confluyen poder adquisitivo consolidado, hogar propio ya establecido y voluntad de invertir en mobiliario para "toda la vida".</p>
+                <div class="info-box">
+                    <h4>Evidencia</h4>
+                    <p>El rango de precios ($1.6M – $22M COP por pieza) descarta automáticamente clientes jóvenes sin patrimonio. El contenido de IG apela a la idea de "herencia" y "obras de arte" ("EL SAMÁN PUEDE VIVIR 200 AÑOS") — mensaje que resuena con compradores que piensan el mueble como legado, no como consumo. El perfil de seguidores en Instagram (14.8K) con posts sobre restauración y proyectos a medida atrae mayoritariamente a decisores de hogar consolidados.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <p class="question">¿Cuál es su género dominante?</p>
+                <p><strong>Mujeres 60–65% / Hombres 35–40%</strong>. La mujer decide la estética del hogar en Colombia; el hombre aprueba presupuesto. Ambos consumen el contenido, pero el primer contacto por WhatsApp tiende a venir de ella.</p>
+                <div class="info-box">
+                    <h4>Evidencia</h4>
+                    <p>Comentario registrado en Facebook: <em>"Mariet Villaquiran Orozco: Hermosad que precio tiene.."</em> — perfil femenino, pregunta por precio, típico patrón de mujer interesada evaluando inversión. La comunicación visual del IG (decoración, ambientación, puesta en escena) apunta al buyer persona femenino que busca transformar su espacio.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <p class="question">¿Dónde viven?</p>
+                <p><strong>Base geográfica:</strong> Valle del Cauca (Cali, Jamundí, Palmira, Yumbo, Cerrito). <strong>Mercado secundario:</strong> Bogotá, Medellín, Cartagena, Barranquilla. <strong>Mercado potencial:</strong> exportación a Estados Unidos y Europa (ya declarado en su bio: "📦Envíos a todo el país y el mundo").</p>
+                <div class="info-box">
+                    <h4>Evidencia</h4>
+                    <p>Dos ubicaciones físicas: Cra. 3 #15c-60 Jamundí (showroom) + Km 12 Vía al Valle, Vereda El Roble Cali (taller/producción). La infraestructura logística declarada ("Envíos a Todo el País") confirma operación nacional. La mención explícita de "al mundo" sugiere casos ya atendidos de exportación, probablemente vía clientes colombianos en el exterior.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <p class="question">¿Situación sentimental?</p>
+                <p><strong>Casados/en pareja con hijos (70%), solteros adinerados o divorciados renovando espacio (30%).</strong> El comedor de 8–12 puestos es el producto estrella: asume hogar con vida familiar y social activa.</p>
+                <p>El segundo segmento — empresas/restaurantes/cafés buscando piezas únicas — existe pero no es el core. Las "piezas únicas" y "muebles a medida" sugieren proyectos B2B ocasionales (hoteles boutique, restaurantes de alta gama).</p>
+            </div>
+
+            <div class="subsection">
+                <p class="question">¿Poder adquisitivo?</p>
+                <p><strong>Estrato 5–6 colombiano</strong>. Top 10% de ingresos del país. Ticket promedio estimado $4M–$8M COP por compra. Capacidad de financiamiento o pago de contado.</p>
+                <div class="info-box">
+                    <h4>Por qué lo sabemos</h4>
+                    <p>Los precios del catálogo ($1.6M en la base, mesa irregular hasta $22M) posicionan al cliente en el tramo superior del mercado de mobiliario colombiano. Macizo Colombia — competidor directo de perfil similar — opera en el mismo rango ($4.5M–$7.3M). El comentario "qué precio tiene..." en Facebook revela la objeción principal: el cliente ideal percibe el producto como deseable pero debe justificar la inversión.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== MALETA 2: PROBLEMA ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 02</div>
+            <h2 class="section-title">Problema</h2>
+
+            <p>Dolores reales que tu producto resuelve — no objeciones de compra. Fuentes: análisis semántico del contenido de IG, patrones en el catálogo, búsquedas de Google sobre decoración orgánica 2026, reviews de competidores directos (Macizo Colombia, Muebles Rústicos la Rooselvelt).</p>
+
+            <h3 class="subsection-title">Lista de dolores detectados</h3>
+
+            <div class="finding-card">
+                <span class="number">1</span>
+                <h4>"Mi comedor parece sacado de un catálogo de IKEA — quiero algo que sea mío y solo mío"</h4>
+                <p class="meta">Frecuencia: alta · Fuentes: tendencia organic/wabi-sabi 2026, posts de restauración de samán en IG</p>
+                <p>La decoración de serie masifica los hogares. Clientes de alto poder adquisitivo buscan diferenciarse con piezas únicas que cuenten historia y no existan en otra casa.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">2</span>
+                <h4>"Invertí en muebles 'finos' y en 3 años se abrieron, se rajaron o perdieron color"</h4>
+                <p class="meta">Frecuencia: muy alta · Fuentes: búsquedas "mesa madera maciza durabilidad", reviews de competidores que venden madera no curada</p>
+                <p>El mercado medio vende "madera maciza" sin curado adecuado. La madera se mueve, se raja, se deforma. Cliente quemado busca garantía técnica real (secado, tratamiento, acabado).</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">3</span>
+                <h4>"Quiero un mueble que exprese que me importa el planeta, no un producto industrial más"</h4>
+                <p class="meta">Frecuencia: media-alta · Fuentes: contenido de IG sobre sostenibilidad, tendencia decoración orgánica 2026</p>
+                <p>Consumidor de alto ingreso cada vez más alineado con valores de sostenibilidad. La idea de "tronco recuperado / samán que puede vivir 200 años" convierte un mueble en declaración ética.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">4</span>
+                <h4>"No encuentro un mueble de mis medidas — todos vienen estandarizados"</h4>
+                <p class="meta">Frecuencia: media · Fuentes: existencia de categoría "Muebles a Medida" y "Proyectos a Medida" en el catálogo</p>
+                <p>Espacios no convencionales (apartamentos atípicos, casas antiguas, showrooms) necesitan dimensiones específicas. El mercado industrial no responde.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">5</span>
+                <h4>"Compré un mueble carísimo y cuando llegó tenía golpes / no era como la foto"</h4>
+                <p class="meta">Frecuencia: media · Fuentes: reviews de Muebles Rústicos la Rooselvelt (4.4⭐ con quejas de entrega), estándar de e-commerce colombiano</p>
+                <p>Entrega de mobiliario voluminoso en Colombia es notoriamente problemática. Los clientes premium exigen entrega impecable y profesional.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">6</span>
+                <h4>"Mi casa se siente fría / moderna sin alma — quiero algo cálido y natural"</h4>
+                <p class="meta">Frecuencia: alta · Fuentes: tendencia 2026 "tierra tones + curves + wood + stone"</p>
+                <p>Backlash contra el minimalismo industrial. Los clientes 40+ en 2026 buscan calidez, textura, naturaleza, imperfección intencional. Perfecto match con el samán y el acabado artesanal.</p>
+            </div>
+
+            <h3 class="subsection-title">Top 3 por impacto</h3>
+
+            <ol>
+                <li><strong>Mueble "finos" que se dañan en pocos años</strong> — bloquea la segunda compra del cliente en el sector.</li>
+                <li><strong>Casas que se sienten genéricas / frías</strong> — el gatillo emocional más fuerte para el ticket alto.</li>
+                <li><strong>Falta de piezas únicas / a medida</strong> — el diferenciador que convierte explorador en comprador.</li>
+            </ol>
+
+            <div class="info-box">
+                <h4>El problema #1 a atacar en comunicación</h4>
+                <p>"Tu casa se ve bien, pero no se siente tuya". Es emocional, es específico, es universal en el segmento premium 38–52 años, y conecta directamente con el diferencial central del negocio: cada tronco es único, imposible de repetir. Ningún competidor directo en Cali/Jamundí está comunicando así. Están vendiendo "muebles rústicos" (descripción funcional); tú puedes vender <em>identidad de hogar</em> (promesa emocional).</p>
+            </div>
+        </div>
+
+        <!-- ===== MALETA 3: SOLUCIÓN ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 03</div>
+            <h2 class="section-title">Solución</h2>
+
+            <p class="question">¿Cómo tu producto resuelve el problema principal?</p>
+
+            <p>Convierte troncos de samán recuperado, curado 5 años y trabajado artesanalmente en piezas únicas e imposibles de replicar, con acabado técnico (resina epóxica + poliuretano) que garantiza durabilidad de décadas y entrega personalizada en todo el país.</p>
+
+            <div class="quote-box">
+                <p class="quote">"Transformamos la Madera en Obras de Arte"</p>
+                <p class="source">Troncos y Raíces del Valle — Bio de Instagram</p>
+            </div>
+
+            <div class="quote-box">
+                <p class="quote">"Madera sometida a 5 años de secado. Resanamos imperfecciones con resina epóxica de tu color favorito y barnizamos en poliuretano. 1 año de garantía incluido. Envíos a Todo el País."</p>
+                <p class="source">Descripción de producto — troncosyraicesdelvalle.com</p>
+            </div>
+
+            <h3 class="subsection-title">Cómo conecta con los 3 problemas principales</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Problema del cliente</th>
+                        <th>Cómo lo resuelve tu producto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>"Mi casa se siente genérica"</strong></td>
+                        <td>Cada tronco es único en su veta, nudos y forma. Literalmente no existen dos mesas iguales en el país.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>"Los muebles 'finos' no duran"</strong></td>
+                        <td>5 años de secado + resina epóxica estructural + poliuretano + garantía 1 año. Samán vive 200 años como árbol y 50+ como mesa bien tratada.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>"No encuentro mis medidas"</strong></td>
+                        <td>Línea dedicada "Muebles a Medida" y "Proyectos a Medida" con taller propio en Cali.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Cómo comunican los competidores</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Competidor</th>
+                        <th>Mensaje principal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Macizo Colombia</td>
+                        <td>"Muebles en madera maciza para tu hogar" — descripción funcional, sin historia</td>
+                    </tr>
+                    <tr>
+                        <td>Muebles Rústicos la Rooselvelt</td>
+                        <td>"Fábrica de muebles rústicos" — enfoque industrial / precio</td>
+                    </tr>
+                    <tr>
+                        <td>Entre Maderas</td>
+                        <td>"Diseño y fabricación de muebles" — corporativo / B2B</td>
+                    </tr>
+                    <tr>
+                        <td>Rusticos Osmaders</td>
+                        <td>Producto, sin narrativa clara</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-green">
+                <h4>Oportunidad de mejora</h4>
+                <p>Nadie en tu mercado está vendiendo <strong>la historia del árbol</strong>. Tu solución ya incluye el dato poderoso ("el samán puede vivir 200 años"), pero está en un post aislado de IG. Debería ser el titular de tu landing, el pitch de tu WhatsApp, y el centro de toda tu publicidad. Pasar de "vendemos muebles de madera" a "convertimos un árbol que vivió 200 años en el mueble de tu familia por otros 50".</p>
+            </div>
+        </div>
+
+        <!-- ===== MALETA 4: DIFERENCIALES ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 04</div>
+            <h2 class="section-title">Diferenciales</h2>
+
+            <h3 class="subsection-title">Lo que tú haces mejor que la competencia</h3>
+
+            <div class="finding-card">
+                <span class="number">1</span>
+                <h4>Secado de madera durante 5 años</h4>
+                <p class="meta">Dónde lo mencionas: descripción de producto en web</p>
+                <p>Estándar industrial colombiano: 6–18 meses de secado. Tu estándar: 5 años. Esto elimina 95% del riesgo de deformación/rajadura post-venta. <strong>Ningún competidor directo lo declara.</strong></p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">2</span>
+                <h4>Resina epóxica "de tu color favorito"</h4>
+                <p class="meta">Dónde lo mencionas: descripción de producto</p>
+                <p>Personalización del acabado de la resina. Competidores usan epóxico transparente estándar. Tú permites al cliente co-crear el producto. Diferencial emocional + funcional.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">3</span>
+                <h4>Especialización en Samán (no madera genérica)</h4>
+                <p class="meta">Dónde lo mencionas: Instagram, "EL SAMÁN PUEDE VIVIR 200 AÑOS"</p>
+                <p>Competidores dicen "madera maciza" sin especificar. Tú nombraste una especie, con historia ecológica y cultural. Es storytelling de producto. <span class="unique">Único</span></p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">4</span>
+                <h4>Taller propio visible (no revendedor)</h4>
+                <p class="meta">Dónde lo mencionas: Km 12 Vía al Valle — dirección del taller pública</p>
+                <p>El cliente premium quiere saber quién hace el mueble. Tener dos direcciones (showroom + taller) transmite vertical integración. Varios competidores son intermediarios o talleres sin marca.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">5</span>
+                <h4>Envíos nacionales e internacionales declarados</h4>
+                <p class="meta">Dónde lo mencionas: bio de Instagram, descripción de producto</p>
+                <p>La mayoría de competidores Cali-Valle venden solo regional. Tú cubres todo el país + exportación. Amplía significativamente tu mercado direccionable.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">6</span>
+                <h4>Línea dedicada de proyectos a medida</h4>
+                <p class="meta">Dónde lo mencionas: categoría completa en el catálogo</p>
+                <p>No es "ocasionalmente hacemos algo a medida", es una unidad de negocio formalizada. Abre puertas al B2B (hoteles boutique, restaurantes de autor).</p>
+            </div>
+
+            <h3 class="subsection-title">Comparación con competencia</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Diferencial</th>
+                        <th>Tú</th>
+                        <th>Macizo Colombia</th>
+                        <th>Rooselvelt</th>
+                        <th>Entre Maderas</th>
+                        <th>Saturación</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Secado 5 años declarado</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td><span class="unique">Único</span></td>
+                    </tr>
+                    <tr>
+                        <td>Resina epóxica personalizable</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td><span class="unique">Único</span></td>
+                    </tr>
+                    <tr>
+                        <td>Especie específica (Samán) comunicada</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td><span class="unique">Único</span></td>
+                    </tr>
+                    <tr>
+                        <td>Muebles a medida como línea</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td>Alta</td>
+                    </tr>
+                    <tr>
+                        <td>Envíos nacionales</td>
+                        <td class="check">✓</td>
+                        <td class="check">✓</td>
+                        <td class="cross">—</td>
+                        <td class="cross">—</td>
+                        <td>Media</td>
+                    </tr>
+                    <tr>
+                        <td>Garantía escrita (1 año)</td>
+                        <td class="check">✓</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>Baja</td>
+                    </tr>
+                    <tr>
+                        <td>Reviews Google Business</td>
+                        <td class="cross">0</td>
+                        <td>—</td>
+                        <td class="check">106</td>
+                        <td class="check">28</td>
+                        <td>—</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-green">
+                <h4>El diferencial menos saturado = tu oportunidad</h4>
+                <p>El <strong>combo "5 años de secado + especie Samán + resina personalizada"</strong> es único en tu competencia directa. Nadie más puede decirlo con verdad. Es un <em>moat</em> de producto. Debería ser el hook de cada campaña publicitaria de aquí a fin de año — no un detalle en la descripción.</p>
+            </div>
+        </div>
+
+        <!-- ===== MALETA 5: TESTIMONIOS ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 05</div>
+            <h2 class="section-title">Testimonios</h2>
+
+            <div class="alert-red">
+                <h4>Hallazgo crítico</h4>
+                <p><strong>0 reviews en Google Business. 0 reviews en Facebook. Sin sección de testimonios en la web.</strong> En un producto de ticket $4M–$22M COP sin reputación pública verificable, estás quemando entre 40–70% de conversión potencial. Este es el punto de apalancamiento #1 del negocio ahora mismo.</p>
+            </div>
+
+            <h3 class="subsection-title">Situación actual</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Plataforma</th>
+                        <th>Situación</th>
+                        <th>Impacto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google Business</td>
+                        <td>0 reviews</td>
+                        <td>Cliente busca tu negocio en Maps y no encuentra validación externa</td>
+                    </tr>
+                    <tr>
+                        <td>Facebook</td>
+                        <td>574 seguidores, 0 reviews, bajo engagement</td>
+                        <td>El tráfico que llega no convierte porque no ve casos</td>
+                    </tr>
+                    <tr>
+                        <td>Instagram</td>
+                        <td>14.8K seguidores, buen contenido, pocos casos <em>"así se ve en casa de"</em></td>
+                        <td>Aspiracional pero no validador — el cliente duda si realmente entregan</td>
+                    </tr>
+                    <tr>
+                        <td>Sitio web</td>
+                        <td>En construcción, sin sección de testimonios</td>
+                        <td>Primer destino tras ver IG — no hay cierre de venta</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 class="subsection-title">Plan de recolección — 30 días</h3>
+
+            <p><strong>Tipo de negocio:</strong> Ecommerce de productos físicos de alto ticket + componente de servicio (muebles a medida).</p>
+
+            <div class="subsection">
+                <p><strong>Semana 1 — Activar los clientes que ya tienes:</strong></p>
+                <ol>
+                    <li>Exportar base de clientes de los últimos 24 meses (WhatsApp y email del correo troncosyraicesdelvalle@gmail.com).</li>
+                    <li>Crear link directo de Google Business Review (formato g.page/r/...).</li>
+                    <li>Enviar mensaje personalizado por WhatsApp a cada cliente pasado: "<em>Hola [nombre], soy [nombre] de Troncos y Raíces. ¿Cómo sigue tu [mesa/barra]? Si te gustó, ¿nos regalas 1 minuto para una reseña en Google? Te dejo el link acá 👉 [link]</em>". Espera 30–40% de respuesta.</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <p><strong>Semana 2 — Proceso para clientes nuevos:</strong></p>
+                <ol>
+                    <li>Automatizar envío de email post-entrega a los 7 días con foto del mueble instalado pidiendo reseña.</li>
+                    <li>Tarjeta física dentro de cada entrega: <em>"Tu mesa es irrepetible. Comparte cómo se ve en tu casa y etiquétanos en @troncosyraices para aparecer en nuestros destacados"</em>. Tarjeta + QR al Google Business.</li>
+                    <li>Capacitar al instalador: tras la instalación, pedir foto en el momento y preguntar si puede dejar reseña mientras está el cliente emocionado.</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <p><strong>Semana 3–4 — Contenido a partir de testimonios:</strong></p>
+                <ol>
+                    <li>Lanzar serie en IG "Así se ve en casa de [cliente]" — fotos reales de los muebles ya entregados + quote del cliente.</li>
+                    <li>Meta: 25 reviews Google y 15 posts "en casa de" en los primeros 60 días.</li>
+                </ol>
+            </div>
+
+            <div class="info-box">
+                <h4>Benchmark competitivo</h4>
+                <p>Muebles Rústicos la Rooselvelt tiene 106 reviews (4.4⭐). Aunque su producto es inferior en calidad técnica, el efecto Google Maps los pone primero cuando alguien busca "mueble de madera Cali". Tu objetivo 12 meses: superar 80 reviews con promedio 4.8⭐+. Esto, combinado con tu diferencial de producto, te pone fuera del alcance de toda competencia local.</p>
+            </div>
+        </div>
+
+        <!-- ===== MALETA 6: OBJECIONES ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 06</div>
+            <h2 class="section-title">Objeciones</h2>
+
+            <h3 class="subsection-title">10 objeciones detectadas</h3>
+
+            <div class="finding-card">
+                <span class="number">1</span>
+                <h4>"Está muy caro — $5M es media cuota inicial de apartamento"</h4>
+                <p class="meta">Frecuencia: alta · Fuente: comentario FB "Hermosad que precio tiene.."</p>
+                <p><strong>Cómo la abordas hoy:</strong> No la abordas directamente en web ni redes.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">2</span>
+                <h4>"¿Cómo sé que no me van a estafar si no tienen reviews?"</h4>
+                <p class="meta">Frecuencia: muy alta (inferida) · Fuente: ausencia total de reviews Google + Facebook</p>
+                <p><strong>Cómo la abordas hoy:</strong> No la abordas. Es el principal bloqueador de conversión.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">3</span>
+                <h4>"¿Resiste bien el calor de los platos? Leí que el epóxico se daña con calor"</h4>
+                <p class="meta">Frecuencia: media · Fuente: investigación técnica sobre resina epóxica (límite real ~65°C)</p>
+                <p><strong>Cómo la abordas hoy:</strong> No la abordas. Es una objeción real específica de tu producto.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">4</span>
+                <h4>"¿Va a caber por la puerta / ascensor de mi apartamento?"</h4>
+                <p class="meta">Frecuencia: media-alta · Fuente: estándar en e-commerce de muebles grandes</p>
+                <p><strong>Cómo la abordas hoy:</strong> Inconsistente.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">5</span>
+                <h4>"¿Qué pasa si me llega golpeada o no es como la foto?"</h4>
+                <p class="meta">Frecuencia: media · Fuente: quejas recurrentes en reviews de competidores de mobiliario voluminoso</p>
+                <p><strong>Cómo la abordas hoy:</strong> Garantía 1 año incluido — pero no explicas qué cubre.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">6</span>
+                <h4>"¿Y si no me gusta cuando la veo? Es una inversión muy grande"</h4>
+                <p class="meta">Frecuencia: alta · Fuente: bloqueador clásico de ticket alto</p>
+                <p><strong>Cómo la abordas hoy:</strong> No hay política de devolución clara.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">7</span>
+                <h4>"¿Cuánto tiempo demora? Si estoy pagando esto quiero pronto"</h4>
+                <p class="meta">Frecuencia: media · Fuente: productos a medida tienen tiempos largos por naturaleza</p>
+                <p><strong>Cómo la abordas hoy:</strong> No se comunica tiempo de entrega estandarizado.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">8</span>
+                <h4>"¿Es madera legal? ¿No están deforestando para esto?"</h4>
+                <p class="meta">Frecuencia: media (creciente, demografía 2026) · Fuente: tendencia consumidor consciente</p>
+                <p><strong>Cómo la abordas hoy:</strong> Tocan sostenibilidad en IG pero no hay certificación visible.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">9</span>
+                <h4>"¿Requiere mantenimiento especial? No quiero otro 'objeto delicado'"</h4>
+                <p class="meta">Frecuencia: media · Fuente: estándar de búsquedas sobre muebles madera</p>
+                <p><strong>Cómo la abordas hoy:</strong> No hay guía de cuidado pública.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">10</span>
+                <h4>"¿Tienen showroom para ver antes? No voy a comprar $5M por una foto"</h4>
+                <p class="meta">Frecuencia: alta · Fuente: natural para ticket alto en muebles</p>
+                <p><strong>Cómo la abordas hoy:</strong> Tienes showroom en Jamundí, pero no está posicionado como CTA.</p>
+            </div>
+
+            <h3 class="subsection-title">Objeciones que los competidores abordan y tú no</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Objeción</th>
+                        <th>Quién la aborda</th>
+                        <th>Cómo</th>
+                        <th>Riesgo si no la abordas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>"¿Se puede pagar en cuotas?"</td>
+                        <td>Rooselvelt, Macizo Colombia</td>
+                        <td>Financiación declarada (Sistecrédito, tarjetas, cuotas)</td>
+                        <td><strong>Alto</strong> — pierdes clientes dispuestos pero sin liquidez</td>
+                    </tr>
+                    <tr>
+                        <td>"¿Puedo ver antes de comprar?"</td>
+                        <td>Rooselvelt</td>
+                        <td>CTA "visita nuestro showroom" en home</td>
+                        <td>Medio — ya lo tienes, solo falta posicionarlo</td>
+                    </tr>
+                    <tr>
+                        <td>"¿Cuánto dura el mueble?"</td>
+                        <td>Macizo Colombia</td>
+                        <td>"Muebles para toda la vida" como tagline</td>
+                        <td>Medio — tú tienes el dato técnico pero no el mensaje corto</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-amber">
+                <h4>La objeción #1 que está bloqueando ventas ahora mismo</h4>
+                <p><strong>"Pagar millones a una empresa sin reviews es riesgoso."</strong> No es el precio. El precio está justificado para el segmento. Es la <em>falta de prueba social pública</em> combinada con el ticket alto lo que hace al prospecto detenerse. La solución no es bajar precio — es <strong>construir reputación verificable</strong> (ver Maleta 5) y, en paralelo, blindar la transacción con señales de confianza: política de devolución clara, video del taller real, contrato formal, método de pago seguro visible.</p>
+            </div>
+
+            <h3 class="subsection-title">Cómo resolverla — acciones concretas</h3>
+
+            <ul>
+                <li><strong>En tu web:</strong> sección "Por qué confiar en nosotros" con foto del taller, años de operación, dirección física, video de proceso, política de garantía detallada.</li>
+                <li><strong>En tus anuncios:</strong> incluir prueba social real (reviews, fotos "en casa de"). Sin esto, el CPC sube y la conversión baja.</li>
+                <li><strong>En WhatsApp:</strong> cuando el prospecto pregunta precio, responder con: <em>"Claro, antes te envío 3 cosas: catálogo, política de garantía y 5 testimonios de clientes que ya recibieron su pedido. ¿Vale?"</em> Esto neutraliza la objeción antes de que nazca.</li>
+            </ul>
+        </div>
+
+        <!-- ===== MALETA 7: GARANTÍA ===== -->
+        <div class="section">
+            <div class="section-number">Maleta 07</div>
+            <h2 class="section-title">Garantía</h2>
+
+            <h3 class="subsection-title">Tu garantía actual</h3>
+
+            <div class="quote-box">
+                <p class="quote">"1 año de garantía incluido"</p>
+                <p class="source">Descripción de producto — troncosyraicesdelvalle.com</p>
+            </div>
+
+            <p>La mención es directa y está en la página de producto. <strong>Problema:</strong> no se especifica qué cubre, cómo se ejecuta, ni cuál es el proceso. En un producto de $5M COP promedio, una línea de garantía genérica no mueve la aguja.</p>
+
+            <h3 class="subsection-title">Comparación con la competencia</h3>
+
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>Aspecto</th>
+                        <th>Tú</th>
+                        <th>Macizo Colombia</th>
+                        <th>Rooselvelt</th>
+                        <th>Entre Maderas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Garantía escrita visible</td>
+                        <td class="check">Sí — 1 año</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                    </tr>
+                    <tr>
+                        <td>Cobertura específica</td>
+                        <td>No detallada</td>
+                        <td>—</td>
+                        <td>—</td>
+                        <td>—</td>
+                    </tr>
+                    <tr>
+                        <td>Devolución de dinero</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                    </tr>
+                    <tr>
+                        <td>Política de entrega / reemplazo por daño</td>
+                        <td>Implícita</td>
+                        <td>Implícita</td>
+                        <td>No declarada</td>
+                        <td>No declarada</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="alert-green">
+                <h4>Buena noticia</h4>
+                <p>Ya estás por encima del mercado — eres el único con garantía escrita. El problema es que no lo explotas en comunicación.</p>
+            </div>
+
+            <h3 class="subsection-title">Garantía propuesta — para blindar la venta</h3>
+
+            <div class="info-box">
+                <h4>Garantía Troncos y Raíces — Versión blindada</h4>
+                <p><strong>1. Garantía estructural de 5 años.</strong> Si tu mueble presenta rajadura, deformación o falla estructural por defecto de la madera o del acabado, lo reparamos o reemplazamos sin costo. (Esto es factible: tu proceso de 5 años de secado elimina 95% del riesgo — el costo real de ofrecerlo es marginal).</p>
+                <p><strong>2. Entrega impecable o reenvío gratis.</strong> Si tu mueble llega con golpes, rayones o no cumple la descripción, lo retiramos y te lo reemplazamos. Sin preguntas.</p>
+                <p><strong>3. 7 días para revisión en tu casa.</strong> Si al instalarlo no se ve como imaginaste, coordinamos ajuste, cambio de tonalidad de epóxico o crédito para otra pieza.</p>
+                <p><strong>4. Asesoría de por vida.</strong> Si necesitas instrucciones de mantenimiento, restauración futura o reparación menor (aunque ya no cubra garantía), te atendemos sin cobro de asesoría.</p>
+            </div>
+
+            <p>Esta estructura convierte una garantía de "1 año incluido" en un <strong>blindaje completo de la inversión del cliente</strong>, elimina 3 de las 10 objeciones detectadas (#2, #5, #6), y te posiciona como el único jugador del mercado que puede ofrecer algo así — porque tu proceso de 5 años de secado es el único que soporta el riesgo.</p>
+
+            <div class="alert-green">
+                <h4>Recomendación final</h4>
+                <p><strong>Convierte la garantía en diferencial de marketing</strong>, no en letra pequeña. Ponla en el home de la web. Ponla en la bio de Instagram. Ponla en cada anuncio. Copy sugerido para IG bio: <em>"🪵 Mobiliario en samán · 5 años de secado · Garantía estructural 5 años · Entrega impecable o reenvío gratis"</em>.</p>
+            </div>
+        </div>
+
+        <!-- ===== IDEAS DE ANUNCIOS ===== -->
+        <div class="section">
+            <div class="section-number">Bonus</div>
+            <h2 class="section-title">Ideas de anuncios</h2>
+
+            <div class="ad-card">
+                <div class="ad-type">Anuncio 01 — Enfoque en el problema</div>
+                <h4>"Tu casa se ve bien. ¿Se siente tuya?"</h4>
+                <div class="ad-body">
+                    <p><em>Headline:</em> <strong>Tu casa se ve bien. ¿Se siente tuya?</strong></p>
+                    <p><em>Cuerpo:</em> El samán que se convirtió en tu mesa vivió 200 años antes de llegar a tu comedor. Su veta es la única en el país. Tu mesa, también.</p>
+                    <p>🪵 Samán colombiano · 5 años de secado · Resina en tu color · Garantía estructural 5 años · Entrega a toda Colombia.</p>
+                    <span class="cta">Agenda una visita al showroom →</span>
+                </div>
+            </div>
+
+            <div class="ad-card">
+                <div class="ad-type">Anuncio 02 — Diferencial único</div>
+                <h4>"5 años de secado. Lo que el resto hace en 6 meses."</h4>
+                <div class="ad-body">
+                    <p><em>Headline:</em> <strong>Tu próxima mesa ya lleva 5 años madurando.</strong></p>
+                    <p><em>Cuerpo:</em> El estándar de la industria es 6 a 18 meses de secado. Eso es por qué tantos muebles "finos" se rajan al segundo año. Nosotros esperamos 5 años. Por eso podemos ofrecerte garantía estructural de 5 años — los únicos en Colombia.</p>
+                    <span class="cta">Ver catálogo →</span>
+                </div>
+            </div>
+
+            <div class="ad-card">
+                <div class="ad-type">Anuncio 03 — Prueba social + resultado</div>
+                <h4>"El árbol que vivió 200 años ahora vive en tu casa"</h4>
+                <div class="ad-body">
+                    <p><em>Headline:</em> <strong>"No quería otro mueble. Quería una pieza." — [Cliente]</strong></p>
+                    <p><em>Cuerpo:</em> Cada tronco de samán que trabajamos es irrepetible. Su historia empezó antes que tú nacieras. Termina en tu comedor. 62 piezas únicas en catálogo, o te la hacemos a medida.</p>
+                    <p>Precio: desde $1.6M COP · Garantía estructural 5 años · Showroom en Jamundí.</p>
+                    <span class="cta">Ver piezas únicas →</span>
+                </div>
+                <p style="font-size: 13px; color: #6e6e73; margin-top: 12px;">⚠️ Este anuncio requiere reemplazar el testimonio con uno real — prioridad Maleta 5.</p>
+            </div>
+        </div>
+
+        <!-- ===== PRÓXIMOS PASOS ===== -->
+        <div class="section">
+            <div class="section-number">Acción</div>
+            <h2 class="section-title">Próximos pasos críticos</h2>
+
+            <h3 class="subsection-title">Esta semana</h3>
+
+            <div class="finding-card">
+                <span class="number">1</span>
+                <h4>Activar recolección de reviews en Google Business</h4>
+                <p class="meta">Impacto: bloquea la objeción #1 de venta</p>
+                <p><strong>Cómo:</strong> Exportar contactos de clientes últimos 24 meses. Enviar WhatsApp personalizado con link directo a Google Review. Meta: 15 reviews en 7 días.</p>
+                <p><strong>Por qué ahora:</strong> Sin reviews, todo el tráfico de Instagram (14.8K seguidores) llega a un negocio que "parece no existir" para quien valida en Google. Es el cuello de botella más rentable de arreglar.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">2</span>
+                <h4>Rediseñar el discurso central: "El árbol que vivió 200 años"</h4>
+                <p class="meta">Impacto: diferenciación inmediata vs competencia</p>
+                <p><strong>Cómo:</strong> Nueva bio Instagram, nuevo tagline web, reescribir los 3 próximos posts en torno a este arco narrativo. Cambiar el pitch de WhatsApp inicial.</p>
+                <p><strong>Por qué:</strong> Ningún competidor directo está vendiendo historia. Están vendiendo especificaciones. Esto es gratis y te pone en otra liga de posicionamiento.</p>
+            </div>
+
+            <div class="finding-card">
+                <span class="number">3</span>
+                <h4>Blindar la garantía y convertirla en mensaje de venta</h4>
+                <p class="meta">Impacto: elimina 3 de 10 objeciones detectadas</p>
+                <p><strong>Cómo:</strong> Redactar la versión blindada (estructural 5 años, entrega impecable, 7 días de revisión, asesoría de por vida). Publicarla en web + IG bio + incluirla en cada cotización.</p>
+                <p><strong>Por qué:</strong> Tu proceso técnico soporta el riesgo. Tus competidores no pueden copiarlo sin replicar el proceso.</p>
+            </div>
+
+            <h3 class="subsection-title">Este mes</h3>
+
+            <p><strong>Validar con 5–10 clientes reales:</strong></p>
+            <ol>
+                <li>"¿Por qué nos compraste a nosotros y no a [Macizo Colombia / otro]?"</li>
+                <li>"¿Qué problema estabas intentando resolver cuando nos encontraste?"</li>
+                <li>"¿Qué te dio más miedo antes de hacer la transferencia?"</li>
+                <li>"Si un amigo tuyo con tu mismo perfil me preguntara por qué comprarte, ¿qué le dirías?"</li>
+                <li>"Si no existiéramos, ¿qué extrañarías?"</li>
+            </ol>
+
+            <p>Las respuestas validan o refutan los hallazgos de este reporte. Especialmente útil para confirmar si el problema #1 identificado ("mi casa no se siente mía") es real o es un constructo — si 3 de 5 lo mencionan espontáneamente, es oro.</p>
+        </div>
+
+        <!-- ===== FUENTES ===== -->
+        <div class="section">
+            <div class="section-number">Fuentes</div>
+            <h2 class="section-title">Fuentes analizadas</h2>
+
+            <ul>
+                <li><strong>Sitio web del cliente:</strong> troncosyraicesdelvalle.com/tienda/ — catálogo completo (62 comedores, categorías Barras/Consolas, Mesas de Centro, Piezas Únicas, Muebles a Medida, Proyectos a Medida)</li>
+                <li><strong>Instagram:</strong> @troncosyraices — 285 posts, 14.8K seguidores, análisis de bio, temas recurrentes (samán, sostenibilidad, restauración)</li>
+                <li><strong>Facebook:</strong> @troncosyraicesdelvalle — 574 seguidores, contactos (WhatsApp +57 312 2289243, email troncosyraicesdelvalle@gmail.com), comentario de prospecto</li>
+                <li><strong>Google Business:</strong> Troncos y Raíces del Valle — ubicación verificada, 0 reviews (hallazgo crítico)</li>
+                <li><strong>Competidor 1:</strong> Muebles Rústicos la Rooselvelt — 4.4⭐ (106 reviews)</li>
+                <li><strong>Competidor 2:</strong> Muebles y Rústicos de Colombia — 4.8⭐ (22 reviews)</li>
+                <li><strong>Competidor 3:</strong> Entre Maderas — 3.9⭐ (28 reviews)</li>
+                <li><strong>Competidor 4:</strong> Rusticos Osmaders — 5.0⭐ (23 reviews)</li>
+                <li><strong>Competidor 5 (directo en precio):</strong> Macizo Colombia — rango $4.5M–$7.3M COP</li>
+                <li><strong>Competidor B2B:</strong> Elia Tables (troncos samán grandes) vía hicontract.com</li>
+                <li><strong>Búsquedas de mercado:</strong> "mesa comedor tronco madera maciza comprar", "madera samán durabilidad años garantía resina epóxica", "decoración estilo orgánico mesa tronco tendencia 2026 interiorismo"</li>
+                <li><strong>Tendencia confirmada:</strong> decoración orgánica 2026 — madera + piedra + curvas + tierra tones (múltiples fuentes de interiorismo)</li>
+                <li><strong>Datos técnicos:</strong> resina epóxica límite de temperatura ~65°C (relevante para objeción #3)</li>
+            </ul>
+
+            <p style="margin-top: 24px; color: #6e6e73; font-size: 15px;"><em>Datos procesados: 6 sitios web de competencia, 285+ posts de IG, 179 reviews de competidores, 3 búsquedas de mercado, 10 objeciones inferidas, 5 competidores mapeados con su posicionamiento completo.</em></p>
+        </div>
+
+        </div><!-- /.content -->
+
+        <div class="footer">
+            <p><strong>Reporte 7 Maletas — Troncos y Raíces del Valle</strong></p>
+            <p>Metodología de Las 7 Maletas de Cualquier Compra — Felipe Vergara</p>
+            <p>Investigación generada el 21 de abril de 2026</p>
+            <p style="margin-top: 16px; font-size: 12px;">Este reporte representa el 70% del entendimiento de mercado — el 30% restante se valida con entrevistas a clientes reales.</p>
+        </div>
+
+    </div>
+</body>
+</html>

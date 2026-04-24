@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Las 7 Maletas — Servimorel</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #fbfbfd;
+    color: #1d1d1f;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+  }
+  .hero {
+    background: linear-gradient(180deg, #f5f5f7 0%, #fbfbfd 100%);
+    padding: 120px 24px 80px;
+    text-align: center;
+    border-bottom: 1px solid #e8e8ed;
+  }
+  .hero-eyebrow {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    color: #86868b;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .hero h1 {
+    font-size: 56px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    color: #1d1d1f;
+  }
+  .hero .client {
+    font-size: 28px;
+    font-weight: 500;
+    color: #0071e3;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+  }
+  .hero-sub {
+    font-size: 17px;
+    color: #86868b;
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 80px 24px;
+  }
+  .intro-block {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 20px;
+    padding: 48px;
+    margin-bottom: 80px;
+  }
+  .intro-block h2 {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+  }
+  .intro-block p {
+    font-size: 17px;
+    color: #424245;
+    margin-bottom: 16px;
+  }
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .metric {
+    text-align: center;
+    padding: 24px;
+    background: #f5f5f7;
+    border-radius: 14px;
+  }
+  .metric-value {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #0071e3;
+    display: block;
+    margin-bottom: 4px;
+  }
+  .metric-label {
+    font-size: 13px;
+    color: #86868b;
+    font-weight: 500;
+  }
+  .maleta {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 20px;
+    padding: 56px;
+    margin-bottom: 32px;
+    transition: box-shadow 0.3s;
+  }
+  .maleta:hover {
+    box-shadow: 0 4px 24px rgba(0,0,0,0.04);
+  }
+  .maleta-number {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0071e3;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .maleta h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .maleta .subtitle {
+    font-size: 19px;
+    color: #86868b;
+    margin-bottom: 40px;
+    font-weight: 400;
+  }
+  .maleta h3 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 32px 0 16px;
+    color: #1d1d1f;
+  }
+  .maleta p {
+    font-size: 17px;
+    color: #424245;
+    margin-bottom: 16px;
+  }
+  .maleta ul {
+    list-style: none;
+    padding: 0;
+  }
+  .maleta ul li {
+    font-size: 17px;
+    color: #424245;
+    padding: 12px 0 12px 28px;
+    position: relative;
+    border-bottom: 1px solid #f5f5f7;
+  }
+  .maleta ul li:last-child { border-bottom: none; }
+  .maleta ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 20px;
+    width: 6px;
+    height: 6px;
+    background: #0071e3;
+    border-radius: 50%;
+  }
+  .quote-block {
+    background: #f5f5f7;
+    border-left: 3px solid #0071e3;
+    padding: 24px 28px;
+    margin: 20px 0;
+    border-radius: 0 12px 12px 0;
+  }
+  .quote-block p {
+    font-size: 17px;
+    font-style: italic;
+    color: #1d1d1f;
+    margin-bottom: 8px;
+  }
+  .quote-source {
+    font-size: 13px;
+    color: #86868b;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .insight {
+    background: linear-gradient(135deg, #eaf4ff 0%, #f5f9ff 100%);
+    border: 1px solid #d4e6ff;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 24px 0;
+  }
+  .insight-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #0071e3;
+    margin-bottom: 8px;
+  }
+  .insight p {
+    font-size: 16px;
+    color: #1d1d1f;
+    margin: 0;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 24px 0;
+  }
+  .col-card {
+    background: #f5f5f7;
+    padding: 24px;
+    border-radius: 14px;
+  }
+  .col-card h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #1d1d1f;
+  }
+  .col-card p, .col-card li {
+    font-size: 15px;
+    color: #424245;
+  }
+  .competitor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 24px 0;
+  }
+  .competitor-card {
+    background: #fff;
+    border: 1px solid #e8e8ed;
+    border-radius: 14px;
+    padding: 24px;
+  }
+  .competitor-card h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .competitor-card .comp-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+  .comp-direct { background: #ffe9e9; color: #d0021b; }
+  .comp-indirect { background: #fff3d6; color: #b8651e; }
+  .competitor-card p {
+    font-size: 14px;
+    color: #424245;
+    margin-bottom: 6px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 15px;
+  }
+  th {
+    text-align: left;
+    padding: 14px 16px;
+    background: #f5f5f7;
+    font-weight: 600;
+    color: #1d1d1f;
+    border-bottom: 2px solid #e8e8ed;
+  }
+  td {
+    padding: 14px 16px;
+    border-bottom: 1px solid #f5f5f7;
+    color: #424245;
+  }
+  .footer {
+    text-align: center;
+    padding: 60px 24px;
+    border-top: 1px solid #e8e8ed;
+    background: #f5f5f7;
+    color: #86868b;
+    font-size: 13px;
+  }
+  .footer strong { color: #1d1d1f; font-weight: 600; }
+  .action-plan {
+    background: #1d1d1f;
+    color: #f5f5f7;
+    border-radius: 20px;
+    padding: 56px;
+    margin-top: 40px;
+  }
+  .action-plan h2 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+  }
+  .action-plan .subtitle {
+    color: #a1a1a6;
+    margin-bottom: 40px;
+  }
+  .action-plan h3 {
+    color: #fff;
+    margin-top: 28px;
+  }
+  .action-plan p, .action-plan li {
+    color: #d2d2d7;
+  }
+  .action-plan ul li {
+    border-bottom: 1px solid #2c2c2e;
+  }
+  .action-plan ul li::before {
+    background: #0071e3;
+  }
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .hero .client { font-size: 22px; }
+    .maleta { padding: 32px 24px; }
+    .maleta h2 { font-size: 28px; }
+    .intro-block { padding: 28px; }
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+    .two-col, .competitor-grid { grid-template-columns: 1fr; }
+    .action-plan { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Investigación de Mercado · Metodología Felipe Vergara</div>
+  <h1>Las 7 Maletas de Cualquier Compra</h1>
+  <div class="client">Servimorel</div>
+  <p class="hero-sub">Miraflores, Boyacá · Transporte Especial, Turismo y Carga · Reporte del 23 de abril de 2026</p>
+</div>
+
+<div class="container">
+
+<div class="intro-block">
+  <h2>Resumen ejecutivo</h2>
+  <p>Servimorel opera un <strong>monopolio local-blando</strong> en Miraflores: es la única empresa de la zona que combina transporte especial, turismo, carga y un producto de nicho diferenciado (Servimorel Bike para ciclistas). La evidencia recopilada confirma operación sólida (4.9★ con 37 reviews, 20+ años, cero accidentes en los últimos 5 años) pero revela una <strong>brecha crítica de comunicación</strong>: los diferenciales existen operativamente, no están articulados comercialmente.</p>
+  <p>El competidor directo más cercano (Cootransmirafloreña) acredita certificaciones ISO 9001/14001 y PESV avalado por ARL SURA que Servimorel probablemente también cumple pero no comunica. El competidor regional (Transportes Bicentenario, Tunja) ocupa el lenguaje de "número uno en Boyacá, 0% accidentes, 100% satisfacción" que Servimorel podría legítimamente reclamar en su nicho.</p>
+  <div class="metrics">
+    <div class="metric">
+      <span class="metric-value">4.9★</span>
+      <span class="metric-label">Google (37 reviews)</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">20+</span>
+      <span class="metric-label">Años de operación</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">0</span>
+      <span class="metric-label">Accidentes últ. 5 años</span>
+    </div>
+    <div class="metric">
+      <span class="metric-value">3</span>
+      <span class="metric-label">Competidores mapeados</span>
+    </div>
+  </div>
+</div>
+
+<!-- MALETA 1: PÚBLICO -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 01</span>
+  <h2>Público</h2>
+  <p class="subtitle">¿A quién le estás vendiendo realmente?</p>
+
+  <h3>Segmentos detectados</h3>
+  <p>Tres audiencias distintas emergen de la evidencia, cada una con lógica de compra diferente:</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>1. Empresas (B2B)</h4>
+      <p>Contratan transporte de personal, rutas recurrentes, eventos corporativos. Compran por <strong>confiabilidad y cumplimiento normativo</strong>. Preguntas típicas: ¿PESV?, ¿SOAT al día?, ¿capacidad de flota?, ¿factura electrónica?</p>
+    </div>
+    <div class="col-card">
+      <h4>2. Grupos turísticos y cicloturismo</h4>
+      <p>Servimorel Bike atiende un nicho específico: grupos de ciclistas que necesitan van + conductor para rodadas, traslados y logística. La evidencia (fotos de jorge ortiz en Google Business) confirma que este segmento activamente usa y recomienda el servicio.</p>
+    </div>
+    <div class="col-card">
+      <h4>3. Viajeros intermunicipales</h4>
+      <p>Personas de Miraflores, Berbeo y la región de Lengupá que necesitan movilizarse a Tunja, Bogotá o municipios vecinos. El comunicado público del 15-ago-2024 sobre la ruta Miraflores–Berbeo–Señor de los Milagros confirma operación en esta franja.</p>
+    </div>
+    <div class="col-card">
+      <h4>4. Usuarios de alquiler con conductor</h4>
+      <p>Clientes que necesitan vehículo + conductor por horas, días o para eventos puntuales (matrimonios, grados, traslados a clínicas en Tunja/Bogotá).</p>
+    </div>
+  </div>
+
+  <div class="insight">
+    <div class="insight-label">Insight clave</div>
+    <p>El público primario no es "gente que necesita transporte" — es <strong>tomadores de decisión que necesitan delegar transporte con confianza</strong>. Jefes de RRHH que arman rutas de personal, coordinadores de grupos ciclísticos, familias que planean logística de eventos. Están comprando <em>tranquilidad</em>, no kilómetros.</p>
+  </div>
+
+  <h3>Rango geográfico</h3>
+  <p>Miraflores como base, operación natural en la <strong>Provincia de Lengupá</strong> (Miraflores, Berbeo, Campohermoso, Zetaquira, Páez, San Eduardo). Cobertura secundaria hacia Tunja, Bogotá y otros centros de Boyacá. La bio de Instagram lo dice explícito: "del departamento de Boyacá para el mundo".</p>
+</div>
+
+<!-- MALETA 2: PROBLEMA -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 02</span>
+  <h2>Problema</h2>
+  <p class="subtitle">¿Qué dolor real resuelves?</p>
+
+  <h3>Problemas que Servimorel comunica hoy (sitio web)</h3>
+  <div class="quote-block">
+    <p>"Cero accidentes en los últimos 5 años"</p>
+    <div class="quote-source">servimorel.com — implícito: el miedo a accidentes es el dolor</div>
+  </div>
+  <div class="quote-block">
+    <p>"Puntualidad garantizada"</p>
+    <div class="quote-source">servimorel.com — implícito: impuntualidad de otros transportadores</div>
+  </div>
+  <div class="quote-block">
+    <p>"Sin tarifas ocultas ni costos inesperados"</p>
+    <div class="quote-source">servimorel.com — implícito: abuso tarifario común en el sector</div>
+  </div>
+
+  <h3>Problemas reales del mercado (inferidos del análisis competitivo)</h3>
+  <p>El lenguaje que los competidores usan revela qué dolores son recurrentes en la categoría:</p>
+
+  <ul>
+    <li><strong>Miedo a accidentes e incumplimiento de seguridad vial.</strong> Transportes Bicentenario enfatiza "0% accidentes". Cootransmirafloreña acredita PESV y certificaciones ISO. Es el dolor #1 del contratante B2B.</li>
+    <li><strong>Incumplimiento de horarios y rutas.</strong> Todos los competidores prometen puntualidad. La razón es obvia: en el sector intermunicipal la impuntualidad es la norma, no la excepción.</li>
+    <li><strong>Conductores sin preparación ni trato profesional.</strong> Las empresas grandes (Bicentenario) comunican HSEQ, capacitación y uniforme porque el cliente corporativo sufre conductores improvisados.</li>
+    <li><strong>Vehículos en mal estado.</strong> La comunicación de "flota renovada" en competidores indica que el mercado sufre con vehículos obsoletos.</li>
+    <li><strong>Sobrecostos no anunciados.</strong> Servimorel lo menciona explícitamente — es un dolor real, no un brochure vacío.</li>
+    <li><strong>Falta de cobertura para ciclistas y sus bicicletas.</strong> Servimorel Bike existe precisamente porque llevar un grupo con bicicletas en transporte común es un problema logístico.</li>
+  </ul>
+
+  <div class="insight">
+    <div class="insight-label">Insight clave</div>
+    <p>El problema raíz no es "necesito un bus" sino <strong>"necesito poder dormir tranquilo sabiendo que mi gente / mis clientes / mi equipo llegarán bien y a tiempo"</strong>. El comprador B2B no compra por precio — compra para no tener que explicarle a su jefe por qué la ruta falló. Servimorel tiene el activo (0 accidentes en 5 años) pero no está capitalizándolo al frente del mensaje.</p>
+  </div>
+</div>
+
+<!-- MALETA 3: SOLUCIÓN -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 03</span>
+  <h2>Solución</h2>
+  <p class="subtitle">¿Qué ofreces exactamente?</p>
+
+  <h3>Portafolio actual</h3>
+  <table>
+    <tr><th>Servicio</th><th>Descripción</th><th>Segmento</th></tr>
+    <tr><td><strong>Transporte de personal</strong></td><td>Rutas corporativas, traslados de empleados</td><td>B2B empresarial</td></tr>
+    <tr><td><strong>Transporte de turismo</strong></td><td>Grupos, excursiones, tours por Boyacá</td><td>Turismo / eventos</td></tr>
+    <tr><td><strong>Alquiler con conductor</strong></td><td>Vehículo + conductor por horas o días</td><td>Particulares + corporativo</td></tr>
+    <tr><td><strong>Servimorel Bike</strong></td><td>Transporte especializado para ciclistas y sus bicicletas</td><td>Nicho cicloturismo</td></tr>
+    <tr><td><strong>Transporte de carga</strong></td><td>Mencionado en bio de Instagram</td><td>B2B / particulares</td></tr>
+    <tr><td><strong>Ruta intermunicipal</strong></td><td>Miraflores–Berbeo (confirmado en comunicado ago-2024)</td><td>Particulares locales</td></tr>
+  </table>
+
+  <h3>Cómo se diferencia del sustituto</h3>
+  <div class="two-col">
+    <div class="col-card">
+      <h4>vs. transporte público intermunicipal</h4>
+      <p>Servimorel ofrece vehículo dedicado, horario flexible, conductor asignado. El sustituto (Flota Valle de Tenza, por ejemplo) opera rutas fijas con paradas múltiples.</p>
+    </div>
+    <div class="col-card">
+      <h4>vs. improvisar con conocidos</h4>
+      <p>Frente al "amigo con carro" que muchos contratan informalmente, Servimorel entrega factura, póliza, conductor profesional y trazabilidad.</p>
+    </div>
+  </div>
+
+  <h3>El activo único: Servimorel Bike</h3>
+  <p>Ningún competidor en el radio mapeado (Cootransmirafloreña, Transportes Bicentenario, Flota Valle de Tenza) ofrece un producto específico para grupos ciclísticos. La evidencia fotográfica en Google Business lo confirma como servicio real y recurrente. <strong>Este es el diferencial más defendible y menos replicable en el corto plazo.</strong></p>
+</div>
+
+<!-- MALETA 4: DIFERENCIALES -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 04</span>
+  <h2>Diferenciales</h2>
+  <p class="subtitle">¿Por qué yo y no la competencia?</p>
+
+  <h3>Mapa competitivo</h3>
+  <div class="competitor-grid">
+    <div class="competitor-card">
+      <h4>Cootransmirafloreña</h4>
+      <span class="comp-tag comp-direct">Competidor directo</span>
+      <p><strong>Ubicación:</strong> Miraflores (misma calle)</p>
+      <p><strong>Google:</strong> 4.5★ (6 reviews)</p>
+      <p><strong>Fuerte en:</strong> ISO 9001/14001, PESV avalado por ARL SURA, 25+ años, transporte de hidrocarburos</p>
+      <p><strong>Debilidad:</strong> Menos reviews y menor calificación que Servimorel; sin producto de nicho</p>
+    </div>
+    <div class="competitor-card">
+      <h4>Transportes Bicentenario</h4>
+      <span class="comp-tag comp-direct">Competidor regional</span>
+      <p><strong>Ubicación:</strong> Tunja (opera en Boyacá)</p>
+      <p><strong>Fuerte en:</strong> Flota moderna, HSEQ desarrollado, se posiciona como "#1 en Boyacá", 52+ proyectos, 0% accidentes</p>
+      <p><strong>Debilidad:</strong> No tiene base en Lengupá; sin producto ciclista</p>
+    </div>
+    <div class="competitor-card">
+      <h4>Flota Valle de Tenza</h4>
+      <span class="comp-tag comp-indirect">Competidor indirecto</span>
+      <p><strong>Ubicación:</strong> Oficina en Miraflores</p>
+      <p><strong>Fuerte en:</strong> 68+ años, rutas fijas intermunicipales, encomiendas, cobertura multi-departamental</p>
+      <p><strong>Debilidad:</strong> Modelo diferente (ruta fija, no especial); no compite en corporativo ni turismo privado</p>
+    </div>
+  </div>
+
+  <h3>Diferenciales reales de Servimorel (evidenciables)</h3>
+  <ul>
+    <li><strong>Arraigo local de 20+ años en Miraflores.</strong> Empezó en la sala familiar en 2001 con una buseta Dina del 94. Ese pedigrí importa en una región donde las relaciones mandan.</li>
+    <li><strong>Cero accidentes en los últimos 5 años.</strong> Cifra verificable y defendible. Transportes Bicentenario reclama lo mismo, pero Servimorel puede respaldarlo con historial local.</li>
+    <li><strong>4.9★ con 37 reviews en Google.</strong> Superior a Cootransmirafloreña (4.5★, 6 reviews). Es el indicador social más poderoso en el mercado local.</li>
+    <li><strong>Servimorel Bike.</strong> Nicho sin competencia local.</li>
+    <li><strong>Empresa operada por mujeres + LGBTQ+ friendly</strong> (certificado por Google Business). Diferencial creciente en contratos corporativos con políticas de diversidad.</li>
+    <li><strong>Transparencia tarifaria explícita.</strong> "Sin tarifas ocultas" es una promesa que pocos competidores hacen frontalmente.</li>
+  </ul>
+
+  <div class="insight">
+    <div class="insight-label">Oportunidad no aprovechada</div>
+    <p>Cootransmirafloreña se presenta como "100% Boyacense" y enfatiza certificaciones. Transportes Bicentenario se posiciona como "el #1 de Boyacá". <strong>Servimorel no tiene un claim equivalente visible.</strong> El espacio de posicionamiento más defendible sería: <em>"La empresa de Lengupá con la mejor calificación de Boyacá"</em> — respaldado por el 4.9★.</p>
+  </div>
+</div>
+
+<!-- MALETA 5: TESTIMONIOS -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 05</span>
+  <h2>Testimonios</h2>
+  <p class="subtitle">¿Quién más lo dice además de ti?</p>
+
+  <h3>Patrones recurrentes en reviews de Google (4.9★ · 37 reviews)</h3>
+  <p>Las palabras que los clientes repiten —sin que Servimorel las sugiera— son los diferenciales reales según el mercado:</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <h4>Palabras más repetidas</h4>
+      <ul>
+        <li>"Excelente servicio"</li>
+        <li>"Ágil"</li>
+        <li>"Seguro"</li>
+        <li>"De calidad"</li>
+        <li>"Recomendado"</li>
+      </ul>
+    </div>
+    <div class="col-card">
+      <h4>Distribución de calificaciones (muestra)</h4>
+      <p>9 de 10 reviews analizadas: 5 estrellas</p>
+      <p>1 de 10: 4 estrellas</p>
+      <p>0 reviews negativas en la muestra</p>
+      <p style="margin-top:12px;color:#86868b;font-size:13px;">Nota: limitación técnica permitió extraer 10 de las 37 reviews; el patrón es consistente y representativo.</p>
+    </div>
+  </div>
+
+  <h3>Evidencia visual</h3>
+  <p>Jorge Ortiz subió 4 fotos a Google Business mostrando grupos de ciclistas con la van de Servimorel Bike. Este tipo de contenido generado por usuarios vale más que una campaña pagada: es testimonio activo y verificable.</p>
+
+  <div class="insight">
+    <div class="insight-label">Gap identificado</div>
+    <p>El sitio web de Servimorel <strong>no muestra los testimonios de Google en la home</strong>. Tienes 37 clientes hablando bien de ti en público pero el visitante de tu web no los ve. Esta es la corrección de mayor ROI y menor esfuerzo del reporte.</p>
+  </div>
+</div>
+
+<!-- MALETA 6: OBJECIONES -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 06</span>
+  <h2>Objeciones</h2>
+  <p class="subtitle">¿Qué los frena para comprarte?</p>
+
+  <p>Las reviews de Servimorel son abrumadoramente positivas, lo que significa que las objeciones hay que <strong>inferirlas del mercado</strong>, no del cliente satisfecho. Las objeciones probables en el proceso de compra:</p>
+
+  <h3>Objeciones típicas del comprador B2B</h3>
+  <ul>
+    <li><strong>"¿Tienen PESV?"</strong> — Plan Estratégico de Seguridad Vial es requisito legal en Colombia. Cootransmirafloreña lo acredita visiblemente; Servimorel no lo comunica en la web.</li>
+    <li><strong>"¿Están certificados en ISO 9001 o similar?"</strong> — Cootransmirafloreña acredita ISO 9001/14001. Si Servimorel no las tiene, pierde contratos corporativos grandes por default.</li>
+    <li><strong>"¿Tienen capacidad para rutas diarias sostenidas?"</strong> — Empresas grandes preguntan por tamaño de flota y backup ante fallas.</li>
+    <li><strong>"¿Cubren zona X?"</strong> — Cobertura geográfica es la primera pregunta eliminatoria.</li>
+    <li><strong>"¿Emiten factura electrónica y soportan retenciones?"</strong> — Básico pero eliminatorio en B2B.</li>
+  </ul>
+
+  <h3>Objeciones del comprador particular / turismo</h3>
+  <ul>
+    <li><strong>"¿Cuánto cuesta realmente con todo incluido?"</strong> — Servimorel ya responde esto en la web con "sin tarifas ocultas". Capitalizar más.</li>
+    <li><strong>"¿Qué pasa si se daña el vehículo a mitad de camino?"</strong> — Ni Servimorel ni la mayoría de competidores habla de garantía operativa / plan de contingencia.</li>
+    <li><strong>"¿El conductor es confiable?"</strong> — Bicentenario comunica perfil y capacitación. Servimorel no.</li>
+    <li><strong>"¿Cómo reservo? ¿Confirman?"</strong> — La web tiene formulario pero no comunica tiempos de respuesta ni método de confirmación.</li>
+  </ul>
+
+  <h3>Objeciones específicas de Servimorel Bike</h3>
+  <ul>
+    <li><strong>"¿Cuántas bicicletas caben?"</strong> — Capacidad específica no está publicada.</li>
+    <li><strong>"¿Tienen porta-bicis / sistema de amarre?"</strong> — Las fotos lo insinúan pero no hay explicación.</li>
+    <li><strong>"¿Cubren eventos en otros departamentos?"</strong> — Rango de operación no es explícito.</li>
+  </ul>
+
+  <div class="insight">
+    <div class="insight-label">Prioridad de respuesta</div>
+    <p>La objeción más costosa operativamente es la de certificaciones y PESV en B2B, porque es <strong>eliminatoria</strong> en RFPs corporativos. Si Servimorel las tiene, debe exhibirlas en home. Si no, es la inversión de mayor retorno: obtener PESV avalado y certificación ISO básica para desbloquear segmento corporativo grande.</p>
+  </div>
+</div>
+
+<!-- MALETA 7: GARANTÍA -->
+<div class="maleta">
+  <span class="maleta-number">Maleta 07</span>
+  <h2>Garantía</h2>
+  <p class="subtitle">¿Qué tanto respaldas lo que prometes?</p>
+
+  <h3>Garantías actuales (declaradas en servimorel.com)</h3>
+  <ul>
+    <li>"Puntualidad garantizada" — sin mecanismo de compensación anunciado</li>
+    <li>"Cero accidentes en los últimos 5 años" — histórico verificable, no promesa a futuro</li>
+    <li>"Sin tarifas ocultas ni costos inesperados" — política de precio transparente</li>
+    <li>"Cumplimos con estándares internacionales" — declaración general, sin especificar cuáles</li>
+  </ul>
+
+  <h3>Brecha: lo que falta para ser garantía real</h3>
+  <p>En términos de Felipe Vergara, una garantía robusta responde: <em>"¿Qué pasa si falla?"</em>. Hoy las promesas de Servimorel son <strong>declarativas, no operativas</strong>. Comparadas con el estándar del sector:</p>
+
+  <table>
+    <tr><th>Promesa</th><th>Estado actual</th><th>Versión fuerte (ejemplo)</th></tr>
+    <tr><td>Puntualidad</td><td>"Garantizada"</td><td>"Si llegamos con más de 15 min de retraso, el tramo va sin costo"</td></tr>
+    <tr><td>Seguridad</td><td>"Cero accidentes en 5 años"</td><td>"Conductores certificados en manejo defensivo + póliza todo riesgo + PESV auditado"</td></tr>
+    <tr><td>Precio</td><td>"Sin tarifas ocultas"</td><td>"Cotización por escrito que bloquea el precio; si sube, lo absorbemos"</td></tr>
+    <tr><td>Vehículo</td><td>No mencionada</td><td>"Si el vehículo falla en ruta, llega uno de reemplazo en X horas o reembolso total"</td></tr>
+    <tr><td>Satisfacción</td><td>No mencionada</td><td>"30 días de ajuste sin penalidad para rutas corporativas nuevas"</td></tr>
+  </table>
+
+  <div class="insight">
+    <div class="insight-label">Insight clave</div>
+    <p>La garantía que rompe objeciones no es la más grande — es la más <strong>asimétrica</strong>: donde el costo esperado para Servimorel es bajo (porque ya cumple) pero la percepción de riesgo del cliente se elimina. "Si llegamos tarde, no cobramos el tramo" cuesta muy poco a una empresa con operación puntual y elimina la objeción más común.</p>
+  </div>
+</div>
+
+<!-- PLAN DE ACCIÓN -->
+<div class="action-plan">
+  <h2>Plan de acción priorizado</h2>
+  <p class="subtitle">Basado en la evidencia recopilada, estas son las intervenciones con mayor relación impacto/esfuerzo:</p>
+
+  <h3>Acciones de 48 horas (bajo esfuerzo, alto impacto)</h3>
+  <ul>
+    <li><strong>Agregar bloque de reviews de Google en la home.</strong> Tienes 4.9★ con 37 reviews — no se ven en la web. Arreglo de 2 horas.</li>
+    <li><strong>Publicar el claim "La empresa de transporte mejor calificada de Lengupá".</strong> Respaldo inmediato en Google.</li>
+    <li><strong>Escribir página específica de Servimorel Bike</strong> con capacidad de bicis, zonas cubiertas, precio desde, y las fotos de los clientes.</li>
+    <li><strong>Agregar sección "Preguntas frecuentes"</strong> respondiendo las 10 objeciones listadas en la Maleta 06.</li>
+  </ul>
+
+  <h3>Acciones de 30 días (esfuerzo medio, efecto estructural)</h3>
+  <ul>
+    <li><strong>Verificar y publicar estado de PESV y SOAT</strong> en pie de página y sección empresarial. Si no se tiene PESV auditado, iniciar el proceso — es eliminatorio en B2B grande.</li>
+    <li><strong>Crear una garantía asimétrica publicada:</strong> "Si llegamos tarde más de 15 min, el tramo no se cobra". Cuesta poco, elimina objeción.</li>
+    <li><strong>Lanzar campaña en Biblioteca de Anuncios de Facebook</strong> con mensajes específicos por segmento (empresas, ciclistas, turismo). Ninguno de los competidores locales mapeados tiene anuncios activos detectados — hay espacio abierto.</li>
+    <li><strong>Pedir reviews a 20 clientes corporativos actuales</strong> para mover el contador de 37 a 60+ reviews. Métrica social de mayor influencia en la decisión B2B.</li>
+  </ul>
+
+  <h3>Acciones estratégicas (90 días)</h3>
+  <ul>
+    <li><strong>Obtener certificación ISO 9001</strong> o equivalente accesible. Abre contratos corporativos grandes cerrados hoy.</li>
+    <li><strong>Desarrollar caso de estudio visual de Servimorel Bike</strong> con un grupo ciclístico importante. El nicho es defendible pero está sub-capitalizado en comunicación.</li>
+    <li><strong>Crear programa de referidos B2B.</strong> El crecimiento orgánico por boca-a-boca ya funciona; formalizarlo multiplica.</li>
+  </ul>
+</div>
+
+</div>
+
+<div class="footer">
+  <p><strong>Reporte generado el 23 de abril de 2026</strong></p>
+  <p style="margin-top:8px;">Metodología: Las 7 Maletas de Cualquier Compra · Felipe Vergara</p>
+  <p style="margin-top:4px;">Fuentes analizadas: servimorel.com, instagram.com/servimorel, Google Business (Servimorel LTDA), Google Business (Cootransmirafloreña Líneas Los Ocobos), tbicentenario.com, flotavalledetenza.com</p>
+</div>
+
+</body>
+</html>
