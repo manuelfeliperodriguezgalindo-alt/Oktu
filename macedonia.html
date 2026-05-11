@@ -1,0 +1,1493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Plan de Acción · Macedonia Restaurante · Mayo 2026</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@page { size: A4; margin: 0; }
+* { margin:0; padding:0; box-sizing:border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #FFFFFF;
+  background: #121212;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+:root {
+  --bg: #121212;
+  --bg-card: #1A1A1A;
+  --border: #2A2A2A;
+  --white: #FFFFFF;
+  --gray: #A0A0A0;
+  --gray-dark: #555;
+  --purple: #8A2BE2;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 24mm 22mm 26mm;
+  page-break-after: always;
+  background: var(--bg);
+  position: relative;
+  overflow: hidden;
+}
+.page:last-child { page-break-after: auto; }
+
+/* ============ COVER ============ */
+.cover {
+  padding: 0;
+  height: 297mm;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cover-glow {
+  position: absolute;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138,43,226,0.18) 0%, transparent 60%);
+  top: -250px; right: -250px;
+  pointer-events: none;
+}
+.cover-glow2 {
+  position: absolute;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(138,43,226,0.1) 0%, transparent 65%);
+  bottom: -200px; left: -150px;
+  pointer-events: none;
+}
+.cover-content {
+  position: relative; z-index: 5;
+  padding: 32mm 24mm 0;
+}
+.cover-eyebrow {
+  display: inline-block;
+  border: 1px solid var(--purple);
+  color: var(--purple);
+  padding: 6px 14px;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.cover h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 68px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+.cover h1 .accent { color: var(--purple); }
+.cover-sub {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--gray);
+  max-width: 460px;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+.cover-meta {
+  position: relative; z-index: 5;
+  padding: 0 24mm 14mm;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.cover-meta-row { display: flex; justify-content: space-between; margin-bottom: 14px; }
+.cover-meta-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+.cover-meta-val {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--white);
+  font-weight: 500;
+}
+.cover-footer {
+  position: relative; z-index: 5;
+  padding: 0 24mm 22mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cover-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: -0.5px;
+}
+.cover-brand .o { color: var(--purple); }
+.cover-brand-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  margin-top: 4px;
+  font-weight: 500;
+}
+.cover-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--gray);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* ============ PAGE HEADER / FOOTER ============ */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.ph-brand {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+}
+.ph-brand .o { color: var(--purple); }
+.ph-doc {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 500;
+}
+.page-footer {
+  position: absolute;
+  bottom: 14mm;
+  left: 22mm;
+  right: 22mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.pf-num { color: var(--purple); font-weight: 700; }
+
+/* ============ SECTION ============ */
+.section-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: var(--purple);
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.05;
+  margin-bottom: 12px;
+  letter-spacing: -0.8px;
+}
+.section-title .accent { color: var(--purple); }
+.section-lead {
+  font-size: 13px;
+  color: var(--gray);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 28px;
+}
+.h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+.h3 .accent { color: var(--purple); }
+
+p { font-size: 12px; color: var(--white); line-height: 1.65; margin-bottom: 10px; }
+p.muted { color: var(--gray); }
+strong { font-weight: 600; color: var(--white); }
+em.purple { color: var(--purple); font-style: normal; font-weight: 600; }
+
+/* ============ METRIC CARDS ============ */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.metric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 18px 16px;
+  text-align: left;
+}
+.metric-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.metric-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 4px;
+  letter-spacing: -1px;
+}
+.metric-sub {
+  font-size: 10px;
+  color: var(--gray);
+  line-height: 1.4;
+}
+
+/* ============ COMPARISON TABLE ============ */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 60px 1fr;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+.compare-col {
+  padding: 22px 22px;
+}
+.compare-col.start { border-right: 1px solid var(--border); }
+.compare-col.end { border-left: 1px solid var(--border); background: rgba(138,43,226,0.05); }
+.compare-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  color: var(--purple);
+  font-weight: 900;
+}
+.compare-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.compare-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 11px;
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-key { color: var(--gray); }
+.compare-val {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--white);
+}
+.compare-col.end .compare-val { color: var(--purple); }
+
+/* ============ FUNNEL ============ */
+.funnel-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 18px;
+  margin-bottom: 18px;
+  align-items: flex-start;
+}
+.funnel-stage {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.funnel-stage.top { border-color: var(--purple); }
+.funnel-stage-icon {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--purple);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.funnel-stage-label {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.funnel-content h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+  letter-spacing: -0.3px;
+}
+.funnel-content .funnel-meaning {
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+.funnel-content .funnel-meaning .accent { color: var(--purple); font-weight: 500; }
+.funnel-content .funnel-task {
+  font-size: 11px;
+  color: var(--white);
+  background: var(--bg-card);
+  border-left: 2px solid var(--purple);
+  padding: 8px 12px;
+  border-radius: 0 4px 4px 0;
+  line-height: 1.5;
+}
+
+/* ============ CREATIVE TABLE ============ */
+.cr-block {
+  margin-bottom: 22px;
+  page-break-inside: avoid;
+}
+.cr-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+.cr-block-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.2px;
+}
+.cr-block-title .accent { color: var(--purple); }
+.cr-block-count {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--purple);
+  line-height: 1;
+}
+
+.creative-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 8px;
+}
+.cr-row1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.cr-id {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  color: var(--purple);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+.cr-tags { display: flex; gap: 5px; flex-wrap: wrap; }
+.cr-tag {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(138,43,226,0.15);
+  color: var(--purple);
+  border: 1px solid rgba(138,43,226,0.3);
+}
+.cr-tag.gray { background: rgba(160,160,160,0.1); color: var(--gray); border-color: rgba(160,160,160,0.2); }
+.cr-tag.white { background: rgba(255,255,255,0.05); color: var(--white); border-color: rgba(255,255,255,0.15); }
+.cr-name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+.cr-desc {
+  font-size: 11px;
+  color: var(--gray);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+.cr-desc .accent { color: var(--purple); font-weight: 600; }
+.cr-meta-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+.cr-meta-item {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--gray);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cr-meta-item b { color: var(--white); font-weight: 700; display: block; font-size: 10px; margin-top: 1px; letter-spacing: 0; text-transform: none; }
+
+/* ============ TABLES ============ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 18px;
+  font-size: 11px;
+}
+.data-table thead th {
+  background: var(--bg-card);
+  color: var(--purple);
+  padding: 10px 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+.data-table tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--white);
+  vertical-align: top;
+  line-height: 1.5;
+  font-size: 11px;
+}
+.data-table tbody td.label {
+  color: var(--gray);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.data-table tbody td.value {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: var(--purple);
+  text-align: right;
+}
+
+/* ============ WHATSAPP MESSAGES PREVIEW ============ */
+.wa-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 18px;
+}
+.wa-msg {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.wa-trigger {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--purple);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+.wa-text {
+  font-size: 11px;
+  color: var(--white);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+/* ============ CALLOUT ============ */
+.callout {
+  background: rgba(138,43,226,0.08);
+  border-left: 3px solid var(--purple);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 18px;
+}
+.callout-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  font-weight: 700;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 5px;
+}
+.callout p { font-size: 11.5px; margin-bottom: 0; line-height: 1.6; color: var(--white); }
+
+/* ============ WEEK TIMELINE ============ */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin-bottom: 18px;
+}
+.week-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 12px;
+}
+.week-card.active { border-color: var(--purple); }
+.week-num {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  color: var(--purple);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 2px;
+}
+.week-dates {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: var(--gray);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+.week-focus {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+.week-tasks {
+  list-style: none;
+}
+.week-tasks li {
+  font-size: 10px;
+  color: var(--gray);
+  padding: 3px 0 3px 10px;
+  position: relative;
+  line-height: 1.4;
+}
+.week-tasks li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--purple);
+  font-weight: 900;
+}
+
+/* ============ CLOSE ============ */
+.close-page {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 297mm;
+  padding: 40mm 20mm;
+  position: relative;
+}
+.close-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1.2;
+  max-width: 520px;
+  margin-bottom: 28px;
+  letter-spacing: -0.6px;
+}
+.close-quote .accent { color: var(--purple); }
+.close-line {
+  width: 50px;
+  height: 2px;
+  background: var(--purple);
+  margin: 0 auto 32px;
+}
+.close-cta {
+  background: var(--purple);
+  color: var(--white);
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+.close-meta {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: var(--gray);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-top: 24px;
+}
+.close-brand-block {
+  position: absolute;
+  bottom: 26mm;
+}
+.close-brand-block .cb {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+}
+.close-brand-block .cb .o { color: var(--purple); }
+</style>
+</head>
+<body>
+
+<!-- ============================== -->
+<!-- COVER -->
+<!-- ============================== -->
+<div class="page cover">
+  <div class="cover-glow"></div>
+  <div class="cover-glow2"></div>
+
+  <div class="cover-content">
+    <span class="cover-eyebrow">Plan de Acción · Mes 1</span>
+    <h1>Sistema<br>Macedonia<br><span class="accent">Mayo 2026.</span></h1>
+    <p class="cover-sub">Punto de partida, plan de ejecución y métricas a mover en 30 días. Atención de clientes + estrategia de contenido orgánico + pauta en Meta.</p>
+  </div>
+
+  <div class="cover-meta">
+    <div class="cover-meta-row">
+      <span class="cover-meta-label">Cliente</span>
+      <span class="cover-meta-val">Macedonia Restaurante · Tunja</span>
+    </div>
+    <div class="cover-meta-row">
+      <span class="cover-meta-label">Producto destacado</span>
+      <span class="cover-meta-val">Parrilla en horno de carbón</span>
+    </div>
+    <div class="cover-meta-row">
+      <span class="cover-meta-label">Período</span>
+      <span class="cover-meta-val">1 al 31 de mayo · 30 días</span>
+    </div>
+    <div class="cover-meta-row">
+      <span class="cover-meta-label">Canales activos</span>
+      <span class="cover-meta-val">TikTok · Instagram · Meta Ads · WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div>
+      <div class="cover-brand"><span class="o">O</span>ktuMedia</div>
+      <div class="cover-brand-sub">Sistema · 90 días</div>
+    </div>
+    <div class="cover-num">Mes 1 / 3</div>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 2: PUNTO DE PARTIDA -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">01 · Diagnóstico</div>
+  <h2 class="section-title">Donde <span class="accent">estás</span> hoy</h2>
+  <p class="section-lead">Antes de movernos, anclamos las métricas actuales. Estas son las cifras de las que partimos el 1 de mayo. El 31 las comparamos contra los resultados reales del mes y vemos qué movimos, qué no, y qué ajustamos para junio.</p>
+
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="metric-label">Reseñas Google</div>
+      <div class="metric-value">748</div>
+      <div class="metric-sub">4.6 estrellas promedio · #1 mariscos en Tunja</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Seguidores Instagram</div>
+      <div class="metric-value">2.3K</div>
+      <div class="metric-sub">Engagement bajo · sin contenido constante</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">TikTok</div>
+      <div class="metric-value">0</div>
+      <div class="metric-sub">Cuenta inexistente · canal sin tocar</div>
+    </div>
+    <div class="metric-card">
+      <div class="metric-label">Pauta activa</div>
+      <div class="metric-value">$0</div>
+      <div class="metric-sub">Sin Meta Ads · sin pixel · sin retargeting</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Lectura del diagnóstico</div>
+    <p>Macedonia ya ganó la batalla de la reputación: <strong>748 reseñas con 4.6 estrellas</strong> es prueba social difícil de comprar. La fricción está en el otro extremo del embudo: el canal no produce descubrimiento. Quien ya te conoce, te quiere. Quien no te conoce, no se entera de que existes. Ese es el problema que el plan resuelve.</p>
+  </div>
+
+  <h3 class="h3" style="margin-top:20px;">Métricas <span class="accent">a mover</span> en 30 días</h3>
+
+  <div class="compare-grid">
+    <div class="compare-col start">
+      <div class="compare-label">Hoy · 1 mayo</div>
+      <div class="compare-row"><span class="compare-key">Seguidores TikTok</span><span class="compare-val">0</span></div>
+      <div class="compare-row"><span class="compare-key">Views totales TikTok</span><span class="compare-val">0</span></div>
+      <div class="compare-row"><span class="compare-key">Consultas WhatsApp / mes</span><span class="compare-val">Sin data</span></div>
+      <div class="compare-row"><span class="compare-key">Tiempo respuesta WhatsApp</span><span class="compare-val">2-4 horas</span></div>
+      <div class="compare-row"><span class="compare-key">Alcance Instagram orgánico</span><span class="compare-val">Sin data</span></div>
+      <div class="compare-row"><span class="compare-key">Reservas atribuibles a digital</span><span class="compare-val">0</span></div>
+    </div>
+    <div class="compare-arrow">→</div>
+    <div class="compare-col end">
+      <div class="compare-label">Objetivo · 31 mayo</div>
+      <div class="compare-row"><span class="compare-key">Seguidores TikTok</span><span class="compare-val">500+</span></div>
+      <div class="compare-row"><span class="compare-key">Views totales TikTok</span><span class="compare-val">10.000+</span></div>
+      <div class="compare-row"><span class="compare-key">Consultas WhatsApp / mes</span><span class="compare-val">+30%</span></div>
+      <div class="compare-row"><span class="compare-key">Tiempo respuesta WhatsApp</span><span class="compare-val">&lt; 5 min</span></div>
+      <div class="compare-row"><span class="compare-key">Alcance Instagram orgánico</span><span class="compare-val">+40%</span></div>
+      <div class="compare-row"><span class="compare-key">Reservas atribuibles a digital</span><span class="compare-val">25+</span></div>
+    </div>
+  </div>
+
+  <p class="muted" style="font-size:11px;">Estas no son metas inflexibles — son los compromisos auditables sobre los cuales evaluamos el mes. Si una no se cumple, el reporte del 31 de mayo explica por qué y qué se ajusta. Sin condiciones escondidas.</p>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">02</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 3: ATENCIÓN A CLIENTES -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">02 · Atención · WhatsApp</div>
+  <h2 class="section-title">Respuestas <span class="accent">prestablecidas</span></h2>
+  <p class="section-lead">Toda la pauta y todo el contenido del mes lleva al cliente al mismo lugar: WhatsApp. Si la atención no responde rápido y bien, el embudo se rompe en la última milla. Estas son las 8 respuestas plantilla que cubren el 90% de los mensajes que llegan a un restaurante.</p>
+
+  <div class="wa-grid">
+    <div class="wa-msg">
+      <div class="wa-trigger">R1 · Saludo de apertura (auto)</div>
+      <div class="wa-text">¡Hola! Soy Macedonia 🦞 Gracias por escribirnos. ¿Quieres reservar mesa, conocer el menú del día o preguntar por un evento? Responde con el número o cuéntame qué necesitas.</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R2 · Quiere reservar mesa</div>
+      <div class="wa-text">¡Perfecto! Para confirmarte la mesa necesito: 1) fecha y hora, 2) cuántas personas, 3) tu nombre completo. Te confirmo disponibilidad en menos de 5 minutos.</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R3 · Pregunta por menú o precios</div>
+      <div class="wa-text">Te paso el menú completo aquí 📋 [link al PDF]. Nuestros platos van entre $60.000 y $100.000. El ticket promedio por persona es $90.000. ¿Te ayudo a decidirte?</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R4 · Pregunta por ubicación / horario</div>
+      <div class="wa-text">Estamos en Calle 23 # 9-16, Tunja 📍 Abrimos de martes a domingo, 12pm a 10pm. Aquí te mando la ubicación en Maps: [link].</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R5 · Pregunta por evento especial</div>
+      <div class="wa-text">¡Buenísimo que te animes! Para celebraciones (cumpleaños, aniversarios, empresas) tenemos opciones desde 6 personas. Cuéntame: ¿cuántos serían y qué fecha tienes en mente?</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R6 · Pide domicilio</div>
+      <div class="wa-text">La parrilla en horno de carbón solo la servimos en el restaurante para que llegue como debe llegar 🔥 Para domicilio tenemos las cazuelas, ensaladas y platos seleccionados. ¿Te paso el menú de domicilios?</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R7 · No hay disponibilidad</div>
+      <div class="wa-text">Para esa fecha y hora estamos llenos 😔 Pero tengo opciones a las [hora alternativa] el mismo día o el [día siguiente]. ¿Alguna te sirve? Si no, te apunto en lista de espera por si se libera.</div>
+    </div>
+    <div class="wa-msg">
+      <div class="wa-trigger">R8 · Confirmación de reserva</div>
+      <div class="wa-text">Confirmado ✅ [Nombre], mesa para [N] personas el [fecha] a las [hora]. Te esperamos en Calle 23 # 9-16. Si necesitas reagendar, escríbenos hasta 2 horas antes. ¡Hasta el [día]!</div>
+    </div>
+  </div>
+
+  <h3 class="h3" style="margin-top:8px;">Reglas de <span class="accent">operación</span></h3>
+
+  <table class="data-table">
+    <tbody>
+      <tr><td class="label" style="width:35%;">Tiempo de respuesta meta</td><td>Menos de <strong>5 minutos</strong> en horario de operación (12pm-10pm)</td></tr>
+      <tr><td class="label">Saludo automático fuera de horario</td><td>"Estamos cerrados. Te respondemos mañana desde las 12pm. Mientras tanto, ya puedes dejar tu solicitud aquí."</td></tr>
+      <tr><td class="label">Lista de contactos guardados</td><td>Cada cliente que reserva queda guardado con etiqueta (Pareja / Familia / Empresa / Evento)</td></tr>
+      <tr><td class="label">Recordatorio antes de la reserva</td><td>Mensaje automático 2 horas antes: "Te esperamos hoy a las [hora]. Tu mesa está lista."</td></tr>
+      <tr><td class="label">Mensaje post-visita</td><td>Día siguiente a la visita: "Gracias por venir. Si te gustó, nos ayudaría una reseña en Google: [link]"</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Por qué esto antes que la pauta</div>
+    <p>Tener pauta corriendo sin un WhatsApp que responda en 5 minutos es <strong>fuga de capital directa</strong>. Cada cliente que escribe y no recibe respuesta en 30 minutos se va al competidor. El primer fix del mes es este — sin él, los anuncios no convierten.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">03</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 4: EL EMBUDO EXPLICADO -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">03 · El Embudo</div>
+  <h2 class="section-title">Las 3 <span class="accent">etapas</span> del cliente</h2>
+  <p class="section-lead">Antes de meternos en cuántos videos y cuántos carruseles, hay que entender una cosa: <strong>no todo el mundo está listo para reservar mesa hoy</strong>. La gente pasa por 3 etapas antes de escribirte. Cada anuncio que hacemos sirve para una etapa específica. Si todos los anuncios atacaran la misma etapa, dejaríamos plata sobre la mesa.</p>
+
+  <div class="funnel-row">
+    <div class="funnel-stage top">
+      <div class="funnel-stage-icon">1</div>
+      <div class="funnel-stage-label">Arriba<br>del embudo</div>
+    </div>
+    <div class="funnel-content">
+      <h4>Hacer que la gente descubra que existes</h4>
+      <p class="funnel-meaning">Aquí la persona ni siquiera sabe que Macedonia tiene parrilla en horno de carbón. Hay que <span class="accent">presentar el producto</span> y mostrar que existe esta opción en Tunja. No se pide nada — solo se planta la semilla.</p>
+      <div class="funnel-task"><strong>Qué hacen los anuncios de esta etapa:</strong> mostrar el plato, mostrar el lugar, mostrar el fuego. Sin precios, sin "reserva ya", sin presión. Solo despertar curiosidad.</div>
+    </div>
+  </div>
+
+  <div class="funnel-row">
+    <div class="funnel-stage">
+      <div class="funnel-stage-icon">2</div>
+      <div class="funnel-stage-label">Mitad<br>del embudo</div>
+    </div>
+    <div class="funnel-content">
+      <h4>Convencer de que vale la pena venir</h4>
+      <p class="funnel-meaning">La persona ya vio el primer anuncio o visitó el perfil. Sabe que existes, pero todavía no está segura. Aquí entran las <span class="accent">razones para elegirte</span>: las 748 reseñas, el horno de carbón, los detalles que te diferencian de otros restaurantes.</p>
+      <div class="funnel-task"><strong>Qué hacen los anuncios de esta etapa:</strong> mostrar prueba social (reseñas, clientes), explicar por qué la parrilla en carbón sabe distinto, presentar el plato que más piden. La promesa entra acá.</div>
+    </div>
+  </div>
+
+  <div class="funnel-row">
+    <div class="funnel-stage">
+      <div class="funnel-stage-icon">3</div>
+      <div class="funnel-stage-label">Abajo<br>del embudo</div>
+    </div>
+    <div class="funnel-content">
+      <h4>Lograr que reserve la mesa</h4>
+      <p class="funnel-meaning">La persona ya quiere ir. Solo necesita un empujón final: una promoción, un evento especial del fin de semana, o simplemente recordarle "esta noche estamos abiertos". Aquí el <span class="accent">llamado a la acción</span> es directo y específico.</p>
+      <div class="funnel-task"><strong>Qué hacen los anuncios de esta etapa:</strong> CTA directo "Reserva al 310 205 37 58", urgencia real ("Sábado lleno: quedan 4 mesas"), eventos especiales (cena maridaje). Botón a WhatsApp en todos.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Cómo se reparte el presupuesto del mes</div>
+    <p>Aproximadamente <strong>50% en etapa 1 (descubrimiento)</strong>, <strong>30% en etapa 2 (convencimiento)</strong>, <strong>20% en etapa 3 (reserva)</strong>. La etapa 1 alimenta a la 2, la 2 alimenta a la 3. Si solo invertimos en la 3, le hablamos al mismo pequeño grupo de personas todo el mes y se nos agota la audiencia.</p>
+  </div>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">04</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 5: NÚMERO DE CREATIVOS -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">04 · Producción</div>
+  <h2 class="section-title">Cuántas piezas <span class="accent">producimos</span></h2>
+  <p class="section-lead">18 piezas en total durante el mes. Cada una tiene formato, canal y etapa del embudo asignados antes de producirse. Esto evita producir contenido suelto que no entra en la estrategia.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Tipo de pieza</th>
+        <th style="text-align:center; width:14%;">Cantidad</th>
+        <th>Canal</th>
+        <th style="width:18%;">Etapa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Video TikTok orgánico</strong></td>
+        <td class="value" style="text-align:center;">6</td>
+        <td>TikTok @restaurante_macedonia</td>
+        <td>Etapa 1 · Descubrimiento</td>
+      </tr>
+      <tr>
+        <td><strong>Reel Instagram orgánico</strong></td>
+        <td class="value" style="text-align:center;">4</td>
+        <td>Instagram feed</td>
+        <td>Etapa 1 y 2</td>
+      </tr>
+      <tr>
+        <td><strong>Historia Instagram</strong></td>
+        <td class="value" style="text-align:center;">2</td>
+        <td>Stories Instagram</td>
+        <td>Etapa 3 · Reserva</td>
+      </tr>
+      <tr>
+        <td><strong>Video pauta Meta (frío)</strong></td>
+        <td class="value" style="text-align:center;">3</td>
+        <td>Facebook + Instagram Ads</td>
+        <td>Etapa 1 y 2</td>
+      </tr>
+      <tr>
+        <td><strong>Carrusel Meta (retargeting)</strong></td>
+        <td class="value" style="text-align:center;">2</td>
+        <td>Facebook + Instagram Ads</td>
+        <td>Etapa 2 y 3</td>
+      </tr>
+      <tr>
+        <td><strong>Estático evento especial</strong></td>
+        <td class="value" style="text-align:center;">1</td>
+        <td>Instagram + pauta puntual</td>
+        <td>Etapa 3 · Reserva</td>
+      </tr>
+      <tr style="background:rgba(138,43,226,0.08);">
+        <td><strong style="color:var(--purple);">TOTAL</strong></td>
+        <td class="value" style="text-align:center; font-size:18px;">18</td>
+        <td style="color:var(--gray); font-style:italic;">Distribuido en 4 semanas</td>
+        <td style="color:var(--gray); font-style:italic;">3 etapas</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="h3" style="margin-top:24px;">Calendario de <span class="accent">publicación</span></h3>
+
+  <div class="week-grid">
+    <div class="week-card active">
+      <div class="week-num">Semana 1</div>
+      <div class="week-dates">1 — 7 mayo</div>
+      <div class="week-focus">Lanzamiento</div>
+      <ul class="week-tasks">
+        <li>4 piezas: CR-01, CR-02, CR-04, CR-11</li>
+        <li>Apertura cuenta TikTok</li>
+        <li>WhatsApp con respuestas listas</li>
+        <li>Sin pauta aún</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Semana 2</div>
+      <div class="week-dates">8 — 14 mayo</div>
+      <div class="week-focus">Pauta activa</div>
+      <ul class="week-tasks">
+        <li>5 piezas: CR-03, CR-05, CR-13, CR-14, CR-12</li>
+        <li>Pauta Meta arranca (etapa 1)</li>
+        <li>Pixel midiendo desde día 1</li>
+        <li>Primer ajuste de hooks</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Semana 3</div>
+      <div class="week-dates">15 — 21 mayo</div>
+      <div class="week-focus">Escalar</div>
+      <ul class="week-tasks">
+        <li>4 piezas: CR-06, CR-07, CR-15, CR-16</li>
+        <li>Retargeting prende</li>
+        <li>Duplicar el video con más views</li>
+        <li>Colaboración con foodie local</li>
+      </ul>
+    </div>
+    <div class="week-card">
+      <div class="week-num">Semana 4</div>
+      <div class="week-dates">22 — 31 mayo</div>
+      <div class="week-focus">Cierre y reporte</div>
+      <ul class="week-tasks">
+        <li>5 piezas: CR-08, CR-09, CR-10, CR-17, CR-18</li>
+        <li>Evento especial del mes</li>
+        <li>Reporte final con datos reales</li>
+        <li>Plan ajustado para junio</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">05</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 6: DETALLE CREATIVOS ETAPA 1 -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">05 · Detalle por pieza</div>
+  <h2 class="section-title">Qué hace <span class="accent">cada creativo</span></h2>
+  <p class="section-lead">Para cada pieza: qué se ve, qué dice, qué etapa del embudo trabaja y qué tiene que lograr en la persona que la mira. Si una pieza no cumple su objetivo de etapa, se retira y se reemplaza.</p>
+
+  <div class="cr-block">
+    <div class="cr-block-header">
+      <div class="cr-block-title">Etapa 1 · <span class="accent">Descubrimiento</span></div>
+      <div class="cr-block-count">8 piezas</div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-01</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok orgánico</span>
+          <span class="cr-tag gray">12 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">El sonido del horno de carbón</div>
+      <p class="cr-desc">Video sin diálogo. Plano cenital del horno con brasas vivas, primer plano de la carne entrando, corte final con jugos saliendo. <span class="accent">Objetivo:</span> que la persona descubra que en Macedonia hay parrilla de carbón. Sin pedirle nada. Solo despertar el antojo.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Reconocimiento</b></div>
+        <div class="cr-meta-item">CTA <b>Logo final</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-02</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok</span>
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">30 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Por qué horno de carbón y no parrilla a gas</div>
+      <p class="cr-desc">Video explicativo con voz en off (sin rostro del propietario, narración en texto en pantalla + B-roll del horno). <span class="accent">Objetivo:</span> mostrar que la parrilla en carbón no es decoración — es una decisión de cocina que cambia el sabor.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Diferenciación</b></div>
+        <div class="cr-meta-item">CTA <b>Visita perfil</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-04</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok</span>
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">20 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">5 minutos en cocina · mise en place</div>
+      <p class="cr-desc">Time-lapse de la preparación: ingredientes, sazonado, momento exacto en que entra la carne al horno. Estilo behind-the-scenes. <span class="accent">Objetivo:</span> mostrar oficio. La gente confía en restaurantes donde ve trabajo real.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Confianza</b></div>
+        <div class="cr-meta-item">CTA <b>Logo final</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-08</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">10 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">El primer corte · ASMR</div>
+      <p class="cr-desc">Plano cerrado del cuchillo entrando en la carne, jugos saliendo, audio crudo. Cero texto. <span class="accent">Objetivo:</span> generar antojo puro. Funciona porque el cerebro responde al estímulo antes de pensar.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Deseo</b></div>
+        <div class="cr-meta-item">CTA <b>Logo final</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-09</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Sin pantallas esta vez · cena en pareja</div>
+      <p class="cr-desc">Plano de mesa servida con dos copas, velas, parrilla al centro. Texto en pantalla: "Esta semana otra vez comieron viendo Netflix." <span class="accent">Objetivo:</span> activar el deseo de romper la rutina en parejas jóvenes.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Identificación</b></div>
+        <div class="cr-meta-item">CTA <b>"Reserva fin de semana"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-13</span>
+        <div class="cr-tags">
+          <span class="cr-tag white">Meta Ads · pauta</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Pauta frío · El marisco que no esperabas en Boyacá</div>
+      <p class="cr-desc">Video producido específicamente para pauta: brasas + carne + plato + prueba social (4.6★ · 748 reseñas) + dirección. <span class="accent">Objetivo:</span> llegar a personas que nunca han oído hablar de Macedonia y darles motivo para visitarte.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Alcance pago</b></div>
+        <div class="cr-meta-item">CTA <b>"Enviar mensaje"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-14</span>
+        <div class="cr-tags">
+          <span class="cr-tag white">Meta Ads · pauta</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Pauta frío · "Llevaste a tus invitados al lugar de siempre"</div>
+      <p class="cr-desc">Hook directo para Anfitriones (35-55 años) que invitan a clientes o familia. Salón + atmósfera + propuesta de elegir mejor. <span class="accent">Objetivo:</span> capturar al segmento profesional que paga ticket alto y elige por status.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Captura ejecutivos</b></div>
+        <div class="cr-meta-item">CTA <b>"Reserva mesa"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-15</span>
+        <div class="cr-tags">
+          <span class="cr-tag white">Meta Ads · pauta</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Pauta frío · La cena del domingo</div>
+      <p class="cr-desc">Plano de mesa familiar, varios platos, ambiente cálido. Texto: "Reunir a la familia se está volviendo más raro. Cada cena cuenta." <span class="accent">Objetivo:</span> activar el segmento familiar para la cena del domingo, día de menor reserva.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>1 · Arriba del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Captura familias</b></div>
+        <div class="cr-meta-item">CTA <b>"Reserva el domingo"</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">06</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 7: DETALLE CREATIVOS ETAPA 2 y 3 -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="cr-block">
+    <div class="cr-block-header">
+      <div class="cr-block-title">Etapa 2 · <span class="accent">Convencimiento</span></div>
+      <div class="cr-block-count">5 piezas</div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-03</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">POV · el plato llegó a la mesa</div>
+      <p class="cr-desc">Plano subjetivo desde la perspectiva del comensal cuando le sirven el plato. Plato + copa + ambiente. <span class="accent">Objetivo:</span> que quien ya vio el primer anuncio se imagine viviéndolo.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>2 · Mitad del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Proyección</b></div>
+        <div class="cr-meta-item">CTA <b>Visita perfil</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-05</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok</span>
+          <span class="cr-tag gray">25 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Reacción a las mejores reseñas de Google</div>
+      <p class="cr-desc">Captura de pantalla de las reseñas más impactantes con animación + B-roll de los platos que mencionan. <span class="accent">Objetivo:</span> activar prueba social. 748 reseñas con 4.6★ son la mejor venta que tiene Macedonia.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>2 · Mitad del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Prueba social</b></div>
+        <div class="cr-meta-item">CTA <b>"Lee más en Google"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-06</span>
+        <div class="cr-tags">
+          <span class="cr-tag">TikTok</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">La mesa compartida</div>
+      <p class="cr-desc">Plano de mesa con varios platos, copas chocando, manos compartiendo. Sin rostros. Texto: "Hace meses que no se sientan todos a comer juntos." <span class="accent">Objetivo:</span> golpear el deseo de reunión familiar/grupal.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>2 · Mitad del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Activación emocional</b></div>
+        <div class="cr-meta-item">CTA <b>"Reserva domingo"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-07</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">15 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">El plato que tu feed esperaba</div>
+      <p class="cr-desc">Plato editorial con luz cálida, copa de vino, composición tipo revista. <span class="accent">Objetivo:</span> capturar el segmento pareja foodie 25-40 que comparte fotos. Macedonia como contenido shareable.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>2 · Mitad del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Aspiracional</b></div>
+        <div class="cr-meta-item">CTA <b>"Mesa en bio"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-10</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Reel IG</span>
+          <span class="cr-tag gray">18 seg</span>
+        </div>
+      </div>
+      <div class="cr-name">Donde se cierran negocios en Tunja</div>
+      <p class="cr-desc">Salón nocturno, mesa para negocios servida, copas, atmósfera profesional. Texto: "El cliente importante notó dónde lo llevaste." <span class="accent">Objetivo:</span> posicionar Macedonia como elección de profesionales.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>2 · Mitad del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Posicionamiento status</b></div>
+        <div class="cr-meta-item">CTA <b>"Mesa privada"</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cr-block">
+    <div class="cr-block-header">
+      <div class="cr-block-title">Etapa 3 · <span class="accent">Reserva</span></div>
+      <div class="cr-block-count">5 piezas</div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-11 · CR-12</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Historia IG · ×2</span>
+          <span class="cr-tag gray">15 seg c/u</span>
+        </div>
+      </div>
+      <div class="cr-name">Plato del día + urgencia de fin de semana</div>
+      <p class="cr-desc">2 historias semanales con foto del plato del día y sticker de cuenta regresiva o "últimas mesas para hoy". <span class="accent">Objetivo:</span> activar al cliente que ya te sigue y solo necesita un detonador para decidir hoy.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>3 · Abajo del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Conversión inmediata</b></div>
+        <div class="cr-meta-item">CTA <b>Sticker WhatsApp</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-16 · CR-17</span>
+        <div class="cr-tags">
+          <span class="cr-tag white">Meta Ads · retargeting</span>
+          <span class="cr-tag gray">Carrusel 4 slides</span>
+        </div>
+      </div>
+      <div class="cr-name">Retargeting · "Tu mesa ya está esperando"</div>
+      <p class="cr-desc">Carruseles de 4 imágenes dirigidos a quienes ya interactuaron contigo: plato + reseñas + mesa servida + mapa con WhatsApp. <span class="accent">Objetivo:</span> cerrar a quienes ya están tibios. Aquí el costo por consulta baja 40-60% vs pauta fría.</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>3 · Abajo del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Cierre de tibios</b></div>
+        <div class="cr-meta-item">CTA <b>"Reservar por WhatsApp"</b></div>
+      </div>
+    </div>
+
+    <div class="creative-item">
+      <div class="cr-row1">
+        <span class="cr-id">CR-18</span>
+        <div class="cr-tags">
+          <span class="cr-tag">Estático · evento</span>
+          <span class="cr-tag gray">Feed + Story + pauta</span>
+        </div>
+      </div>
+      <div class="cr-name">Evento especial del mes</div>
+      <p class="cr-desc">Pieza estática para promover una cena maridaje, noche temática o evento puntual del mes. Estilo flyer Macedonia. <span class="accent">Objetivo:</span> llenar cupos en 48-72 horas con pauta de pulso (corta, alto presupuesto).</p>
+      <div class="cr-meta-row">
+        <div class="cr-meta-item">Etapa <b>3 · Abajo del embudo</b></div>
+        <div class="cr-meta-item">Lo que logra <b>Llena evento</b></div>
+        <div class="cr-meta-item">CTA <b>"Reservar 310 205 37 58"</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">07</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- PAGE 8: PRESUPUESTO + CIERRE -->
+<!-- ============================== -->
+<div class="page">
+  <div class="page-header">
+    <div class="ph-brand"><span class="o">O</span>ktuMedia</div>
+    <div class="ph-doc">Sistema Macedonia · Mes 1</div>
+  </div>
+
+  <div class="section-eyebrow">06 · Presupuesto</div>
+  <h2 class="section-title">Inversión del <span class="accent">mes 1</span></h2>
+  <p class="section-lead">Todo el presupuesto desglosado y visible. Sin números ocultos ni fees sorpresa. Esta es la inversión que se compromete el 1 de mayo y se audita el 31.</p>
+
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Línea</th>
+        <th>Concepto</th>
+        <th style="text-align:right; width:22%;">Inversión</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="label">Pauta · Etapa 1</td>
+        <td>Campañas de descubrimiento en Meta Ads (3 videos en frío)</td>
+        <td class="value">$380.000</td>
+      </tr>
+      <tr>
+        <td class="label">Pauta · Etapa 2 + 3</td>
+        <td>Campañas de convencimiento y retargeting (carruseles + retargeting de visitas perfil)</td>
+        <td class="value">$200.000</td>
+      </tr>
+      <tr>
+        <td class="label">Producción</td>
+        <td>Una sesión de grabación · 35 tomas + 10 fotos + edición de 18 piezas</td>
+        <td class="value">$80.000</td>
+      </tr>
+      <tr>
+        <td class="label">Colaboración</td>
+        <td>1 foodie / creador local de Tunja: comida + honorario simbólico</td>
+        <td class="value">$100.000</td>
+      </tr>
+      <tr style="background:rgba(138,43,226,0.08);">
+        <td class="label" style="color:var(--purple); font-weight:700;">TOTAL MES 1</td>
+        <td style="color:var(--gray); font-style:italic;">Inversión total auditable</td>
+        <td class="value" style="font-size:18px;">$760.000</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Cómo se mide el retorno</div>
+    <p>Con un ticket promedio de <strong>$90.000 por persona</strong>, basta que el sistema genere 9 reservas de pareja nuevas en el mes para recuperar la inversión. La meta de 25 reservas atribuibles a digital implica un retorno aproximado de 3x en el mes 1. A partir del mes 2, el retorno se acelera porque la audiencia de retargeting ya existe.</p>
+  </div>
+
+  <h3 class="h3" style="margin-top:24px;">Próximo <span class="accent">paso</span></h3>
+
+  <table class="data-table">
+    <tbody>
+      <tr>
+        <td class="label" style="width:30%;">Aprobación del plan</td>
+        <td>Confirmación por escrito antes del <strong>30 de abril</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Kickoff</td>
+        <td>Reunión de arranque el <strong>1 de mayo · 10am</strong> (presencial o videollamada)</td>
+      </tr>
+      <tr>
+        <td class="label">Sesión de grabación</td>
+        <td>Fecha bloqueada: <strong>sábado 3 de mayo desde las 3pm</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Primer reporte</td>
+        <td><strong>Lunes 12 de mayo</strong> · datos de la primera semana en pauta</td>
+      </tr>
+      <tr>
+        <td class="label">Reporte final mes 1</td>
+        <td><strong>Lunes 2 de junio</strong> · comparativa inicio vs cierre + plan ajustado para mes 2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-footer">
+    <span>Sistema Macedonia · Mes 1</span>
+    <span class="pf-num">08</span>
+  </div>
+</div>
+
+<!-- ============================== -->
+<!-- CLOSE -->
+<!-- ============================== -->
+<div class="page close-page">
+  <div class="cover-glow"></div>
+  <div class="cover-glow2"></div>
+
+  <div class="close-quote">Tu marketing<br>convertido en un<br><span class="accent">sistema medible.</span></div>
+  <div class="close-line"></div>
+  <p style="font-size:13px; color:var(--gray); max-width:380px; margin-bottom:32px;">El 31 de mayo no entregamos un reporte de actividades. Entregamos números comparables contra el 1 de mayo. Si una métrica no se movió, decimos por qué.</p>
+  <div class="close-cta">Kickoff · 1 de mayo · 10am</div>
+
+  <div class="close-brand-block">
+    <div class="cb"><span class="o">O</span>ktuMedia</div>
+    <div class="close-meta">Sistema · Macedonia · Mes 1 de 3</div>
+  </div>
+</div>
+
+</body>
+</html>
