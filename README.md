@@ -10,3 +10,5 @@ Haz clic en los enlaces para ver cada propuesta:
 * [Troncos y raices]
 * [Ver 7 maletas](https://manuelfeliperodriguezgalindo-alt.github.io/Oktu/7-maletas-troncos-y-raices-2026-04-21.html)
 * [Ver roadmap](https://manuelfeliperodriguezgalindo-alt.github.io/Oktu/roadmap-troncos-y-raices-90-dias-2026-04-22.html)
+* [Ver troncos](https://manuelfeliperodriguezgalindo-alt.github.io/Oktu/troncos.html)
+* [Ver Macedonia](https://manuelfeliperodriguezgalindo-alt.github.io/Oktu/macedonia.html)
